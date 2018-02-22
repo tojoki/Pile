@@ -3,11 +3,10 @@ namespace Admin\Controller;
 class AdvertController extends BaseController {
     
     public function index(){
+
     }
 
-    /*
-     * 登录广告
-     */
+    //登录广告
     public function home(){
         if(IS_POST){
             $gid = I('aid');
