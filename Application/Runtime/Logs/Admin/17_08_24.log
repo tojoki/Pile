@@ -1,0 +1,185 @@
+[ 2017-08-24T09:53:59+08:00 ] 114.241.179.70 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000227s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+
+[ 2017-08-24T09:53:59+08:00 ] 114.241.179.70 /Admin/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000245s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000330s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003674s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003706s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000100s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000124s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000328s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000356s ]
+
+[ 2017-08-24T09:54:28+08:00 ] 114.241.179.70 /Admin/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000075s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003687s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003722s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000097s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000122s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000288s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000317s ]
+
+[ 2017-08-24T09:58:12+08:00 ] 114.241.179.70 /Admin/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000336s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003730s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003763s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000099s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000124s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000346s ]
+
+[ 2017-08-24T09:58:18+08:00 ] 114.241.179.70 /Admin/Login/dologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000338s ]
+SQL: SHOW COLUMNS FROM `eriko_admin` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `eriko_admin` WHERE `user` = 'admin' AND `state` = 1 LIMIT 1   [ RunTime:0.0156s ]
+SQL: UPDATE `eriko_admin` SET `last_logintime`='1503539898',`last_loginip`='127.0.0.1' WHERE `id` = 1 [ RunTime:0.0065s ]
+
+[ 2017-08-24T09:58:18+08:00 ] 114.241.179.70 /Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000305s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+NOTIC: [8] Undefined index: menu_list /yjdata/www/pile/Application/Admin/Controller/BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() /yjdata/www/pile/Application/Admin/Controller/BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `eriko_treenode` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `eriko_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0083s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000107s ]
+NOTIC: [8] Undefined variable: Os /yjdata/www/pile/Application/Runtime/Cache/Admin/b595b808c2ebeeeb0478ffc30bb4e87a.php 第 105 行.
+NOTIC: [8] Undefined variable: users /yjdata/www/pile/Application/Runtime/Cache/Admin/b595b808c2ebeeeb0478ffc30bb4e87a.php 第 144 行.
+NOTIC: [8] Undefined variable: doctors /yjdata/www/pile/Application/Runtime/Cache/Admin/b595b808c2ebeeeb0478ffc30bb4e87a.php 第 167 行.
+NOTIC: [8] Undefined variable: applys /yjdata/www/pile/Application/Runtime/Cache/Admin/b595b808c2ebeeeb0478ffc30bb4e87a.php 第 190 行.
+NOTIC: [8] Undefined variable: feeds /yjdata/www/pile/Application/Runtime/Cache/Admin/b595b808c2ebeeeb0478ffc30bb4e87a.php 第 215 行.
+NOTIC: [8] Undefined variable: msgs /yjdata/www/pile/Application/Runtime/Cache/Admin/b595b808c2ebeeeb0478ffc30bb4e87a.php 第 238 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013383s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013423s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000102s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000126s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000328s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000379s ]
+
+[ 2017-08-24T09:58:24+08:00 ] 114.241.179.70 /Admin/pile/lists.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000323s ]
+NOTIC: [8] Undefined index: menu_list /yjdata/www/pile/Application/Admin/Controller/BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() /yjdata/www/pile/Application/Admin/Controller/BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `eriko_treenode` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `eriko_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `eriko_disc` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `eriko_disc` ORDER BY rtime desc  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+NOTIC: [8] Undefined variable: Os /yjdata/www/pile/Application/Runtime/Cache/Admin/80bcae84a22996d9cfead0df834971cd.php 第 173 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010777s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010809s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000119s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000146s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000318s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000357s ]
+
+[ 2017-08-24T09:58:26+08:00 ] 114.241.179.70 /Admin/Pile/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000302s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000337s ]
+NOTIC: [8] Undefined index: menu_list /yjdata/www/pile/Application/Admin/Controller/BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() /yjdata/www/pile/Application/Admin/Controller/BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `eriko_treenode` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `eriko_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+NOTIC: [8] Undefined variable: Os /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 147 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 197 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 201 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 209 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 218 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 219 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 220 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 221 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 222 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 232 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 240 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 248 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 249 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 257 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 266 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 267 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 276 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 285 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 287 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 302 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 303 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 307 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 313 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 315 行.
+NOTIC: [8] Undefined variable: info /yjdata/www/pile/Application/Runtime/Cache/Admin/e23c8b0226c5d97ca28016c32f82c0e5.php 第 332 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011604s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011632s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000102s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000503s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000577s ]
+

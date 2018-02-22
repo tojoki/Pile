@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>用户资料修改</title>
+<link href="__PUBLIC__/Admin/css/bootstrap.min.css" rel="stylesheet">
+<link href="__PUBLIC__/Admin/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+<link href="__PUBLIC__/Admin/bootstrap-table/bootstrap-editable.css" rel="stylesheet">
+<link href="__PUBLIC__/Admin/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="__PUBLIC__/Admin/css/style.min.css?v=4.0.0" rel="stylesheet">
+<script src="__PUBLIC__/Admin/js/jquery.min.js"></script>
+<script src="__PUBLIC__/Admin/js/bootstrap.min.js?v=3.3.5"></script>
+<style type="text/css">
+    .rightText{text-align:left;color:#555; line-height: 30px; font-weight: 400;}
+    .hr{
+        height: 0px; line-height: 0px; font-size: 0px; border-bottom: 1px solid #f5f5f5;margin-bottom: 5px;
+    }
+    .form-group{margin-bottom: 5px!important;}
+    .switchery{height: 20px!important; width: 40px!important;} 
+    .switchery > small{height: 20px!important;width: 20px!important;}
+    .radio{padding-top: 0!important;}
+    .tags{ text-align: left;  padding: 10px 0; text-align: center; background: #fff}
+    .tags span{
+    padding: 1px 2px; background: #3E6886;border-radius: 2px; margin: 2px; font-size: 12px;color:#fff;
+    }
+    .btns a{
+    margin:0 5px 5px 0; display: inline-block;  
+    -webkit-transition: all .1s linear;
+    }
+    .headimg_wrap{position: relative; width: 100%; overflow: hidden;}
+    .blurbg_wrap{width:100%;height: 120px;overflow: hidden; position: relative;}
+
+    .headimg_bg{width:120%;/*height: 150px;*/z-index: 1; position: absolute;left: -10px;top:-10px;}
+    .headimg_bg2{width:120%;height: 150px;z-index: 2; background: #fff;position: absolute;top:0;left: 0; opacity: .0;}
+    .headimg{width: 80px; height: 80px;border-radius: 50px; position: absolute;z-index: 10; margin:auto;left:0; right:0; top:0; bottom:0; border:3px solid #fff; box-shadow: 1px 1px 3px rgba(0,0,0,.2); }
+    .blur { 
+        filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+        -webkit-filter: blur(80px); /* Chrome, Opera */
+        -moz-filter: blur(80px);
+        -ms-filter: blur(80px);    
+            filter: blur(80px);
+        filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=80, MakeShadow=false); /* IE6~IE9 */
+    }
+</style>
+</head>
+	<body class="fixed-sidebar full-height-layout gray-bg">
+    <div class="row">
+                    <div class="col-md-12">
+                        <div class="headimg_wrap">
+                            <div class="blurbg_wrap">
+                                <img src="{$data.avator}" class="headimg_bg blur"/>
+                                <div class="headimg_bg2"></div>
+                                <img src="{$data.avator}" class="headimg"/>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                            <form class="form-horizontal form-border" id="form" method="post">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">账号/手机号</label>
+                                        <div class="col-sm-2 rightText">{$data.phone}</div>
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">昵称</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control input-sm" name="nickname" id="nickname" placeholder="昵称" value="{$data.nickname}">
+                                            <input type="hidden" class="form-control input-sm" name="userid" id="userid" value="{$data.uid}">
+                                        </div>
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">性别</label>
+                                        <div class="col-sm-6 rightText">
+                                            <div class="radio i-checks">
+                                            <label>
+                                            <input type="radio" <if condition="$data.gender eq '1'">checked="checked"</if> value="1" name="gender"> <i></i> 男</label>
+                                            <label>
+                                            <input type="radio" <if condition="$data.gender eq '2'">checked="checked"</if> value="2" name="gender"> <i></i> 女</label>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">邮箱</label>
+                                        <div class="col-sm-6 rightText">
+                                            <input type="text" class="form-control input-sm" name="email" id="email" placeholder="邮箱" value="{$data.email}">
+                                        </div>
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">最近登陆</label>
+                                        <div class="col-sm-6 rightText">
+                                            {$data.last_login_time|date="Y-m-d H:i:s",###}
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">注册时间</label>
+                                        <div class="col-sm-6 rightText">
+                                            {$data.ctime|date="Y-m-d H:i:s",###}
+                                        </div>
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">禁用</label>
+                                        <div class="col-sm-6">
+                                            <div class="radio">
+                                            <input type="checkbox" name='status' value="1" class="js-switch" <if condition="$data.status eq '1'">checked="checked"</if> />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-10 col-sm-10">
+                                            <button type="submit" class="btn btn-primary">保存</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+	</body>
+<script src="/Public/Admin/js/plugins/switchery/switchery.js"></script><!--IOS开关样式-->
+<link href="__PUBLIC__/Admin/css/plugins/switchery/switchery.css" rel="stylesheet">
+<script type="text/javascript" src="/Public/Admin/js/plugins/iCheck/icheck.min.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+
+var elem = document.querySelector('.js-switch');
+        var switchery = new Switchery(elem, {
+            color: '#1AB394',
+        });
+</script>
+</html>

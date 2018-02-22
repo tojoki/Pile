@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+
+		<include file="Public:nav" />
+		<div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>广告列表</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="index.html"><i class="fa fa-home"></i> 主页</a>
+                    </li>
+                    <li>
+                        <a>广告管理</a>
+                    </li>
+                    <li>
+                        <strong>广告列表</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+        <br />
+		<a href="{:U('Advert/add')}" class="btn btn-primary">添加广告</a>
+		<br />
+		<br />
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="fa fa-tasks"></i> 广告管理</h5>
+					</div>
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+								<tr class="long-tr">
+									<th width='20%'>图片</th>
+									<th width='8%'>位置</th>
+									<th width='15%;' >添加时间</th>
+									<th width='8%'>状态</th>
+									<th width='32%'>链接地址</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<volist name="list" id="vo">
+									<tr class="long-td">
+										<td><img src="{$vo.images}" onerror="this.src='__PUBLIC__/Admin/img/no_img.jpg'" style="width: 90%;" /></td>
+										<td>
+                                                                                    <switch name="vo.category">
+                                                                                        <case value="1">首页顶部</case>
+                                                                                        <case value="2">首页中部</case>
+                                                                                        <case value="3">首页底部</case>
+                                                                                        <case value="4">首页右侧</case>
+                                                                                    </switch>
+										</td>
+										<td>{$vo.addtime|date='Y-m-d',###}</td>
+										<td>
+                                                                                    <if condition="$vo.state eq 0 ">
+                                                                                            开启
+                                                                                    </if>
+                                                                                    <if condition="$vo.state eq 1 ">
+                                                                                            关闭
+                                                                                    </if>
+										</td>
+										<td>{$vo.links}</td>
+										<!-- <td>{$vo.address}</td> -->
+										<td>
+											<a href="{:U('edit',array('id'=>$vo['id']))}" class="btn btn-primary btn-mini">
+												<i class="fa fa-pencil"></i> 编辑</a>&nbsp;&nbsp;
+											<a onClick="return confirm('是否删除此条记录')" href="{:U('del',array('id'=>$vo['id']))}" class="btn btn-danger">
+												<i class="fa fa-trash-o"></i> 删除</a>
+										</td>
+									</tr>
+								</volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+	</body>
+
+</html>

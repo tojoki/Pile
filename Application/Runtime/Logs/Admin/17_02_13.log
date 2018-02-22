@@ -1,0 +1,99 @@
+[ 2017-02-13T17:22:30+08:00 ] ::1 /lawyer/Admin/orders/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000094s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008290s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008398s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.1087s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0323s ]
+SQL: SHOW COLUMNS FROM `web_order` [ RunTime:0.0738s ]
+NOTIC: [8] Undefined variable: where D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\OrdersController.class.php 第 27 行.
+SQL: SELECT * FROM `web_order`  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `web_lawyer` [ RunTime:0.0538s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.0330s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 13 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_lawyer` WHERE `uid` = 12 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `rname` FROM `web_user` WHERE `uid` = 10 LIMIT 1   [ RunTime:0.0004s ]
+ERR: 模板不存在:./Application/Admin/View/Orders/index.html
+
+[ 2017-02-13T17:22:37+08:00 ] ::1 /lawyer/Admin/plat/price.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001355s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `web_config` [ RunTime:0.0285s ]
+SQL: SELECT * FROM `web_config` WHERE ( name = 'fee' ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000235s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000309s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\639a08b37bd865d9baf1c15fbc913c7d.php 第 139 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.155057s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.155129s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.010472s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010559s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.013902s ]
+INFO: [ app_end ] --END-- [ RunTime:0.013977s ]
+

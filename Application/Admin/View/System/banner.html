@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>商城管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"> 主页</a>
+                    </li>
+                    <li>
+                        <a href="{:U('Shop/goods')}" class="tip-bottom">轮播管理</a>
+                    </li>
+                    <li>
+                        <strong>轮播列表</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+        <br/>
+		<a href="{:U('addbanner')}" class="btn btn-primary">添加轮播</a>
+		<br />
+		<br />
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="fa fa-tasks"></i> 轮播管理</h5>
+					</div>
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+                                                            <tr class="long-tr">
+                                                                <th width="5%">编号</th>                              
+                                                                <!-- <th>展示图</th> -->
+                                                                <th width="25%">标题</th>
+                                                                <th width="25%">链接</th>
+                                                                <th width="15%">封面</th>
+                                                                <th >排序</th>
+                                                                <th>类型</th>
+                                                                <th>操作</th>
+                                                            </tr>
+							</thead>
+							<tbody>
+								<volist name="list" id="vo">
+									<tr class="long-td">
+                                            <td>{$vo.bid}</td>
+                                            <td style="text-align: left;">
+                                                {:msubstr($vo['title'],0,15)}
+                                            </td>
+                                            <td> 
+                                                <if condition="$vo['catid'] eq 1">
+                                                    {$vo.links}
+                                                    <else/>
+                                                    {$vo.subtitle}
+                                                </if>
+                                            </td>
+                                            <td> 
+                                                <img src="{$vo.poster}" width="100"/>
+                                            </td>
+                                            <td>{$vo.sortval}</td>
+                                       <td>
+                                           <switch name="vo['catid']">
+                                                <case value="1">文章</case>
+                                                <case value="2">店铺</case>
+                                                <case value="3">讲师</case>
+                                                <case value="4">专家</case>
+                                           </switch>
+                                       </td>
+										<td>
+											<a href="{:U('editbanner',array('bid'=>$vo['bid']))}" class="btn btn-primary btn-sm">
+												<i class="fa fa-pencil"></i> 编辑
+                                            </a>
+                                            &nbsp;&nbsp;
+											<a onClick="return confirm('是否删除此条记录')" href="{:U('delbanner',array('bid'=>$vo['bid']))}" class="btn btn-danger btn-sm">
+												<i class="fa fa-trash-o"></i> 删除
+                                            </a>
+										</td>
+									</tr>
+								</volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+
+	</body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            //上下架
+            $("a.btn-warning").click(function(){
+                var url = $(this).attr('href');
+                $.get(url,{},function(data){
+                    console.log(data);
+                    layer.msg(data.returnMsg,{skin:"layui-layer-hui",time:1500,end:function(){
+                         if(data.returnCode == 'SUCCESS'){
+                             window.location.reload();
+                         }
+                    }});
+                },'json');
+                return false;
+            });
+        });
+    </script>
+
+</html>

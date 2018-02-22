@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+    <style type="text/css">
+        .mtcontent{font-size:12px!important; text-align: left!important;}
+        .mtphotos{
+            text-align: left!important;
+        }
+        .mtphotos img{ margin-right: 2px; cursor:pointer; }
+        .infoDetail p{
+            text-align: left!important;margin:0;line-height: 28px;font-family:"Helvetica Neue",HelveticaNeue,"Microsoft YaHei",Arial,Helvetica,sans-serif; color:#555;word-break: break-all;
+        }
+        .infoDetail p span{text-align:right;width:70px; display: inline-block; font-weight: 400; color:#888; }
+        .mt-cont{
+            text-align:left;color:#888; font-size:12px; line-height: 24px; font-weight: 400;
+            /*border-radius: 5px;border:1px solid #ccc;*/
+            padding: 5px 10px;
+            /*box-shadow: 2px 2px 3px rgba(0,0,0,.1);*/
+        }
+    </style>
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>优惠管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"> 主页</a>
+                    </li>
+                    <li>
+                        <a href="#" class="tip-bottom">优惠管理</a>
+                    </li>
+                    <li>
+                        <strong>优惠券列表</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+       
+        <br />
+        <br />
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="fa fa-tasks"></i> 优惠券列表</h5>
+					</div>
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+								<tr class="long-tr">
+									<th>#</th>
+                                    <th>优惠券名称</th>
+                                    <th>用户</th>
+                                    <th>类型</th>
+                                    <th>面额</th>
+                                    <th>有效时间</th>
+                                    <th>状态</th>
+                                    <th>使用时间</th>
+                                    <!-- <th>操作</th> -->
+								</tr>
+							</thead>
+							<tbody>
+								<volist name="list" id="vo">
+									<tr class="long-td">
+                                        <td>{$vo.index_r}</td>
+                                        <td>{$vo.name}</td>
+                                        <td><div class="text-left">{$vo.nickname}/<strong>{$vo.phone}</strong></div></td>
+                                        <td><?=$vo['type_id']==1?'用户':'律师';?></td>
+                                        <td>{$vo.amount}</td>
+                                        <td>{$vo.starttime|date='Y-m-d H:i:s',###}-
+                                            {$vo.deadtime|date='Y-m-d H:i:s',###}</td>
+                                        <td><?=$vo['status']==0?'未使用':'已使用';?></td>
+                                        <td>
+                                            <?php
+                                                if($vo['usetime']){
+                                                    echo date('Y-m-d H:i:s',$vo['usetime']);
+                                                }
+                                            ?>
+                                        </td>
+										<!-- <td>
+											<a href="javascript:;" data-id="{$vo.feedid}" class="btn-sm btn-danger del" type-id=" <?=$vo['type_id']?>">
+												<i class="fa fa-trash-o"></i> 删除</a>
+										</td> -->
+									</tr>
+								</volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+	</body>
+    <script type="text/javascript">
+    $(function(){
+        $(".del").click(function(){
+            var thi= $(this);            
+            var id = thi.data("id");
+            var type_id=$(this).attr('type-id');
+            // alert(type_id);
+            layer.confirm('确定删除？', {icon: 3}, function(index){
+                layer.close(index);
+                $.post("{:U('delfeed')}",{feedid:id,type_id:type_id},function(data){
+                    layer.msg(data.msg,{skin:"layui-layer-hui",time:1000,end:function(){
+                        if(data.status == 0){
+                            window.location.reload();
+                        }
+                    }});
+                });
+            });
+        });
+    });
+    </script>
+</html>

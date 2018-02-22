@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+        <style>
+        </style>
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+		<div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>物价管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="article.html"><i class="fa fa-home"></i> 主页</a>
+                    </li>
+                    <li>
+                        <a>首页管理</a>
+                    </li>
+                    <li>
+                        <strong>物价管理</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+                                                            <tr class="long-tr">
+                                                                <th width="20%">超市名称</th>
+                                                                <th width="12%">物品总数</th>
+                                                                <th width="15%">今日新增</th>
+                                                                <th width="15%">今日缺失</th>
+                                                                <th width="15%">更新时间</th>
+                                                                <th>操作</th>
+                                                            </tr>
+							</thead>
+							<tbody>
+                                                            <volist name="list" id="vo">
+                                                                <tr class="long-td">
+                                                                    <td>{$vo.sname}</td>										
+                                                                    <td><a href="javascript:;" data-type="totalgoods" data-optype="1" data-shopid="{$vo.sid}" class="openWindow">{$vo.total}</a></td>
+                                                                    <td><a href="javascript:;" data-type="newgoods" data-optype="2" data-shopid="{$vo.sid}" class="openWindow" >{$vo.todaynum}</a></td>
+                                                                    <td><a href="javascript:;" data-type="lostgoods" data-optype="3" data-shopid="{$vo.sid}" class="openWindow" ><php>echo $vo['total']-$vo['todaynum'];</php></a></td>
+                                                                    <td>
+                                                                        <if condition="$vo['importtime'] gt 0">
+                                                                          {$vo.importtime|date='Y-m-d H:i:s',###}  
+                                                                        </if>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="javascript:;" data-shopid="{$vo.sid}" data-optype="1" data-type="importgoods" class="btn btn-primary btn-mini openWindow">
+                                                                                商品导入</a>&nbsp;&nbsp;
+                                                                        <a href="javascript:;" data-shopid="{$vo.sid}" data-optype="2" data-type="importprice" class="btn btn-primary btn-mini openWindow">
+                                                                                物价导入</a>&nbsp;&nbsp;
+                                                                    </td>										
+                                                                </tr>
+                                                            </volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		$(function(){
+                    var config = {
+                        importgoods:{
+                            title:"导入商品",
+                            url:"{:U("compare/imports",'','')}",
+                            width:"800px"
+                        },
+                        importprice:{
+                            title:"导入价格",
+                            url:"{:U("compare/imports",'','')}",
+                            width:"800px",
+                        },
+                        totalgoods:{
+                            title:"超市商品",
+                            url:"{:U("compare/shopgoods",'','')}",
+                            width:"800px",
+                        },
+                        newgoods:{
+                            title:"今日新增",
+                            url:"{:U("compare/shopgoods",'','')}",
+                            width:"800px",
+                        },
+                        lostgoods:{
+                            title:"缺失商品",
+                            url:"{:U("compare/shopgoods",'','')}",
+                            width:"800px",
+                        }
+                    };
+                    
+                    $(".openWindow").click(function(){
+                        var shopid = $(this).data("shopid");
+                        var type = $(this).data("type");
+                        var optype = $(this).data("optype");
+                        url = eval("config."+$(this).data("type")+".url") +"?shopid="+shopid+'&optype='+optype;
+                        var wd = eval("config."+$(this).data("type")+".width");
+                        var hg = "500px";
+                        var index = layer.open({
+                            type: 2,
+                            title:eval("config."+$(this).data("type")+".title"),
+                            content: url,
+                            area: [wd, hg],
+                            shadeClose: true,
+                            skin: 'layui-layer-rim',
+                            maxmin: true,
+                            scrollbar: true,
+                        });
+                    });
+                    });
+		</script>
+		<include file="Public:footer" />
+	</body>
+</html>

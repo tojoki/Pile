@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <include file="Public:header" />
+    <include file="Public:page_css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/js/plugins/datetimepick/css/lq.datetimepick.css"/>
+    <style type="text/css">
+    </style>
+	<body class="fixed-sidebar full-height-layout gray-bg">
+            <div class="row" style="margin-top:10px;margin-left: 10px;">
+            <div class="col-sm-10">
+                <form action="__ACTION__" class="form-inline" method="get">
+                    <input type="hidden" name="userid" value="{$userid}"/>
+                    <div class="form-group">
+                    <input type="text" class="form-control input-sm" id="stime" placeholder="开始时间" name="stime" value="{$stime}" size="10">
+                    </div>至
+                    <div class="form-group">
+                    <input type="text" class="form-control input-sm" id="etime" placeholder="结束时间" name="etime" value="{$etime}" size="10">
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-sm">搜索</button>
+                </form>
+            </div>
+        </div>
+        <br/>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+                                    <div class="ibox-content">
+                                        <table class="table table-bordered">
+                                        <thead>
+                                            <tr class="long-tr">
+                                                <th width="15%">日期</th>
+                                                <th>鼻炎</th>
+                                                <th>哮喘</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <foreach name='list' item='vo'>
+                                            <tr>
+                                                <td>{$vo.datestr}</td>
+                                                <td>
+                                                    鼻炎症状:{$vo.nosesymptom}  <br/>
+                                                    清晨PEF:{$vo.nosemorningpef}    晚上PFF:{$vo.nosenightpef} <br/>
+                                                    清晨FEV1:{$vo.nosemorningfev}   晚上FEV1:{$vo.nosenightfev}
+                                                </td>
+                                                <td>
+                                                    哮喘症状:{$vo.breathsymptom}<br/>
+                                                    清晨PEF:{$vo.breathmorningpef}    晚上PFF:{$vo.breathnightpef}<br/>
+                                                    清晨FEV1:{$vo.breathmorningfev}   晚上FEV1:{$vo.breathnightfev}
+                                                </td>
+                                            </tr>
+                                        </foreach>
+					</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+            <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/datetimepick/js/lq.datetimepick.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/datetimepick/js/selectUi.js"></script>
+    <script type="text/javascript">
+        $("#stime,#etime").on("click",function(e){
+            e.stopPropagation();
+            $(this).lqdatetimepicker({
+                css : 'datetime-day',
+                dateType : 'D',
+                selectback : function(){
+                }
+            });
+        });
+    </script>
+</html>

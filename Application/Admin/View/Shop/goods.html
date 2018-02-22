@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>抢购商品</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"> 主页</a>
+                    </li>
+                    <li>
+                        <a href="{:U('Shop/goods')}" class="tip-bottom">抢购商品</a>
+                    </li>
+                    <li>
+                        <strong>抢购商品</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+        <br/>
+        <div class="col-sm-10">
+            <form action="__ACTION__" class="form-inline" method="get">
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" id="title" placeholder="商品名称" name="title" value="<php>echo $_GET['title'];</php>" size="30">
+                </div>
+                <button type="submit" class="btn btn-success btn-sm">搜索</button>
+            </form>
+        </div>
+		<a href="{:U('addgoods')}" class="btn btn-primary">添加商品</a>
+		<br />
+		<br />
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="fa fa-tasks"></i>抢购商品</h5>
+					</div>
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+                                                            <tr class="long-tr">
+                                                                <th width="5%">编号</th>
+                                                                <th width='15%'>商品名称</th>                               
+                                                                <th width='12%'>展示图</th>
+                                                                <th width='10%'>价格</th>
+                                                                <th width='10%'>库存</th>
+                                                                <th width='10%'>销量</th>
+                                                                <th width='15%'>结束时间</th>
+                                                                <th width='8%'>状态</th>
+                                                                <th>操作</th>
+                                                            </tr>
+							</thead>
+							<tbody>
+								<volist name="list" id="vo">
+									<tr class="long-td">
+                                                                            <td>{$vo.gid}</td>
+                                                                            <td>{$vo.gname}</td>
+                                                                            <td><img src="{$vo.poster}" style="width:80px;"/></td>
+                                                                            <td>
+                                                                                <font style="text-decoration:line-through;">{$vo.mprice}</font><br/>
+                                                                                <strong>{$vo.price}
+                                                                                </strong>
+                                                                            </td>
+                                                                            <td> {$vo.stock}</td>
+                                                                            <td>{$vo.sales}</td>
+                                                                            <td>{$vo.endtime|date='Y/m/d H:i:s',###}</td>
+                                                                            <td>
+                                                                                <if condition="$vo['issale'] eq '0'">
+                                                                                    <if condition="$vo['endtime'] lt time()">
+                                                                                        下架<else/>在售
+                                                                                    </if>
+                                                                                    <else/>下架
+                                                                                </if>
+                                                                            </td>
+                                                                            <td style="text-align: left;">
+                                                                                <a href="{:U('addgoods',array('gid'=>$vo['gid']))}" class="btn btn-primary">
+                                                                                        编辑</a>
+                                                                                <if condition="$vo['endtime'] gt time()">
+                                                                                        <if condition="$vo['issale'] eq '0'">
+                                                                                            <a onClick="editstatus('{$vo.gid}','1','是否确认下架该商品？')" href="javascript:;" class="btn btn-warning">
+                                                                                            下架</a>
+                                                                                            <else/>
+                                                                                            <a onClick="editstatus('{$vo.gid}','0','是否确认上架该商品？')" href="javascript:;" class="btn btn-warning">
+                                                                                            上架</a>
+                                                                                        </if>
+                                                                                    <else/>
+                                                                                </if>
+                                                                                <a onClick="del('{$vo.gid}')" href="javascript:;" class="btn btn-danger">
+                                                                                            删除</a>
+                                                                            </td>
+									</tr>
+								</volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+
+	</body>
+    <script type="text/javascript">
+        function editstatus(gid,status,msg){
+            layer.confirm(msg, {icon: 3}, function(index){
+                layer.close(index);
+                $.post("{:U('goodsstatus')}",{gid:gid,status:status},function(data){
+                    layer.msg(data.msg,{skin:"layui-layer-hui",time:1500,end:function(){
+                        if(data.status == 0){
+                            window.location.reload();
+                        }   
+                    }});
+                });
+            });
+        }
+        function del(id){
+            layer.confirm('确认删除该商品？', {icon: 3}, function(index){
+                layer.close(index);
+                $.post("{:U('delgoods')}",{gid:id},function(data){
+                    layer.msg(data.msg,{skin:"layui-layer-hui",time:1500,end:function(){
+                        if(data.status == 0){
+                            window.location.reload();
+                        }   
+                    }});
+                });
+            });
+        }
+    </script>
+
+</html>

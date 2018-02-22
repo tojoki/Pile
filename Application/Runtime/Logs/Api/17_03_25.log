@@ -1,0 +1,274 @@
+[ 2017-03-25T11:00:43+08:00 ] ::1 /xj_property/Api/user/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003630s ]
+
+[ 2017-03-25T11:01:09+08:00 ] ::1 /xj_property/Api/user/index?uid=502&ucode=816
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001341s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002785s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.0278s ]
+SQL: SELECT u.*,p.title FROM web_user u left join web_place p on p.id=u.place_id  WHERE ( u.uid=502 AND u.ucode='816' ) LIMIT 1   [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `web_notice` [ RunTime:0.0288s ]
+SQL: SELECT * FROM `web_notice` WHERE ( is_banner=1 )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `web_remind` [ RunTime:0.0321s ]
+SQL: SELECT * FROM `web_remind`  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `web_notice` WHERE ( is_recommend=1 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `web_activity` [ RunTime:0.0314s ]
+SQL: SELECT * FROM `web_activity`  [ RunTime:0.0008s ]
+
+[ 2017-03-25T11:04:45+08:00 ] ::1 /xj_property/Api/user/index?uid=502&ucode=816
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000931s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001347s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.0261s ]
+SQL: SELECT u.*,p.title FROM web_user u left join web_place p on p.id=u.place_id  WHERE ( u.uid=502 AND u.ucode='816' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `web_notice` [ RunTime:0.0265s ]
+SQL: SELECT * FROM `web_notice` WHERE ( is_banner=1 )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `web_remind` [ RunTime:0.0249s ]
+SQL: SELECT * FROM `web_remind`  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `web_notice` WHERE ( is_recommend=1 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `web_activity` [ RunTime:0.0251s ]
+SQL: SELECT * FROM `web_activity`  [ RunTime:0.0007s ]
+
+[ 2017-03-25T11:08:16+08:00 ] ::1 /xj_property/Api/user/noticeInfo?uid=502&ucode=816&notice_id=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001548s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006013s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006160s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.0494s ]
+SQL: SELECT u.*,p.title FROM web_user u left join web_place p on p.id=u.place_id  WHERE ( u.uid=502 AND u.ucode='816' ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `web_notice` [ RunTime:0.0321s ]
+SQL: SELECT * FROM `web_notice` WHERE ( notice_id=8 ) LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-03-25T11:12:05+08:00 ] ::1 /xj_property/Api/user/noticeList?uid=502&ucode=816&notice_id=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001595s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002729s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002932s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.0593s ]
+SQL: SELECT u.*,p.title FROM web_user u left join web_place p on p.id=u.place_id  WHERE ( u.uid=502 AND u.ucode='816' ) LIMIT 1   [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `web_notice` [ RunTime:0.0540s ]
+SQL: SELECT * FROM `web_notice` ORDER BY ctime desc  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined variable: info D:\heyi\USBWebserver\root\xj_property\Application\Api\Controller\UserController.class.php 第 176 行.
+
+[ 2017-03-25T11:12:21+08:00 ] ::1 /xj_property/Api/user/noticeList?uid=502&ucode=816&notice_id=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002753s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002864s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.2487s ]
+SQL: SELECT u.*,p.title FROM web_user u left join web_place p on p.id=u.place_id  WHERE ( u.uid=502 AND u.ucode='816' ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `web_notice` [ RunTime:0.0233s ]
+SQL: SELECT * FROM `web_notice` ORDER BY ctime desc  [ RunTime:0.0010s ]
+
+[ 2017-03-25T11:17:10+08:00 ] ::1 /xj_property/Api/user/service1?uid=502&ucode=816&notice_id=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001728s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005615s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.0497s ]
+SQL: SELECT u.*,p.title FROM web_user u left join web_place p on p.id=u.place_id  WHERE ( u.uid=502 AND u.ucode='816' ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `web_service1` [ RunTime:0.0335s ]
+SQL: SELECT s.*,p.title FROM web_service1 s left join web_place p on p.id=s.place_id  WHERE ( place_id=1 and cate_id=1 ) LIMIT 1   [ RunTime:0.0013s ]
+
+[ 2017-03-25T11:20:06+08:00 ] ::1 /xj_property/Api/user/service1?uid=502&ucode=816&notice_id=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002667s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.0433s ]
+SQL: SELECT u.*,p.title FROM web_user u left join web_place p on p.id=u.place_id  WHERE ( u.uid=502 AND u.ucode='816' ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `web_service1` [ RunTime:0.0251s ]
+SQL: SELECT s.*,p.title FROM web_service1 s left join web_place p on p.id=s.place_id  WHERE ( place_id=1 and cate_id=1 )  [ RunTime:0.0011s ]
+
+[ 2017-03-25T13:44:43+08:00 ] ::1 /xj_property/Api/user/serviceInfo2?uid=502&ucode=816&notice_id=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001839s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005717s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.0281s ]
+SQL: SELECT u.*,p.title FROM web_user u left join web_place p on p.id=u.place_id  WHERE ( u.uid=502 AND u.ucode='816' ) LIMIT 1   [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `web_service2` [ RunTime:0.0220s ]
+SQL: SELECT * FROM `web_service2` WHERE ( place_id=1 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0239s ]
+SQL: SELECT * FROM `web_category` WHERE ( type=2 and pid=0 )  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=1 )  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=5 )  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=10 )  [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001775s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001868s ]
+
+[ 2017-03-25T13:44:47+08:00 ] ::1 /xj_property/Api/user/serviceInfo2?uid=502&ucode=816&notice_id=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001774s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001949s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.0408s ]
+SQL: SELECT u.*,p.title FROM web_user u left join web_place p on p.id=u.place_id  WHERE ( u.uid=502 AND u.ucode='816' ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `web_service2` [ RunTime:0.0266s ]
+SQL: SELECT * FROM `web_service2` WHERE ( place_id=1 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0271s ]
+SQL: SELECT * FROM `web_category` WHERE ( type=2 and pid=0 )  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=1 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=5 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=10 )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001998s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002090s ]
+
+[ 2017-03-25T13:47:09+08:00 ] ::1 /xj_property/Api/user/serviceInfo2?uid=502&ucode=816&notice_id=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001744s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.0231s ]
+SQL: SELECT u.*,p.title FROM web_user u left join web_place p on p.id=u.place_id  WHERE ( u.uid=502 AND u.ucode='816' ) LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `web_service2` [ RunTime:0.0224s ]
+SQL: SELECT * FROM `web_service2` WHERE ( place_id=1 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0277s ]
+SQL: SELECT `catid`,`pid`,`catname`,`sortorder` FROM `web_category` WHERE ( type=2 and pid=0 )  [ RunTime:0.0006s ]
+SQL: SELECT `catid`,`pid`,`catname`,`sortorder` FROM `web_category` WHERE ( pid=1 )  [ RunTime:0.0008s ]
+SQL: SELECT `catid`,`pid`,`catname`,`sortorder` FROM `web_category` WHERE ( pid=5 )  [ RunTime:0.0007s ]
+SQL: SELECT `catid`,`pid`,`catname`,`sortorder` FROM `web_category` WHERE ( pid=10 )  [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002199s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002307s ]
+
+[ 2017-03-25T13:49:57+08:00 ] ::1 /xj_property/Api/user/serviceInfo2?uid=502&ucode=816&notice_id=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002048s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002180s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.0433s ]
+SQL: SELECT u.*,p.title FROM web_user u left join web_place p on p.id=u.place_id  WHERE ( u.uid=502 AND u.ucode='816' ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `web_service2` [ RunTime:0.0243s ]
+SQL: SELECT * FROM `web_service2` WHERE ( place_id=1 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0307s ]
+SQL: SELECT `catid`,`catname`,`sortorder` FROM `web_category` WHERE ( type=2 and pid=0 )  [ RunTime:0.0010s ]
+SQL: SELECT `catid`,`catname`,`sortorder` FROM `web_category` WHERE ( pid=1 )  [ RunTime:0.0009s ]
+SQL: SELECT `catid`,`catname`,`sortorder` FROM `web_category` WHERE ( pid=5 )  [ RunTime:0.0008s ]
+SQL: SELECT `catid`,`catname`,`sortorder` FROM `web_category` WHERE ( pid=10 )  [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002369s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002516s ]
+
+[ 2017-03-25T13:50:57+08:00 ] ::1 /xj_property/Api/user/serviceInfo2?uid=502&ucode=816&notice_id=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001272s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002661s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002793s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.0424s ]
+SQL: SELECT u.*,p.title FROM web_user u left join web_place p on p.id=u.place_id  WHERE ( u.uid=502 AND u.ucode='816' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `web_service2` [ RunTime:0.0242s ]
+SQL: SELECT * FROM `web_service2` WHERE ( place_id=1 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0259s ]
+SQL: SELECT `catid`,`catname`,`sortorder` FROM `web_category` WHERE ( type=2 and pid=0 )  [ RunTime:0.0008s ]
+SQL: SELECT `catid`,`catname`,`sortorder` FROM `web_category` WHERE ( pid=1 )  [ RunTime:0.0009s ]
+SQL: SELECT `catid`,`catname`,`sortorder` FROM `web_category` WHERE ( pid=5 )  [ RunTime:0.0005s ]
+SQL: SELECT `catid`,`catname`,`sortorder` FROM `web_category` WHERE ( pid=10 )  [ RunTime:0.0006s ]
+SQL: SELECT `catid`,`catname`,`sortorder` FROM `web_category` WHERE ( pid=26 )  [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002134s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002236s ]
+
+[ 2017-03-25T14:22:40+08:00 ] ::1 /xj_property/Api/user/calculate_price?uid=502&ucode=816&ids=2,4,26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003006s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003165s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.0255s ]
+SQL: SELECT u.*,p.title FROM web_user u left join web_place p on p.id=u.place_id  WHERE ( u.uid=502 AND u.ucode='816' ) LIMIT 1   [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0279s ]
+NOTIC: [8] Undefined variable: ids D:\heyi\USBWebserver\root\xj_property\Application\Api\Controller\UserController.class.php 第 323 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT SUM(sortorder) AS tp_sum FROM `web_category` WHERE ( catid in () ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT SUM(sortorder) AS tp_sum FROM `web_category` WHERE ( catid in () ) LIMIT 1  
+
+[ 2017-03-25T14:23:03+08:00 ] ::1 /xj_property/Api/user/calculate_price?uid=502&ucode=816&ids=2,4,26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001105s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001678s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.0250s ]
+SQL: SELECT u.*,p.title FROM web_user u left join web_place p on p.id=u.place_id  WHERE ( u.uid=502 AND u.ucode='816' ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0246s ]
+SQL: SELECT SUM(sortorder) AS tp_sum FROM `web_category` WHERE ( catid in (2,4,26) ) LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002103s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002242s ]
+
+[ 2017-03-25T16:25:37+08:00 ] ::1 /xj_property/Api/user/myorder2?uid=502&ucode=816&ids=2,4,26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000114s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002507s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005349s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005517s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.0291s ]
+SQL: SELECT u.*,p.title FROM web_user u left join web_place p on p.id=u.place_id  WHERE ( u.uid=502 AND u.ucode='816' ) LIMIT 1   [ RunTime:0.0053s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002719s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002805s ]
+
+[ 2017-03-25T16:25:52+08:00 ] ::1 /xj_property/Api/user/myorder2?uid=502&ucode=816&ids=2,4,26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001076s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003125s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.0451s ]
+SQL: SELECT u.*,p.title FROM web_user u left join web_place p on p.id=u.place_id  WHERE ( u.uid=502 AND u.ucode='816' ) LIMIT 1   [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002960s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003087s ]
+
+[ 2017-03-25T16:26:04+08:00 ] ::1 /xj_property/Api/user/myorder2?uid=502&ucode=816&status=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001972s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003300s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003451s ]
+SQL: SHOW COLUMNS FROM `web_user` [ RunTime:0.0426s ]
+SQL: SELECT u.*,p.title FROM web_user u left join web_place p on p.id=u.place_id  WHERE ( u.uid=502 AND u.ucode='816' ) LIMIT 1   [ RunTime:0.0011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002824s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002905s ]
+

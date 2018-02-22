@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+    <style type="text/css">
+        .ibox-content table tr td:nth-child(1){text-align: right;font-weight: bold;padding-right: 30px;width:15%;line-height: 30px;}
+    </style>
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+
+		<include file="Public:nav" />
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content no-padding">
+						<ul class="list-group">
+                            <li class="list-group-item">
+                                <p class="text-success"><a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"><i class="fa fa-home"></i> 首页</a> /
+                                    <a href="{:U('Admin/User/index')}" class="tip-bottom">用户管理</a> /
+                                    <a href="javascript:;" class="tip-bottom">机构详情</a>
+                                </p>
+                            </li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="fa fa-tasks"></i> 机构信息</h5>
+					</div>
+					<div class="ibox-content">
+                                            <table class="table table-bordered">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>用户</td>
+                                                            <td>{$organize.nickname}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>机构名称</td>
+                                                            <td>{$organize.company}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>联系人</td>
+                                                            <td>{$organize.linkman}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>电话</td>
+                                                            <td>{$organize.phone}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>邮箱</td>
+                                                            <td>{$organize.email}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>常驻地</td>
+                                                            <td>{$organize.places}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>地址</td>
+                                                            <td>{$organize.address}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>营业执照</td>
+                                                            <td><img src='{$organize.license}'/></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>申请类型</td>
+                                                            <td>{$organize.type}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>公司性质</td>
+                                                            <td>{$organize.ctype}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>公司规模</td>
+                                                            <td>{$organize.scale}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>申请时间</td>
+                                                            <td>{$organize.applytime|date='m-d H:i:s',###}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>状态</td>
+                                                            <td><switch name="organize['status']" >
+                                                                    <case value="0">待审核</case>
+                                                                    <case value="1">通过</case>
+                                                                    <case value="2">驳回</case>
+                                                                </switch>
+                                                            </td>
+                                                        </tr>
+                                                        <if condition="$showop">
+                                                            <tr>
+                                                                <td>审核信息</td>
+                                                                <td>
+                                                                    <form>
+                                                                        <input type='hidden' name='applyid' id='applyid' value="{$organize.orgid}"/>
+                                                                    <table class="table">
+                                                                        <tr>
+                                                                            <td class="col-sm-2">审核结果</td>
+                                                                            <td>
+                                                                                <select id='authtype' class="form-control ">
+                                                                                    <option value="1" >通过</option>
+                                                                                    <option value="2" >驳回</option>
+                                                                                </select>      
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>备注</td>
+                                                                            <td><textarea type="text" rows="5" name="memo" id='memo' class="form-control"></textarea></td>
+                                                                        </tr>
+                                                                    </table>
+                                                                    </form>
+                                                                </td>
+                                                            </tr>
+                                                        </if>
+                                                        <tr>
+                                                            <td colspan='2' style="text-align: center;" >
+                                                                <if condition="$showop">
+                                                                 <button class="btn btn-primary" type="submit">确定</button>
+                                                                </if>
+                                                                 <a class="btn btn-danger" href="javascript:history.back()">返回</a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+	</body>
+    <script type="text/javascript">
+    $(function(){
+        $(".btn-primary").click(function(){
+            var authstr = $("#authtype option:selected").text();
+            layer.confirm('是否确认要'+authstr+'该条申请？', {icon: 3}, function(index){
+                layer.close(index);
+                var status = $('#authtype').val();
+                var memo = $('#memo').val();
+                ajax_request({
+                   url:'__URL__/authorganize',
+                   params:{status:status,memo:memo,applyid:$("#applyid").val()},
+                   succshow:true,
+                   redirect:'__URL__/organize',
+                });
+            });
+        });
+    });
+    </script>
+</html>

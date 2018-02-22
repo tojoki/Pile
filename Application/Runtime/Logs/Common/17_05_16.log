@@ -1,0 +1,54 @@
+[ 2017-05-16T19:21:31+08:00 ] 123.123.1.158 /index.php?m=search
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000225s ]
+ERR: 无法加载模块:Search
+
+[ 2017-05-16T19:21:31+08:00 ] 123.123.1.158 /index.php?m=link
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000306s ]
+ERR: 无法加载模块:Link
+
+[ 2017-05-16T19:21:32+08:00 ] 123.123.1.158 /index.php?m=wap
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+ERR: 无法加载模块:Wap
+
+[ 2017-05-16T19:21:40+08:00 ] 123.123.1.158 /API/DW/Dwplugin/TemplateManage/manage_site.htm
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+ERR: 无法加载模块:API
+
+[ 2017-05-16T19:21:40+08:00 ] 123.123.1.158 /API/DW/Dwplugin/TemplateManage/save_template.htm
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000245s ]
+ERR: 无法加载模块:API
+
+[ 2017-05-16T19:21:40+08:00 ] 123.123.1.158 /API/DW/Dwplugin/ThirdPartyTags/SiteFactory.xml
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+ERR: 无法加载模块:API
+
+[ 2017-05-16T19:21:40+08:00 ] 123.123.1.158 /API/DW/Dwplugin/TemplateManage/login_site.htm
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000237s ]
+ERR: 无法加载模块:API
+
+[ 2017-05-16T19:21:40+08:00 ] 123.123.1.158 /API/DW/Dwplugin/SystemLabel/SiteConfig.htm
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+ERR: 无法加载模块:API
+
+[ 2017-05-16T19:21:48+08:00 ] 123.123.1.158 /api/api_user.xml
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000238s ]
+ERR: 无法加载模块:Api
+

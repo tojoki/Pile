@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+		<div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>新闻列表</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#"><i class="fa fa-home"></i> 主页</a>
+                    </li>
+                    <li>
+                        <a>首页管理</a>
+                    </li>
+                    <li>
+                        <strong>新闻列表</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+                <div class="row">
+            <!-- <div class="col-sm-1">
+            <a href="{:U('add')}" class="btn btn-primary btn-sm">添加活动</a>
+            </div> -->
+            <div class="col-sm-10"><br/>
+                <form action="__ACTION__" class="form-inline" method="get">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-sm" id="title" placeholder="标题" name="title" value="{$title}" size="30">
+                    </div>
+                    <div class="form-group">
+                        <select name="type" class="form-control input-sm">
+                            <option value="" >类型</option>
+                            <option value="1" <if condition="$type eq '1'"> selected="selected"</if>>新闻</option>
+                            <option value="2" <if condition="$type eq '2'"> selected="selected"</if>>通知</option>
+                            <option value="3" <if condition="$type eq '3'"> selected="selected"</if>>热点</option>
+                            <option value="4" <if condition="$type eq '4'"> selected="selected"</if>>推广</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-sm">搜索</button>
+                    <a href="{:U('news/addnews')}" class="btn btn-primary btn-sm" style='float:right;'>添加新闻</a>
+                </form>
+            </div>
+        </div><br/>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+                                                            <tr class="long-tr">
+                                                                <th width="20%">标题</th>
+                                                                <th width="15%">封面</th>
+                                                                <th width="12%">类型</th>
+                                                                <th width="15%">发布者</th>
+                                                                <th width="15%">发布时间</th>
+                                                                <th>操作</th>
+                                                            </tr>
+							</thead>
+							<tbody>
+								<volist name="list" id="vo">
+									<tr class="long-td">
+                                                                            <td>{$vo.title}</td>
+                                                                            <td>
+                                                                                <div style="width:100%;max-height: 80px;overflow: hidden;">
+                                                                                    <if condition="$vo['posters']">
+                                                                                        <php>$imgs = explode(',', $vo['posters']);</php>
+                                                                                        <img src="{$imgs[0]}" onerror="this.src='__PUBLIC__/Admin/img/no_img.jpg'" style="width:90%;" />
+                                                                                        <else/>无
+                                                                                    </if>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>
+                                                                                <switch name="vo.catid" >
+                                                                                    <case value="1">新闻</case> 
+                                                                                    <case value="2">通知</case>
+                                                                                    <case value="3">热点</case>
+                                                                                    <case value="4">推广</case>
+                                                                                </switch>
+                                                                            </td>
+                                                                            <td>{$vo.author}</td>
+                                                                            <td>{$vo.releasetime|date='Y-m-d H:i',###}</td>
+                                                                            <td>
+                                                                                <a href="{:U('addnews',array('nid'=>$vo['nid']))}" class="btn-sm btn-primary btn-mini">
+                                                                                       编辑</a>&nbsp;&nbsp;
+                                                                                       <a href="javascript:;" data-tid="{$vo.nid}" class="btn-sm btn-primary comments">
+                                                                                                    评论</a>
+                                                                                <if condition="$vo['isrcmd'] eq 0">
+                                                                                    <a href="{:U('rcmd',array('nid'=>$vo['nid'],'isrcmd'=>1))}" class="btn-sm btn-primary btnrcmd">
+                                                                                                 推荐
+                                                                                    </a>
+                                                                                    <else/>
+                                                                                    <a href="{:U('rcmd',array('nid'=>$vo['nid'],'isrcmd'=>0))}" class="btn-sm btn-primary btnrcmd">
+                                                                                                 取消推荐
+                                                                                    </a>
+                                                                                </if>&nbsp;&nbsp;
+                                                                                <a href="javascript:;" onclick="return del({$vo.nid});" class="btn-sm btn-danger">
+                                                                                        删除</a>
+                                                                            </td>										
+									</tr>
+								</volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+		function del(id){
+                    layer.confirm('确认删除该新闻？', {icon: 3}, function(index){
+                        layer.close(index);
+                        $.post("{:U('delnews')}",{nid:id},function(data){
+                            layer.msg(data.msg,{skin:"layui-layer-hui",time:1500,end:function(){
+                                if(data.status == 0){
+                                    window.location.reload();
+                                }   
+                            }});
+                        });
+                    });
+		}
+                $("a.btnrcmd").click(function(){
+                    var url = $(this).attr('href');
+                    $.get(url,{},function(data){
+                         layer.msg(data.msg,{skin:"layui-layer-hui",time:1500,end:function(){
+                              if(data.status == 0){
+                                  window.location.href = "{:U('lists')}";
+                              }
+                         }});
+                    });
+                    return false;
+                });
+                
+                $(".comments").click(function(){
+                    var tid = $(this).data("tid");
+                    url ="{:U('comments')}?tid="+tid;
+                    var index = layer.open({
+                        type: 2,
+                        title:'新闻评论列表',
+                        content: url,
+                        area: ['800px', '600px'],
+                        shadeClose: true,
+                        skin: 'layui-layer-rim',
+                        maxmin: true,
+                        scrollbar: true,
+                    });
+                });
+		</script>
+
+		<include file="Public:footer" />
+	</body>
+</html>

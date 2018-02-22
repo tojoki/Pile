@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>设置</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"> 主页</a>
+                    </li>
+                    <li>
+                        <a href="#" class="tip-bottom">设置</a>
+                    </li>
+                    <li>
+                        <strong>问卷调查</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+        <br/>
+        <a href="{:U('addquestion')}" class="btn btn-primary">添加问题</a>
+        <br />
+        <br />
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="fa fa-tasks"></i> 问题列表</h5>
+					</div>
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+                                                            <tr class="long-tr">
+                                                                <th width="8%">#</th>
+                                                                <th width="30%">题目</th>
+                                                                <th width="30%">选项</th>
+                                                                <th width="10%">是否多选</th>
+                                                                <th>操作</th>
+                                                            </tr>
+							</thead>
+							<tbody>
+								<volist name="list" id="vo">
+									<tr class="long-td">
+                                                                        <td>{$vo.qid}</td>
+                                                                        <td>{$vo.title}</td>
+                                                                        <td style='text-align: left;'>
+                                                                        <foreach name='vo.options' item='opt'>
+                                                                            {$key+1}.{$opt}<br/>
+                                                                        </foreach>
+                                                                        </td>
+                                                                        <td>
+                                                                        <if condition="$vo['ismulti'] eq '0'">
+                                                                            否<elseif condition="$vo['ismulti'] eq '1'"/>是
+                                                                        </if>
+                                                                        </td>
+										<td>
+                                                                                    <a href="{:U('addquestion',array('qid'=>$vo['qid']))}" class="btn btn-primary">
+												<i class="fa fa-pencil"></i> 修改</a>&nbsp;&nbsp;
+											<a href="javascript:;" data-id="{$vo.qid}" class="btn btn-danger del">
+												<i class="fa fa-trash-o"></i> 删除</a>
+										</td>
+									</tr>
+								</volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+
+	</body>
+    <script type="text/javascript">
+    $(function(){
+        $(".del").click(function(){
+            var thi= $(this);            
+            var id = thi.data("id");
+            layer.confirm('确定删除？', {icon: 3}, function(index){
+                $.getJSON('{:U('quedel','','')}/qid/'+id,function(data){
+                    layer.msg(data.msg,{skin:"layui-layer-hui",time:1000,end:function(){
+                        if(data.status == 0){
+                            window.location.reload();
+                        }
+                    }});
+                });
+            });
+        });
+    });
+
+    </script>
+
+</html>

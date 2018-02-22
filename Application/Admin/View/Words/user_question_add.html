@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <include file="Public:header" />            
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/Common/Ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/Common/Ueditor/ueditor.all.min.js"></script>
+    <include file="Public:page_css" />
+    <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+        <include file="Public:nav" />
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>文字管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"> 主页</a>
+                    </li>
+                    <!-- <li>
+                        <a href="{:U('Article/goods')}" class="tip-bottom">公告列表</a>
+                    </li> -->
+                    <li>
+                        <strong>文字管理</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>文字管理</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form class="form-horizontal" >
+                                                    
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">标题</label>
+                                <div class="col-sm-6">
+                                    <input type="text" datatype="*" nullmsg="请填写名称" name="name" placeholder="标题" class="form-control title" value="{$data.name}">
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">内容</label>
+                                    <div class="col-sm-10">
+                                        <textarea  class="text" cols="70" rows="10"></textarea>
+                                    </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <!-- <button class="btn btn-primary" type="submit">保存内容</button> -->
+                                    <input type="button" class="btn btn-primary" id="sub" value="保存内容">
+                                   <!--  <a class="btn btn-white" href="javascript:history.back();">取消</a> -->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <include file="Public:footer" />
+    <js file='__PUBLIC__/Common/js/uploadify/jquery.uploadify.min.js' />        
+    <link rel="stylesheet" href="__PUBLIC__/Common/js/uploadify/uploadify.css"> 
+        <script type="text/javascript" src='__PUBLIC__/Admin/js/plugins/Validform/Validform_v5.3.1_min.js'></script>
+        <style type="text/css" src='__PUBLIC__/Admin/css/plugins/Validform/validform.css'></style>
+    <script type="text/javascript">
+            var succpath = "{:U('Article/index')}";
+            $("#photo_file").uploadify({
+                'swf': '__PUBLIC__/Common/js/uploadify/uploadify.swf',
+                'uploader': '{:U("Upload/upload")}',
+                'cancelImg': '__PUBLIC__/Common/js/uploadify/uploadify-cancel.png',
+                'buttonText': '上传图片',
+                'height': 35,
+                'fileTypeExts': '*.gif;*.jpg;*.png',
+                'queueSizeLimit': 1,
+                'onUploadSuccess': function(file, data, response) {
+                    $("#poster").val('/Uploads' + data);
+                    $("#upload_img").attr('src', '__ROOT__/Uploads' + data).show();
+                }
+            });
+
+
+            $('#sub').on('click',function(){
+                    var title = $('.title').val();
+                    // var arr = [];
+                    // arr.push(UE.getEditor('editor').getContent());
+                    // var arr1=arr.join("\n");
+                    var text = $('.text').val();
+                    if (title=='') {
+                        alert('请添加标题');
+                        return false;
+                    }
+                    if (text=='') {
+                        alert('请添加内容');
+                        return false;
+                    }
+                    $.post("{:U('user_question_add')}",{text:text,title:title},function(data){
+                        if(data.status){
+                            alert('上传成功');
+                            location.href=data.url;
+                        }else{
+                            alert(data.info);
+                        }
+                    })
+            })
+    </script>
+        <script type="text/javascript" src="__PUBLIC__/Admin/js/pagejs/article.js"></script>
+    </body>
+</html>

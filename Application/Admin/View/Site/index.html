@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+	<style>
+	.tab-content{
+		padding: 20px;
+	}
+	.pointPackItem{
+		margin-bottom: 5px!important;
+	}
+	.ico{
+		padding: 0 10px;
+	}
+	</style>
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content no-padding">
+						<ul class="list-group">
+							<li class="list-group-item">
+								<p class="text-success"><a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"><i class="fa fa-home"></i> 首页</a> /
+									<a href="" class="tip-bottom">设置管理</a> /<a href="{:U('Site/index')}" class="current">基础设置</a></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5>基础设置</h5>
+						<div class="ibox-tools">
+							<a class="collapse-link">
+								<i class="fa fa-chevron-up"></i>
+							</a>
+						</div>
+					</div>
+<form id="form-wizard" action="{:U('Site/index')}" method="post" class="form-horizontal">
+					<div class="ibox-content">
+                                <div class="tab-wrapper tab-primary">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a href="#base" data-toggle="tab">基础设置</a>
+                                        </li>
+                                        <li class=""><a href="#point" data-toggle="tab">积分设置</a>
+                                        </li>
+                                        <li class=""><a href="#exp" data-toggle="tab">成长值</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+<!-- 基础设置 -->
+                                        <div class="tab-pane active" id="base">
+
+<div class="form-group">
+	<label class="col-sm-2 control-label">网站名称</label>
+	<div class="col-sm-6">
+		<input type="text" name="sitename" value="{:C('sitename')}" placeholder="输入网站名称" class="form-control">
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">URL地址</label>
+	<div class="col-sm-6">
+		<input type="text" name="siteurl" value="{:C('siteurl')}" placeholder="输入网站绑定的URL地址" class="form-control">
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">SEO关键字</label>
+	<div class="col-sm-6">
+		<input type="text" name="keyword" value="{:C('keyword')}" placeholder="输入SEO关键字" class="form-control">
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">网站描述信息</label>
+	<div class="col-sm-6">
+		<input type="text" name="content" value="{:C('content')}" placeholder="输入网站描述信息" class="form-control">
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">联系QQ</label>
+	<div class="col-sm-6">
+		<input type="text" name="qq" value="{:C('qq')}" placeholder="输入联系QQ" class="form-control">
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">联系电话</label>
+	<div class="col-sm-6">
+		<input type="text" name="linktel" value="{:C('linktel')}" placeholder="输入联系电话" class="form-control">
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">版权信息</label>
+	<div class="col-sm-6">
+		<textarea type="text" name="address"  placeholder="输入版权信息" class="form-control">{:C('address')}</textarea>
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">备案信息</label>
+	<div class="col-sm-6">
+		<textarea type="text" name="copyright" placeholder="输入网址的备案信息" class="form-control">{:C('copyright')}</textarea>
+	</div>
+</div>
+
+
+                                        </div>
+<!-- 基础设置 -->
+<!-- 积分兑换设置 -->
+                                        <div class="tab-pane" id="point">
+<div id="pointPack">
+<div class="form-group">
+	<label class="col-sm-2 control-label">充值</label>
+	<div class="col-sm-6">
+		<?php
+			$pointPack = C('pointPack');
+		?>
+		<volist name="pointPack" id="v" >
+		<div class="form-inline">
+			<div class="form-group pointPackItem">
+			    <input type="text" name="pointPack[{$i}][money]" class="form-control input-sm" placeholder="资产" value="{$v.money}" size="10"> 元
+			    <span class="fa fa-arrow-circle-right ico"></span>
+			    <input type="text" name="pointPack[{$i}][point]" class="form-control input-sm" placeholder="积分" value="{$v.point}" size="10"> 积分
+			    <!-- <button type="button" class="btn btn-danger btn-sm fa fa-trash-o" style="margin: 0;" alt="删除" title="删除"></button> -->
+			</div>
+		</div>
+		</volist>		
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">积分兑换资产(卖出)</label>
+	<div class="col-sm-6">
+		<div class="form-inline">
+		<?php
+			$sellPoint = C('sellPoint');
+		?>
+		<volist name="sellPoint" id="v" >
+			<div class="form-group pointPackItem">
+			    <input type="text" name="sellPoint[{$i}][point]" class="form-control input-sm" id="title" placeholder="积分" value="{$v.point}" size="10"> 积分
+			    <span class="fa fa-arrow-circle-right ico"></span>
+			    <input type="text" name="sellPoint[{$i}][money]" class="form-control input-sm" id="title" placeholder="资产" value="{$v.money}" size="10"> 元
+			    <!-- <button type="button" class="btn btn-danger btn-sm fa fa-trash-o" style="margin: 0;" alt="删除" title="删除"></button> -->
+			</div>
+		</volist>
+		</div>
+		
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+
+<div class="form-group">
+	<label class="col-sm-2 control-label">积分兑换规则</label>
+	<div class="col-sm-6">
+		<textarea type="text" name="point_rule" placeholder="输入积分兑换规则" class="form-control">{:C('point_rule')}</textarea>
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+
+<div class="form-group">
+	<label class="col-sm-2 control-label">注册送积分</label>
+	<div class="col-sm-4">
+		<div class="input-group">
+		<input type="text" name="point_register" class="form-control" id="point_register" placeholder="" value="{:C('point_register')}">
+		<div class="input-group-addon">积分</div>
+		</div>
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+
+<div class="form-group">
+	<label class="col-sm-2 control-label">充值1元赠送</label>
+	<div class="col-sm-4">
+		<div class="input-group">
+		<input type="text" name="point_pay" class="form-control" id="point_pay" placeholder="" value="{:C('point_pay')}">
+		<div class="input-group-addon">积分</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+
+                                        </div>
+<!-- 积分兑换设置 -->
+
+
+<!-- 成长值 经验设置 -->
+										<div class="tab-pane" id="exp">
+<div class="form-group">
+	<label class="col-sm-2 control-label">注册</label>
+	<div class="col-sm-4">
+		<div class="input-group">
+		<input type="text" name="exp_register" class="form-control" id="point" placeholder="" value="{:C("exp_register")}">
+		<div class="input-group-addon">成长值</div>
+		</div>
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">上传头像</label>
+	<div class="col-sm-4">
+		<div class="input-group">
+		<input type="text" name="exp_headimg" class="form-control" id="exp_headimg" placeholder="" value="{:C("exp_headimg")}">
+		<div class="input-group-addon">成长值</div>
+		</div>
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">设置用户名</label>
+	<div class="col-sm-4">
+		<div class="input-group">
+		<input type="text" name="exp_nickname" class="form-control" id="exp_nickname" placeholder="" value="{:C("exp_nickname")}">
+		<div class="input-group-addon">成长值</div>
+		</div>
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">初次设置支付密码</label>
+	<div class="col-sm-4">
+		<div class="input-group">
+		<input type="text" name="exp_paypassword" class="form-control" id="exp_paypassword" placeholder="" value="{:C("birthdayCard.point")}">
+		<div class="input-group-addon">成长值</div>
+		</div>
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">在圈子发帖</label>
+	<div class="col-sm-4">
+		<div class="input-group">
+		<input type="text" name="exp_moment" class="form-control" id="exp_moment" placeholder="" value="{:C("exp_moment")}">
+		<div class="input-group-addon">成长值</div>
+		</div>
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">每日成长值上限</label>
+	<div class="col-sm-4">
+		<div class="input-group">
+		<input type="text" name="exp_daily_URV" class="form-control" id="exp_daily_URV" placeholder="" value="{:C("exp_daily_URV")}">
+		<div class="input-group-addon">成长值</div>
+		</div>
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">充值1元赠送</label>
+	<div class="col-sm-4">
+		<div class="input-group">
+		<input type="text" name="exp_pay" class="form-control" id="exp_pay" placeholder="" value="{:C("exp_pay")}">
+		<div class="input-group-addon">成长值</div>
+		</div>
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+
+										</div>
+<!-- 生日卡设置 -->
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<div class="col-sm-4 col-sm-offset-2">
+		<button class="btn btn-primary" type="submit">保存信息</button>&nbsp;&nbsp;&nbsp;
+		<a class="btn btn-danger" href="{:U('Index/index')}">取消</a>
+	</div>
+</div>                                          
+                                    </div>
+                                </div>
+                            </div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+	</body>
+<js file='__PUBLIC__/Common/js/uploadify/jquery.uploadify.min.js' />		
+<link rel="stylesheet" href="__PUBLIC__/Common/js/uploadify/uploadify.css"> 
+<script type="text/javascript">
+	$("#photo_file").uploadify({
+		'swf': '__PUBLIC__/Common/js/uploadify/uploadify.swf?t={$nowtime}',
+		'uploader': '{:U("Upload/upload")}',
+		'cancelImg': '__PUBLIC__/Common/js/uploadify/uploadify-cancel.png',
+		'buttonText': '上传图片',
+		'height': 35,
+		'fileTypeExts': '*.gif;*.jpg;*.png',
+		'queueSizeLimit': 1,
+		'onUploadSuccess': function(file, data, response) {
+			$("#thumb").val('__ROOT__/Uploads' + data);
+			$("#upload_img").attr('src', '__ROOT__/Uploads' + data).show();
+		}
+	});
+</script>
+</html>

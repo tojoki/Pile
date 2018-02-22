@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>订单详情</title>
+<link href="__PUBLIC__/Admin/css/bootstrap.min.css" rel="stylesheet">
+<link href="__PUBLIC__/Admin/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+<link href="__PUBLIC__/Admin/bootstrap-table/bootstrap-editable.css" rel="stylesheet">
+<link href="__PUBLIC__/Admin/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="__PUBLIC__/Admin/css/style.min.css?v=4.0.0" rel="stylesheet">
+<script src="__PUBLIC__/Admin/js/jquery.min.js"></script>
+<script src="__PUBLIC__/Admin/js/bootstrap.min.js?v=3.3.5"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/layer/layer.min.js"></script>
+
+<style type="text/css">
+    .rightText{text-align:left;color:#555; line-height: 30px; font-weight: 400;}
+    .amount{ font-size:18px;color: red; font-family: Arial,Verdana,"\5b8b\4f53";}
+    .bd{font-weight: bold; font-family: Arial,Verdana,"\5b8b\4f53";}
+    .hr{
+        height: 0px; line-height: 0px; font-size: 0px; border-bottom: 1px solid #f5f5f5;margin-bottom: 5px;
+    }
+    .form-group{margin-bottom: 5px!important;}
+    .switchery{height: 20px!important; width: 40px!important;} 
+    .switchery > small{height: 20px!important;width: 20px!important;}
+    .radio{padding-top: 0!important;}
+    .red{color: red}
+    .green{color:green;}
+    
+</style>
+</head>
+	<body class="fixed-sidebar full-height-layout gray-bg">
+    <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                            <form class="form-horizontal form-border" id="form" method="post">
+                            <input name="orderid" value="{$data.orderid}" type="hidden" />
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">订单号</label>
+                                        <div class="col-sm-2 rightText">{$data.orderid}</div>
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">金额</label>
+                                        <div class="col-sm-2 rightText">
+                                        <strong style="color:red;">{$data.totalamount}</strong>
+                                        </div>
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">用户</label>
+                                        <div class="col-sm-6 rightText bd">{$data.nickname} / {$data.phone}</div>
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">订单类型</label>
+                                        <div class="col-sm-6 rightText bd"><if condition="$data.ordertype eq '1'">限时抢购<else/>一元夺宝</if></div>
+                                    </div>
+                                    <div class="hr"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">下单时间</label>
+                                            <div class="col-sm-3 rightText">
+                                            {$data.ctime|date='Y-m-d H:i:s',###}
+                                            </div>
+                                        </div>
+                                    <if condition="$data['paytime']">
+                                       <div class="hr"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">支付方式</label>
+                                            <div class="col-sm-2 rightText">
+                                                <switch name="data.payway">
+                                                    <case value="1" >支付宝</case> 
+                                                    <case value="2" >微信</case> 
+                                                </switch>
+                                            </div>
+                                        </div> 
+                                        <div class="hr"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">支付时间</label>
+                                            <div class="col-sm-3 rightText">
+                                            {$data.paytime|date='Y-m-d H:i:s',###}
+                                            </div>
+                                        </div>
+                                        <div class="hr"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">第三方订单号</label>
+                                            <div class="col-sm-2 rightText">
+                                            {$data.tradeid}
+                                            </div>
+                                        </div>
+                                    </if>
+                                    
+                                        <div class="hr"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">收件人</label>
+                                            <div class="col-sm-6 rightText">{$data.rname}</div>
+                                        </div>
+                                        <div class="hr"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">联系电话</label>
+                                            <div class="col-sm-6 rightText">
+                                                {$data.mobile}
+                                            </div>
+                                        </div>
+                                        <div class="hr"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">收货地址</label>
+                                            <div class="col-sm-6 rightText">{$data.address}</div>
+                                        </div>
+                                    <div class="hr"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">订单状态</label>
+                                        <div class="col-sm-4 rightText">
+                                            {:order_status($data['ordertype'],$data['isbonus'],$data['isfilladdress'],$data['status'])}
+                                        </div>
+                                    </div>
+                                    <if condition="(($data.ordertype eq '1'))||(($data.ordertype eq '2') && ($data.isbonus eq '1')&& ($data.isfilladdress eq '1'))">
+                                        <if condition="$data.status eq '1'">
+                                            <div class="hr"></div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">快递公司</label>
+                                                <div class="col-sm-3 rightText">
+                                                    <select name="company" id="company" class="form-control">
+                                                        <foreach name="expway" item="eway">
+                                                            <option value="{$key}">{$eway.name}</option>
+                                                        </foreach>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="hr"></div>
+                                            <div class="form-group">
+                                            <label class="col-sm-3 control-label">快递单号</label>
+                                            <div class="col-sm-4 rightText">
+                                                <input type="text" name="express_no" id="express_no" placeholder="输入快递单号" class="form-control" value="{$data.express_no}">
+                                            </div>
+                                            </div>
+                                            <else/>
+                                            <div class="hr"></div>
+                                            <div class="form-group">
+                                                <label class="col-sm-3 control-label">快递公司</label>
+                                                <div class="col-sm-2 rightText">
+                                                    {$data.expressway}
+                                                </div>
+                                            </div>
+                                            <div class="hr"></div>
+                                            <div class="form-group">
+                                            <label class="col-sm-3 control-label">快递单号</label>
+                                            <div class="col-sm-4 rightText">
+                                                {$data.expressno}
+                                            </div>
+                                            </div>
+                                        </if>
+                                    </if>
+                                    <notempty name="data.handletime">
+                                    <div class="hr"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">操作人</label>
+                                        <div class="col-sm-6 rightText">
+                                            {$data.mname}
+                                        </div>
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">处理时间</label>
+                                        <div class="col-sm-6 rightText">
+                                            {$data.handletime|date="Y-m-d H:i:s",###}
+                                        </div>
+                                    </div>
+                                    </notempty>
+                                    <div class="hr"></div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-9 col-sm-9">
+                                        <if condition="(($data.ordertype eq '1') && ($data.status eq '1'))||(($data.ordertype eq '2') && ($data.isbonus eq '1')&& ($data.isfilladdress eq '1')&& ($data.status eq '1'))">
+                                           <button type="button" class="btn btn-success confirm">发货</button>
+                                        </if>
+                                            <a href="javascript:;" class="btn btn-default closeIframe">关闭</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+	</body>
+<script src="__PUBLIC__/Admin/js/plugins/switchery/switchery.js"></script><!--IOS开关样式-->
+<link href="__PUBLIC__/Admin/css/plugins/switchery/switchery.css" rel="stylesheet">
+<script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/iCheck/icheck.min.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})
+    $(".confirm").click(function(){
+        if($("#express_no").val() == ''){
+            layer.msg('请填写快递单号',{skin:"layui-layer-hui",time:1500});
+            return false;
+        }
+        layer.confirm('确定进行发货操作？', {icon: 3}, function(index){
+            $("#form").submit();
+        });
+    });
+    var index = parent.layer.getFrameIndex(window.name);
+    $('.closeIframe').click(function(){
+        parent.layer.close(index);
+    });
+});
+
+var elem = document.querySelector('.js-switch');
+        var switchery = new Switchery(elem, {
+            color: '#1AB394',
+        });
+
+</script>
+</html>

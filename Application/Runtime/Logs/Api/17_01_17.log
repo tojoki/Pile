@@ -1,0 +1,10 @@
+[ 2017-01-17T10:37:32+08:00 ] ::1 /lawyer/Api/Lawyer/tagsList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001061s ]
+SQL: SHOW COLUMNS FROM `web_tags` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `web_tags`  [ RunTime:0.0006s ]
+

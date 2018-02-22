@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+    <style type="text/css">
+        .mtcontent{font-size:12px!important; text-align: left!important;}
+        .mtphotos{
+            text-align: left!important;
+        }
+        .mtphotos img{ margin-right: 2px; cursor:pointer; }
+        .infoDetail p{
+            text-align: left!important;margin:0;line-height: 28px;font-family:"Helvetica Neue",HelveticaNeue,"Microsoft YaHei",Arial,Helvetica,sans-serif; color:#555;
+        }
+        .infoDetail p span{text-align:right;width:70px; display: inline-block; font-weight: 400; color:#888; }
+        .mt-cont{
+            text-align:left;color:#888; font-size:12px; line-height: 24px; font-weight: 400;
+            /*border-radius: 5px;border:1px solid #ccc;*/
+            padding: 5px 10px;
+            /*box-shadow: 2px 2px 3px rgba(0,0,0,.1);*/
+        }
+    </style>
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>区域设置</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"> 主页</a>
+                    </li>
+                    <li>
+                        <a href="#" class="tip-bottom">平台设置</a>
+                    </li>
+                    <li>
+                        <strong>区域设置</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+        <br />
+        <a href="javascript:;" id='add' class="btn btn-primary">添加区域</a>
+       
+        <br />
+        <br />
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="fa fa-tasks"></i> 区域设置</h5>
+					</div>
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+								<tr class="long-tr">
+                                    <th width="25%">#</th>
+									<th width="25%">区域</th>
+                                    <!-- <th width="25%">内容</th> -->
+                                    <th width="25%">操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<volist name="list" id="vo">
+									<tr class="long-td">
+                                        <td>{$vo.index}</td>
+                                        <td>{$vo.title}</td>
+                                        <!-- <td>
+                                        <?php
+                                        echo '<span title="'.$vo['content'].'">'.mb_substr($vo['content'],0,15,'utf-8').'...</span>';
+                                        ?>
+                                        </td> -->
+										<td>
+                                            <a href="javascript:;" data-id="{$vo.id}" class="btn-sm btn-primary edit">
+                                                <i class="fa fa-pencil"></i> 修改</a>
+											<a href="javascript:;" data-id="{$vo.id}" class="btn-sm btn-danger del">
+												<i class="fa fa-trash-o"></i> 删除</a>
+										</td>
+									</tr>
+								</volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+	</body>
+    <script type="text/javascript">
+    $(function(){
+        var url = "{:U("add",'','')}";
+        var upd_url = "{:U("edit",'','')}";
+        $("#add").click(function(){
+            var index = layer.open({
+                type: 2,
+                title:"添加区域",
+                content: url,
+                area: ['800px', '200px'],
+                skin: 'layui-layer-rim',
+                maxmin: true,
+                scrollbar: true,
+            });
+        });
+
+        $(".edit").click(function(){
+            var id = $(this).data("id");
+            var url = upd_url+'/id/'+id;
+            var index = layer.open({
+                type: 2,
+                title:"修改区域",
+                content: url,
+                area: ['800px', '200px'],
+                skin: 'layui-layer-rim',
+                maxmin: true,
+                scrollbar: true,
+            });
+        });
+
+
+        $(".del").click(function(){
+            var thi= $(this);            
+            var id = thi.data("id");
+            layer.confirm('确定删除？', {icon: 3}, function(index){
+                $.getJSON('{:U('deel','','')}/id/'+id,function(data){
+                    layer.msg(data.returnMsg,{skin:"layui-layer-hui",time:1000,end:function(){
+                        if(data.returnCode == 'SUCCESS'){
+                            // thi.parents('tr').hide();
+                            window.location.reload();
+                        }
+                    }});
+                });
+            });
+        });
+
+        $('.mtphotos img').click(function(e){
+            layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            area: '516px',
+            shadeClose: true,
+            content: '<img src="' + $(this).data('maximg') + '" width="100%"/>',
+            });
+        });
+
+        $('.viewComt').click(function(){
+            layer.msg('<div class="mt-cont">'+$(this).data('detail')+'</div>', {shade: 0.5,shadeClose:true,skin:"layui-layer-rim",time:100000});
+        })
+    });
+
+    </script>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />	      	
+	<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Common/Ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Common/Ueditor/ueditor.all.min.js"></script>
+        <script type="text/javascript" src='__PUBLIC__/Admin/js/plugins/Validform/Validform_v5.3.1_min.js'></script>
+        <style type="text/css" src='__PUBLIC__/Admin/css/plugins/Validform/validform.css'></style>
+        <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/chosen/chosen.jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/plugins/chosen/chosen.css" />
+        <css file='__PUBLIC__/Admin/css/goods/goods.base.css' />
+        <js file='__PUBLIC__/Admin/js/plugins/webuploader/webuploader.min.js' />
+        <css file='__PUBLIC__/Admin/css/plugins/webuploader/webuploader.css' />
+	<include file="Public:page_css" />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+		<div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>商城管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a><i class="fa fa-home"></i>商城管理</a>
+                    </li>
+                    <li>
+                        <a>商品管理</a>
+                    </li>
+                    <li>
+                        <strong>{$title}</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+                                            <h5>{$title}</h5>
+                                            <if condition="$data">
+                                                <p style="color: red;">&nbsp;&nbsp;本次修改商品信息，在该商品下一期夺宝生效</p>
+                                            </if>
+					</div>
+					<div class="ibox-content">
+						<form class="form-horizontal" method="post" action="{:U('addbonusgoods')}" name="basic_validate" id="productForm">
+                                                    <input type='hidden' name="gid" value="{$data.gid}"/>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">商品名称</label>
+								<div class="col-sm-6">
+									<input type="text" datatype="*" nullmsg="请填写商品名称" value='{$data.gname}'  name="gname"  class="form-control">
+								</div>
+							</div>
+                                                        <div class="hr"></div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">价格</label>
+                                                            <div class="col-sm-2">
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control" name="price" datatype="n1-10000" nullmsg="请填写商品价格" errormsg="价格格式错误" id="price" placeholder="" value="{$data.price}">
+                                                                    <div class="input-group-addon">元</div>
+                                                                </div>
+                                                            </div>
+                                                            <label class="col-sm-2 control-label">总期数</label>
+                                                            <div class="col-sm-2">
+                                                                 <div class="input-group">
+                                                                    <input type="text" class="form-control" name="items" datatype="n1-1000" nullmsg="请填写总期数" errormsg="期数格式错误" id="totalitems" placeholder=""  value="{$data.items}">
+                                                                    <div class="input-group-addon">期</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="hr"></div>
+<!--                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">商品状态</label>
+                                                            <div class="col-sm-8">                     
+                                                                <label class="checkbox-inline i-checks">
+                                                                <input type="radio" name="issale" class="extendedAttr" value="0"<if condition="$data['issale'] eq 0"> checked="checked"</if>>上架</label>  
+                                                                <label class="checkbox-inline i-checks">
+                                                                <input type="radio" name="issale" class="extendedAttr" value="1" <if condition="$data['issale'] eq 1"> checked="checked"</if>>下架</label>                       
+                                                            </div>
+                                                        </div>
+                                                        <div class="hr"></div>-->
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">封面图片</label>
+                                                            <div class="col-sm-10">
+                                                                <div class="row" id="GD_IndexImg">
+                                                                    <div class="col-sm-10">
+                                                                        <img src="{$data.poster}" width="200" style="margin-bottom: 5px;">
+                                                                        <input type="hidden" class="form-control" name="poster" id="goods_img" value="{$data.poster}">
+                                                                    </div>
+                                                                </div>                  
+                                                                <div class="row">
+                                                                    <div class="btns col-sm-10">
+                                                                        <div id="uploadOne" class="pull-left">选择文件</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <input type="hidden" name="posters" id="poster"  nullmsg="请上传展示图片"  value="{$data.goods_pics}"/>
+                                                        <div class="hr-line-dashed"></div>
+                                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">展示图片</label>
+                                            <div class="col-sm-10">  
+                                                <div class="row">  
+                                                    <div class="col-sm-10" id="uploadImgWrap">
+                                                    <volist name="data.posters" id="pic">
+                                                        <div class="uploadImgItem" draggable="false"><img src="{$pic}" realpath="{$pic}" draggable="false"><p class="state succ">已上传</p><i class="fa fa-close delBtn"></i><div class="progress progress-striped active" style="display: none;"><div class="progress-bar" role="progressbar" style="width: 100%;"></div></div></div>
+                                                    </volist>
+                                                    </div>
+                                                </div>             
+                                                <div class="row">
+                                                    <div class="btns col-sm-10">
+                                                        <div id="picker" class="pull-left">选择文件</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                                        <div class="hr-line-dashed"></div>
+							<div class="form-group">
+                                                            <label class="col-sm-2 control-label">商品详情</label>
+                                                            <div class="col-sm-10">
+                                                                <script type="text/plain" id="editor" name="detail" style="width:90%;height:300px;">{:htmlspecialchars_decode($data['detail'])}</script>
+                                                            </div>
+							</div>
+                                                        
+							<div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<div class="col-sm-6 col-sm-offset-4">
+                                                                    <button class="btn btn-primary" type="submit">提交</button>
+                                                                    <a class="btn btn-danger" href="javascript:history.back()">取消</a>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+                <form id="uploadForm" method="post"  action="__URL__/upload" style="display: none;"   enctype="multipart/form-data">
+                    <input type="file" name="file" id="cower"  style="display: none;" />
+                </form>
+<include file="Public:footer" />
+<script src="__PUBLIC__/Admin/js/plugins/validate/jquery.validate.min.js"></script>
+<script src='__PUBLIC__/Admin/js/plugins/laydate/laydate.js' /></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Common/Ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Common/Ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.form.js"></script>
+<script type="text/javascript">
+    var uploadUrl = '{:U("Upload/upload")}'; //图片上传地址
+    var swfpath = '__PUBLIC__/Admin/js/plugins/webuploader/Uploader.swf';
+    var succpath = "{:U('bonusgoods')}";
+    var gid = '{$data.gid}';
+    var currissue = '{$data.currissue}';
+</script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/pagejs/bonusgoods.js"></script>
+</body>
+</html>

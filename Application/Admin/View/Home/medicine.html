@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+		<div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>药物列表</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="article.html"><i class="fa fa-home"></i> 主页</a>
+                    </li>
+                    <li>
+                        <a>首页管理</a>
+                    </li>
+                    <li>
+                        <strong>药物列表</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+		<br />
+		<a href="{:U('home/medicineadd')}" class="btn btn-primary">添加药物</a>
+		<br />
+		<br />
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+                                                            <tr class="long-tr">
+                                                                <th width="15%">名称</th>
+                                                                <th width="10%">封面</th>
+                                                                <th width="12%">分类</th>	
+                                                                <th width="10%">规格</th>
+                                                                <th width="10%">剂型</th>
+                                                                <th width="15%">创建时间</th>
+                                                                <th width="8%">排序</th>
+                                                                <th>操作</th>
+                                                            </tr>
+							</thead>
+							<tbody>
+								<volist name="list" id="vo">
+									<tr class="long-td">
+                                                                            <td>{$vo.title}</td>										
+                                                                            <td>
+                                                                                <div style="width:100%;max-height: 80px;overflow: hidden;">
+                                                                                    <img src="{$vo.poster}" onerror="this.src='__PUBLIC__/Admin/img/no_img.jpg'" style="width:90%;" />
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>{$vo.catname}</td>
+                                                                            <td>{$vo.standard}</td>
+                                                                            <td>{$vo.jixing}</td>
+                                                                            <td>{$vo.ctime|date='m-d H:i:s',###}</td>
+                                                                            <td>{$vo.sortval|default=0}</td>
+                                                                            <td>
+                                                                                <a href="{:U('editmedicine',array('mid'=>$vo['mid']))}" class="btn btn-primary btn-mini">
+                                                                                        <i class="fa fa-pencil"></i> 编辑</a>&nbsp;&nbsp;
+                                                                                <a href="javascript:;" onclick="return del({$vo.mid});" class="btn btn-danger">
+                                                                                        <i class="fa fa-trash-o"></i> 删除</a>
+                                                                            </td>										
+									</tr>
+								</volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+		function del(id){
+                    layer.confirm('确认删除该药物？', {icon: 3}, function(index){
+                        layer.close(index);
+                        $.post("{:U('delmedicine')}",{mid:id},function(data){
+                            layer.msg(data.msg,{skin:"layui-layer-hui",time:1500,end:function(){
+                                if(data.status == 0){
+                                    window.location.reload();
+                                }   
+                            }});
+                        });
+                    });
+		}
+		</script>
+
+		<include file="Public:footer" />
+	</body>
+</html>

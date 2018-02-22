@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+        <style>
+        </style>
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+            <div class="row" style="margin-top:10px;margin-left: 10px;">
+            <div class="col-sm-10">
+                <form action="__ACTION__" class="form-inline" method="get">
+                    <input type='hidden' name='shopid' value="{$Think.get.shopid}"/>
+                    <div class="form-group">
+                    <input type="text" class="form-control input-sm" id="title" placeholder="名称" name="title" value="{$Think.get.title}" size="15">
+                    </div>
+                    <div class="form-group">
+                        <select name='catid' class="form-control">
+                            <option value="">分类</option>
+                            <option <if condition="$Think.get.catid eq '1'">selected</if> value="1">水果</option>
+                            <option <if condition="$Think.get.catid eq '2'">selected</if> value="2">蔬菜</option>
+                            <option <if condition="$Think.get.catid eq '3'">selected</if> value="3">肉类</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-sm">搜索</button>
+                </form>
+            </div>
+        </div>
+        <br/>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+                                                            <tr class="long-tr">
+                                                                <th width="10%">#</th>
+                                                                <th width="30%">商品名称</th>
+                                                                <th width="15%">分类</th>
+                                                                <th width="15%">最新价格</th>
+                                                                <th>更新时间</th>
+                                                            </tr>
+							</thead>
+							<tbody>
+                                                            <volist name="list" id="vo">
+                                                                <tr class="long-td">
+                                                                    <td><php>echo $key+1+$basesize;</php></td>
+                                                                    <td>{$vo.gname}</td>	
+                                                                    <td>
+                                                                        <switch name='vo.catid'>
+                                                                            <case value='1'>水果</case>
+                                                                            <case value='2'>蔬菜</case>
+                                                                            <case value='3'>肉类</case>
+                                                                        </switch>
+                                                                    </td>
+                                                                    <td>{$vo.price}</td>
+                                                                    <td>
+                                                                    <if condition="$vo['etime']">
+                                                                        {$vo.etime|date='m-d H:i:s',###}
+                                                                    </if>
+                                                                    </td>
+                                                                </tr>
+                                                            </volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+                                                    {$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		</script>
+	</body>
+</html>

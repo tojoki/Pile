@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />	      	
+	<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Common/Ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Common/Ueditor/ueditor.all.min.js"></script>
+	<include file="Public:page_css" />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+		<div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>资讯管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"> 主页</a>
+                    </li>
+                    <li>
+                        <a href="{:U('Exchange/goods')}" class="tip-bottom">积分兑换</a>
+                    </li>
+                    <li>
+                        <strong>添加商品</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+        <br/>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5>添加文章</h5>
+						<div class="ibox-tools">
+							<a class="collapse-link">
+								<i class="fa fa-chevron-up"></i>
+							</a>
+						</div>
+					</div>
+					<div class="ibox-content">
+						<form class="form-horizontal" method="post" action="__URL__/articleadd" name="basic_validate" id="myform">
+                                                    <notempty name="data">
+                                                            <input name="aid" type="hidden" value="{$data.aid}"/>
+                                                    </notempty>
+                                                       <div class="form-group">
+                                                            <label class="col-sm-2 control-label">文章类型</label>
+                                                            <div class="col-sm-6">
+                                                                <select name="category" class="form-control">
+                                                                    <option <if condition="$data['category'] eq '1'">selected</if> value="1" >banner文章</option>
+                                                                    <option <if condition="$data['category'] eq '2'">selected</if> value="2">普通文章</option>
+                                                                    <option <if condition="$data['category'] eq '3'">selected</if> value="3">关于我们</option>
+                                                                </select>
+                                                            </div>
+							</div>
+                                                        <div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">文章标题</label>
+								<div class="col-sm-6">
+									<input type="text" datatype="*" nullmsg="请填写文章标题" name="title" placeholder="文章标题" class="form-control" value="{$data.title}">
+								</div>
+							</div>
+                                                        <div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">文章简介</label>
+								<div class="col-sm-6">
+                                                                    <textarea type="text" rows="5" name="describes" datatype="s" nullmsg="请填写文章简介"  class="form-control">{$data.describes}</textarea>
+								</div>
+							</div>
+							<div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">封面</label>
+								<div class="col-sm-2">						
+									<img id="upload_img" src="{$data.poster|default='/Public/Admin/img/no_img.jpg'}" style="width: 100px;height: 60px" />
+								</div>
+								<div class="col-sm-3">
+									<input type="hidden" name="poster" value="{$data.poster}" id="poster" datatype="*" nullmsg="请上传商品图片" />
+									<input id="photo_file" name="photo_file" type="file" multiple="true" value="" />
+								</div>
+							</div>
+							<div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">作者</label>
+								<div class=" col-sm-2">
+									<input type="text" name="author" datatype="s1-50" nullmsg="请填写作者" errormsg="作者格式错误" placeholder="作者" class="form-control m-t-none" value="{$data.author}">
+								</div>
+                                                                <label class="col-sm-2 control-label">排序值</label>
+								<div class=" col-sm-2">
+									<input type="text" name="sortval" datatype="n" nullmsg="请填写排序值" errormsg="排序值格式错误" placeholder="排序值" class="form-control m-t-none" value="{$data.sortval}">
+								</div>
+							</div>
+                                                        <div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">文章详情</label>
+								<div class="col-sm-10">
+                                                                    <script type="text/plain" id="editor" name="content" style="width:90%;height:300px;">{:htmlspecialchars_decode($data['content'])}</script>
+                                                                </div>
+							</div>
+							<div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<div class="col-sm-4 col-sm-offset-2">
+                                                                    <button class="btn btn-primary" type="submit">保存内容</button>
+                                                                    <a class="btn btn-white" href="javascript:history.back();">取消</a>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+        <include file="Public:footer" />
+	<js file='__PUBLIC__/Common/js/uploadify/jquery.uploadify.min.js' />		
+	<link rel="stylesheet" href="__PUBLIC__/Common/js/uploadify/uploadify.css"> 
+        <script type="text/javascript" src='__PUBLIC__/Admin/js/plugins/Validform/Validform_v5.3.1_min.js'></script>
+        <style type="text/css" src='__PUBLIC__/Admin/css/plugins/Validform/validform.css'></style>
+	<script type="text/javascript">
+            var succpath = "{:U('article')}";
+            $("#photo_file").uploadify({
+                'swf': '__PUBLIC__/Common/js/uploadify/uploadify.swf',
+                'uploader': '{:U("Upload/upload")}',
+                'cancelImg': '__PUBLIC__/Common/js/uploadify/uploadify-cancel.png',
+                'buttonText': '上传图片',
+                'height': 35,
+                'fileTypeExts': '*.gif;*.jpg;*.png',
+                'queueSizeLimit': 1,
+                'onUploadSuccess': function(file, data, response) {
+                    $("#poster").val('/Uploads' + data);
+                    $("#upload_img").attr('src', '__ROOT__/Uploads' + data).show();
+                }
+            });
+	</script>
+        <script type="text/javascript" src="__PUBLIC__/Admin/js/pagejs/article.js"></script>
+	</body>
+</html>

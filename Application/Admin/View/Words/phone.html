@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+    <style type="text/css">
+        .mtcontent{font-size:12px!important; text-align: left!important;}
+        .mtphotos{
+            text-align: left!important;
+        }
+        .mtphotos img{ margin-right: 2px; cursor:pointer; }
+        .infoDetail p{
+            text-align: left!important;margin:0;line-height: 28px;font-family:"Helvetica Neue",HelveticaNeue,"Microsoft YaHei",Arial,Helvetica,sans-serif; color:#555;
+        }
+        .infoDetail p span{text-align:right;width:70px; display: inline-block; font-weight: 400; color:#888; }
+        .mt-cont{
+            text-align:left;color:#888; font-size:12px; line-height: 24px; font-weight: 400;
+            /*border-radius: 5px;border:1px solid #ccc;*/
+            padding: 5px 10px;
+            /*box-shadow: 2px 2px 3px rgba(0,0,0,.1);*/
+        }
+    </style>
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>电话管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"> 主页</a>
+                    </li>
+                    <li>
+                        <a href="#" class="tip-bottom">电话管理</a>
+                    </li>
+                    <li>
+                        <strong>平台电话</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+        <br />
+        <br />
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="fa fa-tasks"></i> 平台电话</h5>
+					</div>
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+								<tr class="long-tr">
+                                    <th width="25%">#</th>
+                                    <th width="25%">标题</th>
+									<th width="25%">号码</th>
+                                    <th width="25%">操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="long-td">
+                                    <td>1</td>
+                                    <td>物业电话</td>
+                                    <td>{$info['property_phone']}</td>
+									<td>
+                                        <a href="javascript:;" data-id="1" class="btn-sm btn-primary edit">
+                                            <i class="fa fa-pencil"></i> 修改</a>
+									</td>
+								</tr>
+                                <tr class="long-td">
+                                    <td>2</td>
+                                    <td>客服电话</td>
+                                    <td>{$info['service_phone']}</td>
+                                    <td>
+                                        <a href="javascript:;" data-id="2" class="btn-sm btn-primary edit">
+                                            <i class="fa fa-pencil"></i> 修改</a>
+                                    </td>
+                                </tr>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							<!-- {$page} -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+	</body>
+    <script type="text/javascript">
+    $(function(){
+        var upd_url = "{:U("editPhone",'','')}";
+
+        $(".edit").click(function(){
+            var id = $(this).data("id");
+            var url = upd_url+'/id/'+id;
+            var index = layer.open({
+                type: 2,
+                title:"修改平台电话",
+                content: url,
+                area: ['800px', '200px'],
+                skin: 'layui-layer-rim',
+                maxmin: true,
+                scrollbar: true,
+            });
+        });
+
+        $('.mtphotos img').click(function(e){
+            layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            area: '516px',
+            shadeClose: true,
+            content: '<img src="' + $(this).data('maximg') + '" width="100%"/>',
+            });
+        });
+
+        $('.viewComt').click(function(){
+            layer.msg('<div class="mt-cont">'+$(this).data('detail')+'</div>', {shade: 0.5,shadeClose:true,skin:"layui-layer-rim",time:100000});
+        })
+    });
+
+    </script>
+
+</html>

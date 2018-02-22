@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+    <css file="__PUBLIC__/Admin/js/plugins/lightbox2/css/lightbox.min.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/js/plugins/datetimepick/css/lq.datetimepick.css"/>
+    <style type="text/css">
+        .mtcontent{font-size:12px!important; text-align: left!important;}
+        .mtphotos{
+            text-align: left!important;
+        }
+        .mtphotos img{ margin-right: 2px; cursor:pointer; }
+        .btns a{
+            margin:0 5px 5px 0; display: inline-block;  
+            -webkit-transition: all .1s linear;
+        }
+        .btns a{background: #fff; color:#333;border:1px solid #888;}
+    </style>
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>活动管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"> 主页</a>
+                    </li>
+                    <li>
+                        <a href="#" class="tip-bottom">活动管理</a>
+                    </li>
+                    <li>
+                        <strong>参与人列表</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+                <div class="row" style="margin:15px auto">
+                <div class="col-sm-10">
+                    <form action="{:U('applys')}" class="form-inline" method="get">
+                        <input type="hidden" name="applyid" value="{$Think.get.applyid}" />
+                        <div class="form-group">
+                        用户：<input type="text" class="form-control input-sm" id="title" placeholder="请输入用户名" name="title" value="{$Think.get.title}" size="15">
+                        </div>
+                        <button type="submit" class="btn btn-success btn-sm">搜索</button>
+                    </form>
+                </div>
+            </div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="fa fa-tasks"></i>参与人列表</h5>
+					</div>
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+                                                            <tr class="long-tr">
+                                                                <th width="5%">ID</th>
+                                                                <th width="12%">用户</th>
+                                                                <th width="23%">文字</th>
+                                                                <th width="25%">图片</th>
+                                                                <th width="6%">票数</th>
+                                                                <th width="6%">评论数</th>
+                                                                <th width="9%">时间</th>
+                                                                <th>操作</th>
+                                                            </tr>
+							</thead>
+							<tbody>
+								<volist name="data" id="vo">
+									<tr class="long-td">
+                                                                                <td>{$vo.applyid}</td>
+                                                                                <td style="text-align:left;">
+                                                                                    {$vo.nickname}<br/>
+                                                                                    {$vo.phone}
+                                                                                </td>
+                                                                                <td style="text-align:left;">
+                                                                                    {$vo.words}
+                                                                                </td>
+                                                                               <td class="mtphotos">
+                                                                                <foreach name="vo.pictures" item="pic">
+                                                                                    <a href="{$pic}" data-lightbox="group{$vo.applyid}"><img src="{$pic}"  width="60" height="60" /></a>
+                                                                                </foreach>
+                                                                                </td>
+                                                                                <td>{$vo.votes}</td>
+                                                                                <td>{$vo.commts}</td>
+                                                                                <td>{$vo.ctime|date='m/d H:i',###}</td>
+                                                                                <td style="text-align:left;line-height: 2.5">
+                                                                                    <a href="javascript:;" data-tid="{$vo.applyid}" class="btn-sm btn-primary comments">
+                                                                                                    评论</a>
+                                                                                    <a href="javascript:;" data-tid="{$vo.applyid}" class="btn-sm btn-primary voters">
+                                                                                                    投票人</a><br/>
+                                                                                    <a href="javascript:;" data-id="{$vo.applyid}" class="btn-sm btn-danger del">
+                                                                                                    删除</a>
+										</td>
+									</tr>
+								</volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+	</body>
+    <js file="__PUBLIC__/Admin/js/plugins/lightbox2/js/lightbox.min.js"/>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/datetimepick/js/lq.datetimepick.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/datetimepick/js/selectUi.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        $(".del").click(function(){
+            var thi= $(this);            
+            var id = thi.data("id");
+            layer.confirm('确定删除该条数据？', {icon: 3}, function(index){
+                $.post("{:U('delapply')}",{applyid:id},function(data){
+                    layer.msg(data.msg,{skin:"layui-layer-hui",time:1000,end:function(){
+                        if(data.status == 0){
+                            window.location.reload();
+                        }
+                    }});
+                });
+            });
+        });
+        
+        $(".comments").click(function(){
+            var tid = $(this).data("tid");
+            url ="{:U('comments')}?applyid="+tid;
+            var index = layer.open({
+                type: 2,
+                title:'评论列表',
+                content: url,
+                area: ['800px', '600px'],
+                shadeClose: true,
+                skin: 'layui-layer-rim',
+                maxmin: true,
+                scrollbar: true,
+            });
+        });
+        
+        $(".voters").click(function(){
+            var tid = $(this).data("tid");
+            url ="{:U('voters')}?applyid="+tid;
+            var index = layer.open({
+                type: 2,
+                title:'投票人列表',
+                content: url,
+                area: ['800px', '600px'],
+                shadeClose: true,
+                skin: 'layui-layer-rim',
+                maxmin: true,
+                scrollbar: true,
+            });
+        });
+    });
+    </script>
+
+</html>

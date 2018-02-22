@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />	      	
+	<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Common/Ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Common/Ueditor/ueditor.all.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.min.js"></script>
+    <script type="text/javascript" src='__PUBLIC__/Admin/js/plugins/Validform/Validform_v5.3.1_min.js'></script>
+    <style type="text/css" src='__PUBLIC__/Admin/css/plugins/Validform/validform.css'></style>
+	<include file="Public:page_css" />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+		<div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>商城管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a><i class="fa fa-home"></i>主页</a>
+                    </li>
+                    <li>
+                        <a>优惠活动</a>
+                    </li>
+                    <li>
+                        <strong>活动添加</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+					</div>
+					<div class="ibox-content">
+						<form class="form-horizontal" method="post" action="" name="basic_validate" id="actForm">
+                            <input type='hidden' name="act_id" value="{$act.act_id}"/>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">活动标题</label>
+								<div class="col-sm-6">
+									<input type="text" datatype="s" nullmsg="请填写活动标题" value='{$act.act_title}'  name="act_title"  class="form-control">
+								</div>
+							</div>
+							<div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">时间</label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="stime" placeholder="开始时间" id="stime" readonly="" datatype="*" nullmsg="请设置开始时间" value="<notempty  name="act['stime']">{$act.stime|date="Y-m-d H:i:s",###}</notempty>" class="form-control">
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="text" name="etime" placeholder="结束时间" id="etime" readonly="" datatype="*" nullmsg="请设置结束时间" value="<notempty  name="act['etime']">{$act.etime|date="Y-m-d H:i:s",###}</notempty>" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">满额包邮开启</label>
+                                <div class="col-sm-6">
+                                <div class="radio i-checks">
+                                        <label><input type="radio" checked="checked" value="1" name="is_express_free" class="nooff" <if condition="$act['is_express_free'] eq 1"> checked</if> > <i></i> 是</label>
+                                        <label><input type="radio" value="0" name="is_express_free" class="nooff" <if condition="$act['is_express_free'] eq 0"> checked</if>> <i></i> 否</label>
+                                </div>                                                                  
+                                </div>
+                                                               
+                            </div>
+							<div class="form-group" <if condition="$act['is_express_free'] eq 0"> style="display:none"</if>>
+								<label class="col-sm-2 control-label">满额包邮</label>
+								<div class="col-sm-4">
+                                    <div class="input-group">
+                                    <input type="text" class="form-control" id="express_free_meet" placeholder="" name="express_free_meet" datatype="price" value='{$act.express_free_meet}' nullmsg="请填满额包邮额度" errormsg="请填写正确的请填满额包邮额度" >
+                                    <div class="input-group-addon">元</div>
+                                    </div>
+								</div>
+                                                               
+							</div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">满减开启</label>
+                                <div class="col-sm-6">
+                                <div class="radio i-checks">
+                                        <label><input type="radio" checked="checked" value="1" name="is_reduce" class="nooff" <if condition="$act['is_reduce'] eq 1"> checked</if>> <i></i> 是</label>
+                                        <label><input type="radio" value="0" class="nooff" name="is_reduce" <if condition="$act['is_reduce'] eq 0"> checked</if>> <i></i> 否</label>
+                                    </div>                                                   
+                                </div>
+                                                               
+                            </div>
+                            <div class="form-group" <if condition="$act['is_reduce'] eq 0"> style="display:none"</if>>
+                                <label class="col-sm-2 control-label">满减</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                    <div class="input-group-addon">满</div>
+                                    <input type="text" class="form-control" id="reduce_meet" placeholder="" name="reduce_meet" datatype="price" value='{$act.reduce_meet}' nullmsg="请填写满减额度" errormsg="请填写正确的满减额度" >
+                                    <div class="input-group-addon">减</div>
+                                    <input type="text" class="form-control" id="reduce_money" placeholder="" name="reduce_money" datatype="price" value='{$act.reduce_money}' nullmsg="请填写满减优惠额度" errormsg="请填写正确的满减优惠额度" >
+                                    <div class="input-group-addon">元</div>
+                                    </div>
+                                </div>
+                                                               
+                            </div>
+                                
+							<div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<div class="col-sm-6 col-sm-offset-4">
+                                <button class="btn btn-primary" type="submit">提交</button>
+                                <a class="btn btn-danger" href="javascript:history.back()">取消</a>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+<js file='__PUBLIC__/Admin/js/plugins/laydate/laydate.js' />
+
+<script type="text/javascript">
+    var succpath = '{:U('activity')}';
+    function show_result_msg(msg,o,cssctl){
+        if(o.type>2){
+            layer.msg(msg,{skin:"layui-layer-hui",time:1500});
+            return false;
+        }
+    }
+    //商品规格启用
+    $('input.nooff').on('ifClicked', function(event){
+        if($(this).val() == 1){
+            $(this).parents('.form-group').next().show();
+        }else{
+            $(this).parents('.form-group').next().hide();
+        }
+    });
+    $.extend($.Datatype,{
+      "price" : /^[0-9]+(\.[0-9]{1,2})?$/
+    });
+
+   $(function(){
+        $('.nooff').change(function(){
+            alert($(this).val());
+        })
+    //时间
+        var options = {        
+            event:'click',
+            format: 'YYYY-MM-DD hh:mm:ss', //日期格式
+            istime: true, //是否开启时间选择
+            isclear: true, //是否显示清空
+            istoday: true, //是否显示今天
+            issure: true, //是否显示确认
+            festival: false, //是否显示节日
+            choose: function(dates){ //选择好日期的回调
+
+            }
+        };
+
+        options.elem = '#stime';
+        laydate(options).skin('molv');
+        options.elem = '#etime';
+        laydate(options).skin('molv');
+
+    //验证表单
+     var valid = $("#actForm").Validform({
+            tiptype:show_result_msg,
+            ignoreHidden:true,
+            tipSweep:true,
+            postonce:true,
+            beforeSubmit:function(form){
+                
+            },
+            ajaxPost:true,
+            callback:function(data){
+                layer.msg(data.returnMsg,{skin:"layui-layer-hui",time:1500,end:function(){
+                    if(data.returnCode == 'SUCCESS'){
+                        window.location.href = succpath;
+                    }
+                }});
+            }
+        });
+   })
+</script>
+</body>
+</html>

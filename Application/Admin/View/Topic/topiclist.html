@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+    <css file="__PUBLIC__/Admin/js/plugins/lightbox2/css/lightbox.min.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/js/plugins/datetimepick/css/lq.datetimepick.css"/>
+    <style type="text/css">
+        .mtcontent{font-size:12px!important; text-align: left!important;}
+        .mtphotos{
+            text-align: left!important;
+        }
+        .mtphotos img{ margin-right: 2px; cursor:pointer; }
+        .btns a{
+            margin:0 5px 5px 0; display: inline-block;  
+            -webkit-transition: all .1s linear;
+        }
+        .btns a{background: #fff; color:#333;border:1px solid #888;}
+    </style>
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>话题管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"> 主页</a>
+                    </li>
+                    <li>
+                        <a href="#" class="tip-bottom">话题管理</a>
+                    </li>
+                    <li>
+                        <strong>话题列表</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+                <div class="row" style="margin:15px auto">
+                <div class="col-sm-10">
+                    <form action="{:U('topiclist')}" class="form-inline" method="get">
+                        <div class="form-group">
+                        用户：<input type="text" class="form-control input-sm" id="title" placeholder="请输入用户名" name="words" value="{$words}" size="15">
+                        </div>
+                        <div class="form-group">
+                        <label for="title" class="sr-only">创建时间&lt;</label>
+                        创建时间：<input type="text" class="form-control input-sm" id="ctime" placeholder="开始时间" name="ctime" value="{$ctime}" size="10">
+                        </div>至
+                        <div class="form-group">
+                        <label for="title" class="sr-only">创建时间&gt;</label>
+                        <input type="text" class="form-control input-sm" id="stime" placeholder="结束时间" name="stime" value="{$stime}" size="10">
+                        </div>
+                        <button type="submit" class="btn btn-success btn-sm">搜索</button>
+                    </form>
+                </div>
+            </div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="fa fa-tasks"></i>话题列表</h5>
+					</div>
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+                                                            <tr class="long-tr">
+                                                                <th width="5%">ID</th>
+                                                                <th width="10%">用户</th>
+                                                                <th width="6%">分类</th>
+                                                                <th width="30%">文字</th>
+                                                                <th width="25%">图片</th>
+                                                                <th width="13%">时间</th>
+                                                                <th>操作</th>
+                                                            </tr>
+							</thead>
+							<tbody>
+								<volist name="data" id="vo">
+									<tr class="long-td">
+                                                                                <td>{$vo.tid}</td>
+                                                                                <td>{$vo.nickname}</td>
+                                                                                <td>{$vo.cname}</td>
+                                                                                <td style="text-align:left;">
+                                                                                    <strong>{$vo.title}</strong><br/>
+                                                                                    {$vo.txt}
+                                                                                </td>
+                                                                               <td class="mtphotos">
+                                                                                <foreach name="vo.pictures" item="pic">
+                                                                                    <a href="{$pic}" data-lightbox="group{$vo.tid}"><img src="{$pic}"  width="60" height="60" /></a>
+                                                                                </foreach>
+                                                                                </td>
+                                                                                <td>{$vo.ctime|date='Y/m/d H:i',###}</td>
+                                                                                <td style="text-align:left;line-height: 2.5">
+                                                                                    <a href="javascript:;" data-tid="{$vo.tid}" class="btn-sm btn-primary comments">
+                                                                                                    评论</a>
+                                                                                    <if condition="$vo['isrcmd'] eq '0'">
+                                                                                        <a href="javascript:;" onclick="rcmd({$vo.tid},1,'确认要推荐该话题?')" class="btn-sm btn-primary">
+                                                                                            推荐</a>
+                                                                                        <else/>
+                                                                                        <a href="javascript:;" onclick="rcmd({$vo.tid},0,'确认要取消推荐该话题?')" class="btn-sm btn-primary">
+                                                                                            取消推荐</a>
+                                                                                    </if><br/>
+                                                                                    <a href="javascript:;" data-id="{$vo.tid}" class="btn-sm btn-danger del">
+                                                                                                    删除</a>
+										</td>
+									</tr>
+								</volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+	</body>
+    <js file="__PUBLIC__/Admin/js/plugins/lightbox2/js/lightbox.min.js"/>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/datetimepick/js/lq.datetimepick.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/datetimepick/js/selectUi.js"></script>
+    <script type="text/javascript">
+    function rcmd(id,state,msg){
+        layer.confirm(msg, {icon: 3}, function(index){
+            $.post("{:U('rcmdtopic')}",{tid:id,state:state},function(data){
+                layer.msg(data.msg,{skin:"layui-layer-hui",time:1000,end:function(){
+                    if(data.status == 0){
+                        window.location.reload();
+                    }
+                }});
+            });
+        });
+    };
+    $(function(){
+        $(".del").click(function(){
+            var thi= $(this);            
+            var id = thi.data("id");
+            layer.confirm('确定删除该条话题？', {icon: 3}, function(index){
+                $.getJSON('{:U('deltopic','','')}/tid/'+id,function(data){
+                    layer.msg(data.msg,{skin:"layui-layer-hui",time:1000,end:function(){
+                        if(data.status == 0){
+                            window.location.reload();
+                        }
+                    }});
+                });
+            });
+        });
+        $("#ctime,#stime").on("click",function(e){
+                e.stopPropagation();
+                $(this).lqdatetimepicker({
+                    css : 'datetime-day',
+                    dateType : 'D',
+                    selectback : function(){
+                    }
+                });
+            });
+        });
+        
+        $(".comments").click(function(){
+            var tid = $(this).data("tid");
+            url ="{:U('comments')}?tid="+tid;
+            var index = layer.open({
+                type: 2,
+                title:'话题评论列表',
+                content: url,
+                area: ['800px', '600px'],
+                shadeClose: true,
+                skin: 'layui-layer-rim',
+                maxmin: true,
+                scrollbar: true,
+            });
+        });
+
+    </script>
+
+</html>

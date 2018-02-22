@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <include file="Public:header" />
+    <include file="Public:page_css" />
+    <style type="text/css">
+        .headimg_wrap{position: relative; width: 166px; overflow: hidden;}
+        .blurbg_wrap{width:200px;height: 100px;overflow: hidden; position: relative;}
+
+        .headimg_bg{width:220px;height: 120px;z-index: 1; position: absolute;left: -10px;top:-10px;}
+        .headimg_bg2{width:200px;height: 100px;z-index: 2; background: #fff;position: absolute;top:0;left: 0; opacity: .6;}
+        .headimg{width: 60px; height: 60px;border-radius: 0px; position: absolute;z-index: 10; margin:auto;left:0; right:0; top:0; bottom:0; border:1px solid #fff; box-shadow: 1px 1px 3px rgba(0,0,0,.2); }
+        .blur { 
+            filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+
+            -webkit-filter: blur(10px); /* Chrome, Opera */
+            -moz-filter: blur(10px);
+            -ms-filter: blur(10px);    
+                filter: blur(10px);
+            filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
+        }
+
+        .infoDetail p{
+            text-align: left;margin:0;line-height: 28px;font-family:"Helvetica Neue",HelveticaNeue,"Microsoft YaHei",Arial,Helvetica,sans-serif; color:#555;
+        }
+        .infoDetail p span{text-align:right;width:70px; display: inline-block; font-weight: 400; color:#888; }
+        .tags{ text-align: left; margin-top: 10px; }
+        .tags span{
+            padding: 1px 2px; background: #5397BF;border-radius: 2px; margin: 2px;display: inline-block; font-size: 12px;color:#fff;
+        }
+        .btns a{
+            margin:0 5px 5px 0; display: inline-block;  
+            -webkit-transition: all .1s linear;
+        }
+        .btns a{background: #fff; color:#333;border:1px solid #888;}
+        .bd{font-weight: bold;}
+        /*.btns a.openWindow:hover{background: #1c84c6; color:#fff;border:1px solid #1c84c6;}*/
+    </style>
+    <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+        
+        <include file="Public:nav" />
+        <div class="row">
+        <form class="form-horizontal" method="post" action="{:U('add_content')}"  >
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><i class="fa fa-tasks"></i> 编辑内容</h5>
+                        <div class="col-sm-10">
+                    </div>
+                    <div class="col-sm-1">
+                    <input type="submit"  class="btn btn-primary btn-sm"  value="保存">
+                    <input type="hidden" name="disc_id" value="{$disc_id}">
+                    </div>
+                    </div>
+                    <div class="ibox-content">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr class="long-tr">
+                                    <th width="10%">类型</th>
+                                    <th width="50%">名称</th>
+                                    <th width="50%">操作</th>
+                                </tr>
+                            </thead>
+                            <style>
+                                .role{
+                                    width: 100px;
+                                    height: 24px;
+                                }
+                                .desc{
+                                    width: 100px;
+                                }
+                                .dia{
+                                    width: 500px;
+                                }
+                            </style>
+                            <tbody class="demo">
+                            <if condition="$lists eq null">
+                                <tr class="long-td">
+                                    <td>
+                                        <select name="type[]" class="role">
+                                            <option value="1">cd</option>
+                                            <option value="2">dvd</option>
+                                            <option value="3">bd</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="dia" name="name[]">
+                                    </td>
+                                    <td><span class="btn-sm btn-success">添加</span> <span class="btn-sm btn-danger">删除</span></td>
+                                </tr>
+                            <else />
+                            <foreach name="lists" item="vo">
+                                    <tr class="long-td">
+                                        <td>
+                                            <select name="type[]" class="role">
+                                                <option value="1" <if condition="$vo['type'] eq 1">selected</if> >cd</option>
+                                                <option value="2" <if condition="$vo['type'] eq 2">selected</if> >dvd</option>
+                                                <option value="3" <if condition="$vo['type'] eq 3">selected</if> >bd</option>
+                                            </select>
+                                        </td>
+                                        
+                                        <td><input type="text" class="dia" name="name[]" value="{$vo.name}"></td>
+                                        <td><span class="btn-sm btn-success">添加</span> <span class="btn-sm btn-danger">删除</span></td>
+                                    </tr>
+                                    </foreach>
+                            </if>
+                            </tbody>
+
+                        </table>
+                        
+                        <div class="pages" style=" text-align: right;">
+                            <!-- {$page} -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+        <include file="Public:footer" />
+
+    </body>
+    <js file="__PUBLIC__/Admin/js/plugins/laydate/laydate.js"/>
+    <js file="__PUBLIC__/Admin/js/common.js"/>
+</html>
+
+<script type="text/javascript">
+    $(function(){
+        $('.demo').delegate('.btn-success','click',function(){
+            var html = '<tr class="long-td">';
+                html += '<td><select name="type[]" class="role"><option value="1" <if condition="$vo['type'] eq 1">selected</if> >cd</option><option value="2" <if condition="$vo['type'] eq 2">selected</if> >dvd</option><option value="3" <if condition="$vo['type'] eq 3">selected</if> >bd</option></select></td>';
+                html += '<td><input type="text" class="dia" name="name[]" value=""></td>';
+                html += '<td><span class="btn-sm btn-success">添加</span> <span class="btn-sm btn-danger">删除</span></tr>';
+            $(this).parent('td').parent('tr').after(html);
+        });
+
+        $('.demo').delegate('.btn-danger','click',function(){
+            $(this).parent('td').parent('tr').remove();
+            console.log($(this).parent())
+        });
+    });
+</script>

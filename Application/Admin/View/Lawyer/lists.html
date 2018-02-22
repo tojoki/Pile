@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/js/plugins/datetimepick/css/lq.datetimepick.css"/>
+    <style type="text/css">
+        .headimg_wrap{position: relative; width: 166px; overflow: hidden;}
+        .blurbg_wrap{width:200px;height: 100px;overflow: hidden; position: relative;}
+
+        .headimg_bg{width:220px;height: 120px;z-index: 1; position: absolute;left: -10px;top:-10px;}
+        .headimg_bg2{width:200px;height: 100px;z-index: 2; background: #fff;position: absolute;top:0;left: 0; opacity: .6;}
+        .headimg{width: 60px; height: 60px;border-radius: 0px; position: absolute;z-index: 10; margin:auto;left:0; right:0; top:0; bottom:0; border:1px solid #fff; box-shadow: 1px 1px 3px rgba(0,0,0,.2); }
+        .blur { 
+            filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+
+            -webkit-filter: blur(10px); /* Chrome, Opera */
+            -moz-filter: blur(10px);
+            -ms-filter: blur(10px);    
+                filter: blur(10px);
+            filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
+        }
+
+        .infoDetail p{
+            text-align: left;margin:0;line-height: 28px;font-family:"Helvetica Neue",HelveticaNeue,"Microsoft YaHei",Arial,Helvetica,sans-serif; color:#555;
+        }
+        .infoDetail p span{text-align:right;width:70px; display: inline-block; font-weight: 400; color:#888; }
+        .tags{ text-align: left; margin-top: 10px; }
+        .tags span{
+            padding: 1px 2px; background: #5397BF;border-radius: 2px; margin: 2px;display: inline-block; font-size: 12px;color:#fff;
+        }
+        .btns a{
+            margin:0 5px 5px 0; display: inline-block;  
+            -webkit-transition: all .1s linear;
+        }
+        .btns a{background: #fff; color:#333;border:1px solid #888;}
+        /*.btns a.openWindow:hover{background: #1c84c6; color:#fff;border:1px solid #1c84c6;}*/
+    </style>
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+
+		<include file="Public:nav" />
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content no-padding">
+						<ul class="list-group">
+                            <li class="list-group-item">
+                                <p class="text-success"><a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"><i class="fa fa-home"></i> 首页</a> /
+                                    <a href="{:U('Admin/User/index')}" class="tip-bottom">律师管理</a> /
+                                    <a href="javascript:;" class="tip-bottom">律师列表</a>
+                                </p>
+                            </li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+        <div class="row">
+            <!-- <div class="col-sm-1">
+            <a href="{:U('add')}" class="btn btn-primary btn-sm">添加活动</a>
+            </div> -->
+            <div class="col-sm-10">
+                <form action="__ACTION__" class="form-inline" method="get">
+                    <input type='hidden' name='doctorid' value="{$doctorid}"/>
+                    <div class="form-group">
+                    <label for="title" class="sr-only">姓名/账号</label>
+                    <input type="text" class="form-control input-sm" id="keyword" placeholder="昵称/账号" name="keyword" value="{$Think.request.keyword}" size="10">
+                    </div>
+                    <div class="form-group">
+                    <label for="title" class="sr-only">性别</label>
+                    <select name="sex" class="form-control input-sm">
+                        <option value="" <if condition="$Think.request.sex eq ''"> selected="selected"</if> >性别</option>
+                        <option value="1" <if condition="$Think.request.sex eq '1'"> selected="selected"</if>>男</option>
+                        <option value="2" <if condition="$Think.request.sex eq '2'"> selected="selected"</if>>女</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <label for="title" class="sr-only">注册时间&lt;</label>
+                    <input type="text" class="form-control input-sm" id="stime" placeholder="###&lt;注册时间" name="stime" value="{$Think.request.stime}" size="10">
+                    </div>
+                    <div class="form-group">
+                    <label for="title" class="sr-only">注册时间&gt;</label>
+                    <input type="text" class="form-control input-sm" id="etime" placeholder="注册时间&gt;###" name="etime" value="{$Think.request.etime}" size="10">
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-sm">搜索</button>
+                </form>
+            </div>
+        </div>
+        <br/>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="fa fa-tasks"></i> 律师列表</h5>
+					</div>
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+								<tr class="long-tr">
+									<th width="5%">ID</th>
+                                    <th width="8%">头像</th>
+                                    <th width="15%">姓名/账号</th>
+                                    <th width="8%">性别</th>
+                                    <th width="10%">年龄</th>
+                                    <th width="10%">注册时间</th>
+                                    <th width="10%">最近登陆</th>
+                                    <th width="20%">操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<volist name="list" id="vo">
+									<tr class="long-td">
+                                        <td>{$vo.uid}</td>
+                                        <td class="headimg_wrap">
+                                            <img src="{$vo.avator}" class="headimg"/>
+                                        </td> 
+                                        <td>
+                                        <div class="infoDetail">
+                                            <p>
+                                                {$vo.rname}
+                                            </p>
+                                            <p>
+                                                {$vo.phone}
+                                            </p>
+                                        </div>
+
+                                        </td>
+                                        <td>
+                                            <if condition="$vo.sex eq '1'">
+                                            男<elseif condition="$vo.sex eq '2'"/>女
+                                            <else/>未设置
+                                            </if>
+                                        </td>
+                                        <td>
+                                           {$vo.age}
+                                        </td>
+                                        <td>
+                                           {$vo.ctime|date="Y-m-d H:i",###}
+                                        </td>
+                                       <td>
+                                            {$vo.last_login_time|date="Y-m-d H:i",###}
+                                       </td>
+                                       <td class="btns" style="text-align:left;">
+                                            <a href="javascript:;" class="btn-sm btn-success openWindow" data-userid="{$vo.uid}" data-type="edit">详细</a>
+                                            <empty name="vo['status']">
+                                                <a href="{:U('userLock',array('userid'=>$vo['uid'],'state'=>1))}" class="btn-sm btn-default">禁用</a>
+                                            <else/>
+                                                <a href="{:U('userLock',array('userid'=>$vo['uid'],'state'=>0))}" class="btn-sm btn-primary">启用</a>
+                                            </empty>
+<!--                                            <a href="javascript:;" class="btn-sm btn-success openWindow" data-userid="{$vo.uid}" data-type="cases">病例</a>-->
+					</td>
+									</tr>
+								</volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+	</body>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/datetimepick/js/lq.datetimepick.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/datetimepick/js/selectUi.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        var config = {
+            cases:{
+                title:"用户病例",
+                url:"{:U("Admin/User/cases",'','')}",
+            },
+            medicine:{
+                title:"用药记录",
+                url:"{:U("Admin/User/medicine",'','')}",
+            },
+            edit:{
+                title:"用户资料",
+                url:"{:U("Admin/User/userEdit",'','')}",
+            },
+            breathlog:{
+                title:"哮喘日志",
+                url:"{:U("Admin/User/breathlog",'','')}",
+            },
+            testlog:{
+                title:"测试记录",
+                url:"{:U("Admin/User/testlog",'','')}",
+            }
+        };
+        $("a.btnrcmd").click(function(){
+               var url = $(this).attr('href');
+               $.get(url,{},function(data){
+                    layer.msg(data.msg,{skin:"layui-layer-hui",time:1500,end:function(){
+                         if(data.status == 0){
+                             window.location.href = "{:U('index')}";
+                         }
+                    }});
+               });
+               return false;
+        });
+
+        $(".openWindow").click(function(){
+            var userid = $(this).data("userid");
+            url = eval("config."+$(this).data("type")+".url") +"/userid/"+userid;
+            var index = layer.open({
+                type: 2,
+                title:eval("config."+$(this).data("type")+".title"),
+                content: url,
+                area: ['800px', '600px'],
+                shadeClose: true,
+                skin: 'layui-layer-rim',
+                maxmin: true,
+                scrollbar: true,
+            });
+        });
+
+        $("#stime,#etime").on("click",function(e){
+            e.stopPropagation();
+            $(this).lqdatetimepicker({
+                css : 'datetime-day',
+                dateType : 'D',
+                selectback : function(){
+
+                }
+            });
+        });
+
+    });
+
+    </script>
+</html>

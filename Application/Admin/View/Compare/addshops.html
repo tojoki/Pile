@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />	      	
+	<include file="Public:page_css" />
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=c4KuBrpdheGmtOQliGX0IZkx939vKtpn"></script>
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+		<div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>添加超市</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"> 主页</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="tip-bottom">首页管理</a>
+                    </li>
+                    <li>
+                        <strong>添加超市</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+        <br/>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+                                            <h5>添加超市</h5>
+                                            <div class="ibox-tools">
+                                                <a class="collapse-link">
+                                                    <i class="fa fa-chevron-up"></i>
+                                                </a>
+                                            </div>
+					</div>
+					<div class="ibox-content">
+						<form class="form-horizontal" method="post" action="__URL__/addshops" name="basic_validate" id="myform">
+                                                        <notempty name="data">
+                                                            <input name="sid" type="hidden" value="{$data.sid}"/>
+                                                        </notempty>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">超市名称</label>
+								<div class="col-sm-6">
+									<input type="text" datatype="*" nullmsg="请填写超市名称" name="sname" placeholder="超市名称" class="form-control" value="{$data.sname}">
+								</div>
+							</div>
+                                                        <div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">封面</label>
+								<div class="col-sm-2">						
+                                                                    <img id="upload_img" src="{$data.poster|default='/Public/Admin/img/no_img.jpg'}" style="width: 100px;height: 60px" />
+								</div>
+								<div class="col-sm-3">
+                                                                    <input type="hidden" name="poster" value="{$data.poster}" id="poster" datatype="*" nullmsg="请上传商品图片" />
+                                                                    <input id="photo_file" name="photo_file" type="file" multiple="true" value="" />
+								</div>
+							</div>
+                                                        <div class="hr-line-dashed"></div>
+                                                        <div class="form-group">
+								<label class="col-sm-2 control-label">联系人</label>
+								<div class="col-sm-6">
+									<input type="text" datatype="*" nullmsg="请填写联系人" name="linkman" placeholder="联系人" class="form-control" value="{$data.linkman}">
+								</div>
+							</div>
+                                                        <div class="hr-line-dashed"></div>
+                                                        <div class="form-group">
+								<label class="col-sm-2 control-label">联系电话</label>
+								<div class="col-sm-6">
+									<input type="text" datatype="*" nullmsg="请填写联系电话" name="linkphone" placeholder="联系电话" class="form-control" value="{$data.linkphone}">
+								</div>
+							</div>
+                                                        <div class="hr-line-dashed"></div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">超市地址</label>
+                                                            <div class="col-sm-6">
+                                                                <div class="input-group" style="margin-bottom: 0;">
+                                                                    <input class="form-control" name="address" datatype='*' nullmsg='请填写地址' id="address" type="text" value="{$data['address']}">
+                                                                    <span onclick="addressmap()" style="cursor: pointer;" class="input-group-addon">检索地图</span>
+                                                                </div>
+                                                                <div id="allmap"  style="width:100%; height:300px; margin:0 auto; float:left;border:1px solid #ccc;"></div>
+                                                                <input type="text" id="coord" readonly="readonly" name="coord" datatype='*' nullmsg='请检索地址' placeholder="点击检索底图获取坐标" class="form-control"  value="{$data['coord']}"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">备注</label>
+								<div class="col-sm-6">
+                                                                    <textarea type="text" rows="5" name="memo" class="form-control">{$data.memo}</textarea>
+								</div>
+							</div>
+<!--							<div class="hr-line-dashed"></div>
+                                                        <div class="form-group">
+                                                                <label class="col-sm-2 control-label">排序值</label>
+								<div class=" col-sm-2">
+									<input type="text" name="sortval" datatype="n" nullmsg="请填写排序值" errormsg="排序值格式错误" placeholder="排序值" class="form-control m-t-none" value="{$data.sortval|default=0}">
+								</div>
+							</div>-->
+                                                        <div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<div class="col-sm-4 col-sm-offset-2">
+                                                                    <button class="btn btn-primary" type="submit">保存</button>
+                                                                    <a class="btn btn-white" href="javascript:history.back();">取消</a>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+        <include file="Public:footer" />
+	<js file='__PUBLIC__/Common/js/uploadify/jquery.uploadify.min.js' />		
+	<link rel="stylesheet" href="__PUBLIC__/Common/js/uploadify/uploadify.css"> 
+        <script type="text/javascript" src='__PUBLIC__/Admin/js/plugins/Validform/Validform_v5.3.1_min.js'></script>
+        <style type="text/css" src='__PUBLIC__/Admin/css/plugins/Validform/validform.css'></style>
+	<script type="text/javascript">
+            var succpath = "{:U('shops')}";
+            $("#photo_file").uploadify({
+                'swf': '__PUBLIC__/Common/js/uploadify/uploadify.swf',
+                'uploader': '{:U("Upload/upload")}',
+                'cancelImg': '__PUBLIC__/Common/js/uploadify/uploadify-cancel.png',
+                'buttonText': '上传图片',
+                'height': 35,
+                'fileTypeExts': '*.gif;*.jpg;*.png',
+                'queueSizeLimit': 1,
+                'onUploadSuccess': function(file, data, response) {
+                    $("#poster").val('/Uploads' + data);
+                    $("#upload_img").attr('src', '__ROOT__/Uploads' + data).show();
+                }
+            });
+            function show_result_msg(msg,o,cssctl){
+                if(o.type>2){
+                    layer.msg(msg,{skin:"layui-layer-hui",time:1500});
+                    return false;
+                }
+            }
+            function show_hint(msg){
+                layer.msg(msg,{skin:"layui-layer-hui",time:1500});
+            }
+            $(document).ready(function(){
+                    var valid = $("#myform").Validform({
+                    tiptype:show_result_msg,
+                    tipSweep:true,
+                    postonce:true,
+                    ajaxPost:true,
+                    callback:function(data){
+                        layer.msg(data.msg,{skin:"layui-layer-hui",time:1500,end:function(){
+                            if(data.status == 0){
+                                window.location.href = succpath;
+                            }
+                        }});
+                    }
+                });
+            });
+	</script>
+        <script type="text/javascript">
+        var id = "{$data.sid}";
+        // 百度地图API功能
+        var map = new BMap.Map("allmap");
+        if(id != '') {
+            var coord = ($('#coord').val()).split(',');
+            var lng = coord[0];
+            var lat = coord[1];
+            var point = new BMap.Point(lng,lat);
+            var marker1 = new BMap.Marker(point);  //创建标注
+            map.addOverlay(marker1);
+            map.centerAndZoom(point,16);  
+        } else {
+            var point = new BMap.Point(116.331398,39.897445);
+            map.centerAndZoom(point,12);
+        }
+        map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+        function showcitymap(city,address) {
+            //alert(city);
+            // 创建地址解析器实例
+            var myGeo = new BMap.Geocoder();
+            // 将地址解析结果显示在地图上,并调整地图视野
+            myGeo.getPoint(address, function(point){
+                if (point) {
+                    if(city == address) {
+                        map.centerAndZoom(point, 12);
+                    } else {
+                        map.centerAndZoom(point, 16);
+                    }
+                    $('#coord').val(point.lng + "," + point.lat);
+                    map.addOverlay(new BMap.Marker(point));
+                }else{
+                    layer.msg('您选择地址没有解析到结果!',{skin:"layui-layer-hui",time:1500});
+                }
+            }, city);
+        }
+
+        function showInfo(e){
+            $('#coord').val(e.point.lng + "," + e.point.lat);
+            //alert(e.point.lng + ", " + e.point.lat);
+        }
+        map.addEventListener("click", showInfo);
+
+
+        function addressmap() {
+            var address = $('#address').val();
+            if(address == '') {
+                layer.msg('请输入地址',{skin:"layui-layer-hui",time:1500});
+                return false;
+            }
+            showcitymap($('#city').val(),address);
+        }
+
+
+        var shareHandler = {
+            'doAdd' : function(form) {
+                var parent = $(form);
+                if ($('#title', parent).val() == '') {
+                    message('请输入标题！', '', 'error');
+                    return false;
+                }
+                return true;
+            },
+        };
+
+    </script>
+	</body>
+</html>

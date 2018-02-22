@@ -1,0 +1,85 @@
+<extend name='Public/base' />
+<block name='content'>
+	<div id='content'>
+		<div class="tag-list">
+			<ul class="list-inline">
+				<li><a href="__CONTROLLER__/index" class="btn btn-default btn-xs">ALL</a></li>
+				<li><a href="__CONTROLLER__/index?type=single" class="btn btn-default btn-xs">SINGLE</a></li>
+				<li><a href="__CONTROLLER__/index?type=album" class="btn btn-default btn-xs">ALBUM</a></li>
+				<li><a href="__CONTROLLER__/index?type=dvd" class="btn btn-default btn-xs">DVD</a></li>
+				<li><a href="__CONTROLLER__/index?type=blu-ray" class="btn btn-default btn-xs">Blu-ray</a></li>
+				<li><a href="__CONTROLLER__/index?type=special" class="btn btn-default btn-xs">SPECIAL</a></li>
+			</ul>
+		</div>
+		<div id="music-list" class="details">
+			<ul class="content-list list-inline disc-list row">
+			<?php
+				foreach($list as $v){
+			?>
+				<li class="col-xs-12 col-sm-3">
+					<a href="__CONTROLLER__/info?id={$v['id']}">
+						<img alt="{$v['name']}" src="__ROOT__/{$v['cover1']}" class="cover_{$v['id']}" >
+					</a>
+					<div class="music-meta">
+						<div class="time">{$v['rtime']|date='Y-m-d',###} Release</div>
+						<div class="title">
+							<h3>
+								<a href="__CONTROLLER__/info?id={$v['id']}">{$v['name']}</a>
+							</h3>
+						</div>
+						<div class="category label label-default">{$v['type']}</div>
+						<div class="category label label-default">{$v['version']==1?'日':'中'}</div>
+						<if condition="$v['cover2'] neq null">
+							<div class="category label label-default change_cover2">cover2</div>
+							<input name='cover2' type='hidden' value="__ROOT__/{$v['cover2']}">
+							<input name='id' type='hidden' value="{$v['id']}">
+							<div class="category label label-default change_cover1" style='display:none;'>cover1</div>
+							<input name='cover1' type='hidden' value="__ROOT__/{$v['cover1']}">
+						</if>
+					</div>
+				</li>
+			<?php
+				}
+			?>
+			</ul>
+		</div>
+		<div class="paging">
+			<div class="pagination">
+				{$page}
+			</div>
+		</div>
+		<script type="text/javascript" src='__JS__/jquery-1.9.1.min.js'></script>
+		<script type="text/javascript">
+			$('.change_cover2').on('click',function(){
+				var cover2=$(this).next().val();
+				var disc_id=$(this).next().next().val();
+				$('.cover_'+disc_id).attr('src',cover2);
+				$('.change_cover2').hide();
+				$('.change_cover1').show();
+			});
+			$('.change_cover1').on('click',function(){
+				var cover1=$(this).next().val();
+				var disc_id=$(this).prev().val();
+				$('.cover_'+disc_id).attr('src',cover1);
+				$('.change_cover1').hide();
+				$('.change_cover2').show();
+			});
+		</script>
+	</div>
+</block>
+
+
+
+
+	
+
+
+
+		
+
+
+
+
+
+		
+		

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+		<div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>话题类型管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#"><i class="fa fa-home"></i> 主页</a>
+                    </li>
+                    <li>
+                        <a>话题管理</a>
+                    </li>
+                    <li>
+                        <strong>话题类型管理</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+		<br />
+		<a href="{:U('topic/addcat')}" class="btn btn-primary">添加类型</a>
+		<br />
+		<br />
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+                                                            <tr class="long-tr">
+                                                                <th width="30%">分类名称</th>									
+                                                                <th width="25%">创建时间</th>
+                                                                <th width="10%">是否推荐</th>
+                                                                <th width="10%">排序</th>
+                                                                <th>操作</th>
+                                                            </tr>
+							</thead>
+							<tbody>
+								<volist name="list" id="vo">
+									<tr class="long-td">										
+                                                                                <td>
+                                                                                    {$vo.cname}
+                                                                                </td>
+										<td>{$vo.ctime|date='Y-m-d H:i:s',###}</td>
+                                                                                <td><if condition="$vo['isrcmd'] eq '0'">否<elseif condition="$vo['isrcmd'] eq '1'" />是</if> </td>
+                                                                                <td>{$vo.sortval}</td>
+										<td>
+											<a href="{:U('addcat',array('catid'=>$vo['catid']))}" class="btn btn-primary btn-mini">
+                                                                                            编辑</a>&nbsp;&nbsp;
+                                                                                        <if condition="$vo['isrcmd'] eq '0'">
+                                                                                            <a href="{:U('rcmdcat',array('catid'=>$vo['catid'],'status'=>1))}" msg='确认推荐该分类？' class="btn btn-primary btn-mini rcmdbtn">推荐</a>
+                                                                                            <elseif condition="$vo['isrcmd'] eq '1'" />
+                                                                                            <a href="{:U('rcmdcat',array('catid'=>$vo['catid'],'status'=>0))}" msg='确认取消推荐？'  class="btn btn-primary btn-mini rcmdbtn">取消推荐</a>
+                                                                                        </if>
+                                                                                               &nbsp;&nbsp;
+											<a href="javascript:;" onclick="return del({$vo.catid});" class="btn btn-danger">
+												删除</a>
+										</td>										
+									</tr>
+								</volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+                    function del(id){
+                        layer.confirm('确认删除该类型？', {icon: 3}, function(index){
+                            layer.close(index);
+                            $.post("{:U('delcat')}",{catid:id},function(data){
+                                layer.msg(data.msg,{skin:"layui-layer-hui",time:1500,end:function(){
+                                    if(data.status == 0){
+                                        window.location.reload();
+                                    }   
+                                }});
+                            });
+                        });
+                    }
+                    $(".rcmdbtn").on('click',function(){
+                        var msg = $(this).attr('msg');
+                        var href = $(this).attr('href');
+                        layer.confirm(msg, {icon: 3}, function(index){
+                            layer.close(index);
+                            $.get(href,{},function(data){
+                                layer.msg(data.msg,{skin:"layui-layer-hui",time:1500,end:function(){
+                                    if(data.status == 0){
+                                        window.location.reload();
+                                    }   
+                                }});
+                            });
+                        });
+                        return false;
+                    });
+		</script>
+		<include file="Public:footer" />
+	</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />	      	
+	<include file="Public:page_css" />
+        <js file='__PUBLIC__/Admin/js/plugins/webuploader/webuploader.min.js' />
+        <css file='__PUBLIC__/Admin/css/plugins/webuploader/webuploader.css' />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+		<div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>资讯管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"> 主页</a>
+                    </li>
+                    <li>
+                        <a href="{:U('Exchange/goods')}" class="tip-bottom">积分兑换</a>
+                    </li>
+                    <li>
+                        <strong>添加商品</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+        <br/>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+                                            <h5>编辑视频</h5>
+                                            <div class="ibox-tools">
+                                                <a class="collapse-link">
+                                                    <i class="fa fa-chevron-up"></i>
+                                                </a>
+                                            </div>
+					</div>
+					<div class="ibox-content">
+						<form class="form-horizontal" method="post" action="__URL__/videoadd" name="basic_validate" id="myform">
+                                                        <notempty name="data">
+                                                                <input name="vid" type="hidden" value="{$data.vid}"/>
+                                                        </notempty>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">视频标题</label>
+								<div class="col-sm-6">
+									<input type="text" datatype="*" nullmsg="请填写视频标题" name="title" placeholder="视频标题" class="form-control" value="{$data.title}">
+								</div>
+							</div>
+                                                        <div class="hr-line-dashed"></div>
+							<div class="form-group">
+                                                            <label class="col-sm-2 control-label">视频简介</label>
+                                                            <div class="col-sm-6">
+                                                                <textarea type="text" rows="5" name="describes" class="form-control">{$data.describes}</textarea>
+                                                            </div>
+							</div>
+							<div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">封面</label>
+								<div class="col-sm-2">						
+									<img id="upload_img" src="{$data.poster|default='/Public/Admin/img/no_img.jpg'}" style="width: 100px;height: 60px" />
+								</div>
+								<div class="col-sm-3">
+                                                                    <input type="hidden" name="poster" value="{$data.poster}" id="poster" datatype="*" nullmsg="请上传视频封面" />
+                                                                    <input id="photo_file" name="photo_file" type="file" multiple="true" value="" />
+								</div>
+							</div>
+                                                        <div class="form-group" id="videodiv">
+                                                            <input type="hidden" name="filepath" id="filepath" value="{$data.filepath}"/>
+                                                            <label class="col-sm-2 control-label">上传视频</label>
+                                                            <div class="col-sm-10">  
+                                                            <div class="row">  
+                                                                <div class="col-sm-10" id="uploadImgWrap">
+                                                                <if condition="$data['filepath']">
+                                                                    <div class="uploadVideoItem">
+                                                                        <div class="info">{$data.filepath}</div>
+                                                                        <span class="state"></span>
+                                                                        <i class="fa fa-close delBtn"></i>
+                                                                    </div>
+                                                                </if>
+                                                                </div>
+                                                            </div>             
+                                                            <div class="row">
+                                                                <div class="btns col-sm-10">
+                                                                    <div id="picker" class="pull-left">选择文件</div>
+                                                                </div>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+							<div class="hr-line-dashed"></div>
+							<div class="form-group">
+                                                                <label class="col-sm-2 control-label">排序值</label>
+								<div class=" col-sm-2">
+									<input type="text" name="sortval" datatype="n" nullmsg="请填写排序值" errormsg="排序值格式错误" placeholder="排序值" class="form-control m-t-none" value="{$data.sortval}">
+								</div>
+							</div>
+                                                        <div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<div class="col-sm-4 col-sm-offset-2">
+                                                                    <button class="btn btn-primary" type="submit">保存内容</button>
+                                                                    <a class="btn btn-white" href="javascript:history.back();">取消</a>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+        <include file="Public:footer" />
+	<js file='__PUBLIC__/Common/js/uploadify/jquery.uploadify.min.js' />		
+	<link rel="stylesheet" href="__PUBLIC__/Common/js/uploadify/uploadify.css"> 
+        <script type="text/javascript" src='__PUBLIC__/Admin/js/plugins/Validform/Validform_v5.3.1_min.js'></script>
+	<script type="text/javascript">
+            function show_result_msg(msg,o,cssctl){
+                if(o.type>2){
+                    layer.msg(msg,{skin:"layui-layer-hui",time:1500});
+                    return false;
+                }
+            }
+            function show_hint(msg){
+                layer.msg(msg,{skin:"layui-layer-hui",time:1500});
+            }
+            var valid = $("#myform").Validform({
+                tiptype:show_result_msg,
+                tipSweep:true,
+                postonce:true,
+                beforeSubmit:function(form){
+                    if($(".uploadVideoItem").size() == 0){
+                        show_hint('请上传视频');
+                        return false;
+                    }
+                    if($(".uploadVideoItem").size()>0){
+                        $("#filepath").val($(".uploadVideoItem").eq(0).attr('realpath'));
+                    }
+                    return true;
+                },
+                ajaxPost:true,
+                callback:function(data){
+                    layer.msg(data.msg,{skin:"layui-layer-hui",time:1500,end:function(){
+                        if(data.status == 0){
+                            window.location.href = succpath;
+                        }
+                    }});
+                }
+            });
+            
+            $("#photo_file").uploadify({
+                'swf': '__PUBLIC__/Common/js/uploadify/uploadify.swf',
+                'uploader': '{:U("Upload/upload")}',
+                'cancelImg': '__PUBLIC__/Common/js/uploadify/uploadify-cancel.png',
+                'buttonText': '上传图片',
+                'height': 35,
+                'fileTypeExts': '*.gif;*.jpg;*.png',
+                'queueSizeLimit': 1,
+                'onUploadSuccess': function(file, data, response) {
+                    $("#poster").val('/Uploads' + data);
+                    $("#upload_img").attr('src', '__ROOT__/Uploads' + data).show();
+                }
+            });
+            var uploadUrl = '{:U("Upload/upload")}'; //图片上传地址
+            var swfpath = '__PUBLIC__/Admin/js/plugins/webuploader/Uploader.swf';
+            var succpath = "{:U('video')}";
+            var videopath ='{:U("Upload/uploadvideo")}'; 
+            var $list = $('#uploadImgWrap'),
+            $btn  = $('#ctlBtn'),
+            state = 'pending',
+            uploader;
+            //图片上传webuploader
+            var uploader = WebUploader.create({
+                auto : true,
+                swf: swfpath,
+                server: videopath,
+                pick: '#picker',
+                resize: false,
+                accept: {
+                    title: 'video',
+                    extensions: 'mp4',
+                    //mimeTypes: 'application/octet-stream'
+                }
+            });
+            // 当有文件添加进来的时候
+            uploader.on( 'fileQueued', function( file ) {        
+                console.log(file.id);
+                var $li = $(
+                        '<div id="' + (file.id) + '" class="uploadVideoItem">' +
+                            '<div class="info">' + file.name + '</div>' +
+                            '<span class="state"></span>'+
+                            '<i class="fa fa-close delBtn"></i>'+
+                        '</div>'
+                        );
+                $list.append( $li );
+            });
+
+            // 文件上传过程中创建进度条实时显示。
+            uploader.on( 'uploadProgress', function( file, percentage ) {
+                var $li = $( '#'+file.id ),
+                    $percent = $li.find('.progress .progress-bar');
+
+                // 避免重复创建
+                if ( !$percent.length ) {
+                    $percent = $('<div class="progress progress-striped active" style="height:3px;margin-top:5px;" >' +
+                      '<div class="progress-bar" role="progressbar" style="width: 0%">' +
+                      '</div>' +
+                    '</div>').appendTo( $li ).find('.progress-bar');
+                }
+
+                $li.find('.state').text('上传中');
+                $percent.css( 'width', percentage * 100 + '%' );
+            });
+            uploader.on( 'uploadSuccess', function( file , rsObj) {
+                // 
+                $( '#'+file.id).attr('realpath',rsObj._raw);
+                $( '#'+file.id ).find('.state').text('已上传').addClass('succ');
+            });
+
+            uploader.on( 'uploadError', function( file ) {
+                $( '#'+file.id ).find('.state').text('上传出错').addClass('err');
+            });
+
+            uploader.on( 'uploadComplete', function( file ) {
+                $( '#'+file.id ).find('.progress').fadeOut();
+            });
+
+            $(document).on('click','.delBtn',function(){
+                $(this).parents('.uploadVideoItem').remove();
+            });
+	</script>
+	</body>
+</html>

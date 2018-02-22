@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>律师管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"> 主页</a>
+                    </li>
+                    <li>
+                        <a href="{:U('User/index')}" class="tip-bottom">律师管理</a>
+                    </li>
+                    <li>
+                        <strong>律师认证</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="fa fa-tasks"></i> 律师认证</h5>
+					</div>
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+                                                            <tr class="long-tr">
+                                                                <th>用户</th>                               
+                                                                <th>姓名</th>
+                                                                <th>律所</th>
+                                                                <th>性别</th>
+                                                                <th>年龄</th>
+                                                                <th>状态</th>
+                                                                <th>申请时间</th>
+                                                                <th width="20%">操作</th>
+                                                            </tr>
+							</thead>
+							<tbody>
+                                <volist name="model" id="vo">
+                                    <tr class="long-td">
+                                        <td>{$vo.phone}</td>                               
+                                        <td>{$vo.rname}</td>
+                                        <td>{$vo.company}</td>
+                                        <td><if condition="$vo['gender'] eq '1'">
+                                            男<elseif condition="$vo['gender'] eq '2'"/>女
+                                            </if> 
+                                        </td>
+                                        <td>{$vo.age}</td>
+                                        <td>
+                                            <switch name="vo['authstatus']" >
+                                                <case value="1">待审核</case>
+                                                <case value="2">驳回</case>
+                                            </switch>
+                                        </td>
+                                        <td>{:date('m-d H:i:s',$vo['ctime'])}</td>
+                                        <td width="20%">
+                                            <a href="{:U('lawyerdetail',array('uid'=>$vo['uid']))}" class="btn btn-primary">详情</a>
+                                            <if condition="$vo['authstatus'] eq '1'">
+                                                <a href="{:U('lawyerdetail',array('uid'=>$vo['uid'],'showop'=>1))}" class="btn btn-primary">审核</a>
+                                            </if>
+                                        </td>
+                                    </tr>
+                                </volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+
+	</body>
+    <script type="text/javascript">
+        
+    </script>
+
+</html>

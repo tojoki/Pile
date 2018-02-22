@@ -1,0 +1,6 @@
+[ 2017-06-03T21:30:29+08:00 ] 119.207.76.149 /index.php?m=member&c=index&a=register
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000233s ]
+ERR: 无法加载模块:Member
+

@@ -1,0 +1,116 @@
+<extend name='Public/base' />
+<block name='content'>
+	<div id='content'>
+		<div id="music-view" class="details">
+			<ul class="content-list list-inline ">
+				<li class="row">
+					<div class="product-image">
+						<img alt="{$info['name']}" class="img-responsive col-sm-5 cover" src="__ROOT__/{$info['cover1']}">
+					</div>
+					<div class="music-meta col-sm-7">
+						<div class="title">
+							<h3>{$info['name']}</h3>
+						</div>
+						<div class="category label label-default">{$info['type']}</div>
+						<div class="category label label-default">{$info['version']==1?'日':'中'}</div>
+						<if condition="$info['cover2'] neq null">
+							<div class="category label label-default change_cover2">cover2</div>
+							<input name='cover2' type='hidden' value="__ROOT__/{$info['cover2']}">
+							<input name='id' type='hidden' value="{$info['id']}">
+							<div class="category label label-default change_cover1" style='display:none;'>cover1</div>
+							<input name='cover1' type='hidden' value="__ROOT__/{$info['cover1']}">
+						</if>
+						<div class="music-description">
+							<div class="disc-info">{$info['rtime']|date='y.m.d',###} Release<br>
+								{$info['code']} / price:￥{$info['price']}
+							</div>
+							<div class="disc-text"><p>収録曲</p></div>
+						<?php
+							if(count($cdList)){
+						?>
+							<div class="disc-title">CD</div>
+
+							<ul class="disc-list">
+							<?php
+								foreach($cdList as $v){
+							?>
+								<li>{$v['name']}</li>
+							<?php
+								}
+							?>
+							</ul>
+						<?php
+							}
+							if(count($dvdList)){
+						?>
+							<div class="disc-title">DVD</div>
+
+							<ul class="disc-list">
+							<?php
+								foreach($dvdList as $v){
+							?>
+								<li>{$v['name']}</li>
+							<?php
+								}
+							?>
+							</ul>
+						<?php
+							}
+							if(count($bdList)){
+						?>
+							<div class="disc-title">Blu-ray</div>
+
+							<ul class="disc-list">
+							<?php
+								foreach($bdList as $v){
+							?>
+								<li>{$v['name']}</li>
+							<?php
+								}
+							?>
+							</ul>
+						<?php
+							}
+						?>
+						</div>
+						<div class="social clearfix">
+							<!-- <ul class="list-inline pull-right">
+								<li class="sns-twitter">
+									<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://pile.asia/musics/2093" data-text="Melody【初回限定盤A(CD+DVD)】" data-lang="ja"></a>
+								</li>
+								<li class="sns-facebook">
+									<iframe src="./Pile Official Web Site4_files/like.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:108px; height:21px;" allowtransparency="true"></iframe>
+								</li>
+								<li class="line-btn">
+									<span>
+										<script type="text/javascript" src="./Pile Official Web Site4_files/line-button.js"></script>
+										<script type="text/javascript">
+											new media_line_me.LineButton({"pc":true,"lang":"ja","type":"a"});
+										</script>
+									</span>
+								</li>
+							</ul> -->
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript" src='__JS__/jquery-1.9.1.min.js'></script>
+		<script type="text/javascript">
+			$('.change_cover2').on('click',function(){
+				var cover2=$(this).next().val();
+				var disc_id=$(this).next().next().val();
+				$('.cover').attr('src',cover2);
+				$('.change_cover2').hide();
+				$('.change_cover1').show();
+			});
+			$('.change_cover1').on('click',function(){
+				var cover1=$(this).next().val();
+				var disc_id=$(this).prev().val();
+				$('.cover').attr('src',cover1);
+				$('.change_cover1').hide();
+				$('.change_cover2').show();
+			});
+		</script>
+	</div>
+</block>

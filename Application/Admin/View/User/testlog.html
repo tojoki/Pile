@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <include file="Public:header" />
+    <include file="Public:page_css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/js/plugins/datetimepick/css/lq.datetimepick.css"/>
+    <style type="text/css">
+    </style>
+	<body class="fixed-sidebar full-height-layout gray-bg">
+            <div class="row" style="margin-top:10px;margin-left: 10px;">
+            <div class="col-sm-10">
+                <form action="__ACTION__" class="form-inline" method="get">
+                    <input type="hidden" name="userid" value="{$userid}"/>
+                    <div class="form-group">
+                    <input type="text" class="form-control input-sm" id="stime" placeholder="开始时间" name="stime" value="{$stime}" size="10">
+                    </div>至
+                    <div class="form-group">
+                    <input type="text" class="form-control input-sm" id="etime" placeholder="结束时间" name="etime" value="{$etime}" size="10">
+                    </div>
+                    <div class="form-group">
+                        <select name="type" class="form-control input-sm">
+                            <option value="1" <if condition="$type eq '1'"> selected="selected"</if>>PEF</option>
+                            <option value="2" <if condition="$type eq '2'"> selected="selected"</if>>FEV1</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-sm">搜索</button>
+                </form>
+            </div>
+        </div>
+        <br/>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+                                    <div class="ibox-content">
+                                        <table class="table table-bordered">
+                                        <thead>
+                                            <tr class="long-tr">
+                                                <th width="18%">测试时间</th>
+                                                <th width='12%'>测试值</th>
+                                                <th width='50%'>症状</th>
+                                                <th>备注</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <foreach name='list' item='vo'>
+                                            <tr>
+                                                <td>{$vo.ctime|date='Y-m-d H:i',###}</td>
+                                                <td>{$vo.resultvalue} L/m</td>
+                                                <td>
+                                                    <if condition="$vo['value1']">气喘:{:test_level($vo['value1'])}</if>
+                                                    <if condition="$vo['value2']">咳嗽:{:test_level($vo['value2'])}</if>
+                                                    <if condition="$vo['value3']">喘鸣:{:test_level($vo['value3'])}</if>
+                                                    <if condition="$vo['value4']">胸痛:{:test_level($vo['value4'])}</if>
+                                                    <if condition="$vo['value5']">有痰:{:test_level($vo['value5'])}</if>
+                                                    <if condition="$vo['value6']">胃灼热:{:test_level($vo['value6'])}</if>
+                                                </td>
+                                                <td>{$vo.memo}</td>
+                                            </tr>
+                                        </foreach>
+					</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+            <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/datetimepick/js/lq.datetimepick.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/datetimepick/js/selectUi.js"></script>
+    <script type="text/javascript">
+        $("#stime,#etime").on("click",function(e){
+            e.stopPropagation();
+            $(this).lqdatetimepicker({
+                css : 'datetime-day',
+                dateType : 'D',
+                selectback : function(){
+                }
+            });
+        });
+    </script>
+</html>

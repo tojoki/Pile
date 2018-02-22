@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />	      	
+	<include file="Public:page_css" />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+		<div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>登录广告</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"> 主页</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="tip-bottom">首页管理</a>
+                    </li>
+                    <li>
+                        <strong>登录广告</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+        <br/>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+                                            <h5>登录广告</h5>
+                                            <div class="ibox-tools">
+                                                <a class="collapse-link">
+                                                    <i class="fa fa-chevron-up"></i>
+                                                </a>
+                                            </div>
+					</div>
+					<div class="ibox-content">
+						<form class="form-horizontal" method="post" action="__URL__/home" name="basic_validate" id="myform">
+                                                        <notempty name="data">
+                                                            <input name="aid" type="hidden" value="{$data.aid}"/>
+                                                        </notempty>
+                                                        <div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">广告图</label>
+                                                                <div class="col-sm-3">
+                                                                    <input type="hidden" name="poster" value="{$data.poster}" id="poster" datatype="*" nullmsg="请上传广告图片" />
+                                                                    <input id="photo_file" name="photo_file" type="file" multiple="true" value="" />
+								</div>
+								<div class="col-sm-2">						
+                                                                    <img id="upload_img" src="{$data.poster|default='/Public/Admin/img/no_img.jpg'}" style="max-width: 300px;" />
+								</div>
+							</div>
+                                                        <div class="form-group">
+								<label class="col-sm-2 control-label">链接地址</label>
+								<div class="col-sm-6">
+									<input type="text" datatype="*" nullmsg="请填写链接地址" name="links" placeholder="链接地址" class="form-control" value="{$data.links}">
+								</div>
+							</div>
+							<div class="hr-line-dashed"></div>
+                                                        <div class="form-group">
+                                                                <label class="col-sm-2 control-label">展示时间</label>
+								<div class=" col-sm-2">
+									<input type="text" name="showtime" datatype="n" nullmsg="请填写展示时间" errormsg="展示时间格式错误" placeholder="展示时间" class="form-control m-t-none" value="{$data.showtime|default=2}">
+								</div>
+							</div>
+                                                        <div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<div class="col-sm-4 col-sm-offset-2">
+                                                                    <button class="btn btn-primary" type="submit">保存</button>
+                                                                    <a class="btn btn-white" href="javascript:history.back();">取消</a>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+        <include file="Public:footer" />
+	<js file='__PUBLIC__/Common/js/uploadify/jquery.uploadify.min.js' />		
+	<link rel="stylesheet" href="__PUBLIC__/Common/js/uploadify/uploadify.css"> 
+        <script type="text/javascript" src='__PUBLIC__/Admin/js/plugins/Validform/Validform_v5.3.1_min.js'></script>
+        <style type="text/css" src='__PUBLIC__/Admin/css/plugins/Validform/validform.css'></style>
+	<script type="text/javascript">
+            $("#photo_file").uploadify({
+                'swf': '__PUBLIC__/Common/js/uploadify/uploadify.swf',
+                'uploader': '{:U("Upload/upload")}',
+                'cancelImg': '__PUBLIC__/Common/js/uploadify/uploadify-cancel.png',
+                'buttonText': '上传图片',
+                'height': 35,
+                'fileTypeExts': '*.gif;*.jpg;*.png',
+                'queueSizeLimit': 1,
+                'onUploadSuccess': function(file, data, response) {
+                    $("#poster").val('/Uploads' + data);
+                    $("#upload_img").attr('src', '__ROOT__/Uploads' + data).show();
+                }
+            });
+            
+            function show_result_msg(msg,o,cssctl){
+                if(o.type>2){
+                    layer.msg(msg,{skin:"layui-layer-hui",time:1500});
+                    return false;
+                }
+            }
+            function show_hint(msg){
+                layer.msg(msg,{skin:"layui-layer-hui",time:1500});
+            }
+            $(document).ready(function(){
+                    var valid = $("#myform").Validform({
+                    tiptype:show_result_msg,
+                    tipSweep:true,
+                    postonce:true,
+                    ajaxPost:true,
+                    callback:function(data){
+                        layer.msg(data.msg,{skin:"layui-layer-hui",time:1500,end:function(){
+                            if(data.status == 0){
+                                window.location.reload();
+                            }
+                        }});
+                    }
+                });
+            });
+	</script>
+	</body>
+</html>

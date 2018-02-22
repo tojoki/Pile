@@ -1,0 +1,138 @@
+[ 2017-02-14T10:02:04+08:00 ] ::1 /lawyer/Admin/words/user.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002704s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002833s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `web_words` [ RunTime:0.0384s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_words` WHERE ( type=1 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `web_words` WHERE ( type=1 ) LIMIT 0,12   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000183s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000301s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\82f7a7e35f2883a3bbf465485310a70f.php 第 153 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\82f7a7e35f2883a3bbf465485310a70f.php 第 217 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\82f7a7e35f2883a3bbf465485310a70f.php 第 217 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\82f7a7e35f2883a3bbf465485310a70f.php 第 217 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\82f7a7e35f2883a3bbf465485310a70f.php 第 217 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\82f7a7e35f2883a3bbf465485310a70f.php 第 217 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\82f7a7e35f2883a3bbf465485310a70f.php 第 217 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\82f7a7e35f2883a3bbf465485310a70f.php 第 217 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\82f7a7e35f2883a3bbf465485310a70f.php 第 217 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\82f7a7e35f2883a3bbf465485310a70f.php 第 217 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\82f7a7e35f2883a3bbf465485310a70f.php 第 217 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\82f7a7e35f2883a3bbf465485310a70f.php 第 217 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\82f7a7e35f2883a3bbf465485310a70f.php 第 217 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\82f7a7e35f2883a3bbf465485310a70f.php 第 217 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\82f7a7e35f2883a3bbf465485310a70f.php 第 217 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046362s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046466s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001639s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001719s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001903s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001999s ]
+
+[ 2017-02-14T10:02:11+08:00 ] ::1 /lawyer/Admin/Words/editWords?words_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001118s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001180s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0642s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `web_words` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `web_words` WHERE ( words_id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000301s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000445s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\bfe70888f02ef8c0a1e65f582ad04802.php 第 139 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.079998s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.080085s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001735s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001827s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.020941s ]
+INFO: [ app_end ] --END-- [ RunTime:0.038222s ]
+
+[ 2017-02-14T14:51:44+08:00 ] ::1 /lawyer/Admin/Words/editWords?words_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001150s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001227s ]
+
+[ 2017-02-14T14:51:44+08:00 ] ::1 /lawyer/Admin/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000674s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001325s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023242s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023340s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000883s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000924s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001114s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001158s ]
+
+[ 2017-02-14T14:51:47+08:00 ] ::1 /lawyer/Admin/Login/dologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001117s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001727s ]
+SQL: SHOW COLUMNS FROM `web_admin` [ RunTime:0.0331s ]
+SQL: SELECT * FROM `web_admin` WHERE `user` = 'admin' AND `state` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: UPDATE `web_admin` SET `last_logintime`='1487055107',`last_loginip`='127.0.0.1' WHERE `id` = 1 [ RunTime:0.0020s ]
+
+[ 2017-02-14T14:51:48+08:00 ] ::1 /lawyer/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000725s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001155s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0273s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000192s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000277s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 101 行.
+NOTIC: [8] Undefined variable: users D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 140 行.
+NOTIC: [8] Undefined variable: doctors D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 163 行.
+NOTIC: [8] Undefined variable: applys D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 186 行.
+NOTIC: [8] Undefined variable: feeds D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 211 行.
+NOTIC: [8] Undefined variable: msgs D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\b595b808c2ebeeeb0478ffc30bb4e87a.php 第 234 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044937s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001071s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001135s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001486s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001563s ]
+

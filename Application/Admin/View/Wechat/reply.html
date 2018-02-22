@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+		<div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content no-padding">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <p class="text-success"><a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"><i class="fa fa-home"></i> 首页</a> /
+                                    <a href="{:U('reply')}" class="tip-bottom">自定义回复</a> /<a href="javascript:;" class="current"> 自定义回复</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+        <div class="row">
+            <div class="col-sm-1">
+            <a href="{:U('replyAdd')}" class="btn btn-primary btn-sm">添加回复</a>
+            </div>
+            <div class="col-sm-10">
+                <form action="__ACTION__" class="form-inline" method="post">
+                    <div class="form-group">
+                    <label for="title" class="sr-only">规则名称</label>
+                    <input type="text" class="form-control input-sm" id="keyword" placeholder="规则名称" name="keyword" value="{$Think.request.keyword}" size="10">
+                    </div>
+                    <button type="submit" class="btn btn-success btn-sm">搜索</button>
+                </form>
+            </div>
+        </div>
+
+		<br />
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="fa fa-tasks"></i> 自定义回复管理</h5>
+					</div>
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+								<tr class="long-tr">
+                                    <th width="5%">编号</th>
+                                    <th width="15%">规则名称</th>
+                                    <th width="15%">回复类型</th>
+                                    <th width="15%">关键字</th>
+                                    <th width="15%">点击量</th>
+                                    <th width="15%">添加时间</th>
+                                    <th width="20%">操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<volist name="list" id="vo">
+									<tr >
+                                        <td class="text-center">{$vo.mid}</td>
+                                        <td class="text-center">{$vo.mname}</td> 
+                                        <td class="text-center">
+                                        <if condition="$vo.replytype eq 'news'">
+                                            图文回复
+                                        <else/>
+                                            文字回复
+                                        </if>
+                                        </td>
+                                        <td>
+                                        <php>
+                                            $keys = explode(',',$vo['keyword']);
+                                        </php>
+                                        <volist name="keys" id="v">
+                                            <span class="label" style="margin:0 2px">{$v}</span>
+                                        </volist>
+                                        </td>
+                                      	<td class="text-center">{$vo.visit}</td>
+                                        <td class="text-center">{$vo.dateline|date="Y-m-d H:i:s",###}</td>
+										<td class="text-center">
+											<a href="{:U('replyEdit',array('mid'=>$vo['mid']))}" class="btn btn-primary">
+												<i class="fa fa-pencil"></i> 编辑</a>&nbsp;&nbsp;
+											<a onClick="return confirm('是否删除此条记录')" href="{:U('replyDel',array('mid'=>$vo['mid']))}" class="btn btn-danger">
+												<i class="fa fa-trash-o"></i> 删除</a>
+										</td>
+									</tr>
+								</volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+
+	</body>
+
+</html>

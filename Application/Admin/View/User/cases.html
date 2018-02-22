@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <include file="Public:header" />
+    <include file="Public:page_css" />
+    <css file="__PUBLIC__/Admin/js/plugins/lightbox2/css/lightbox.min.css" />
+    <style type="text/css">
+    </style>
+	<body class="fixed-sidebar full-height-layout gray-bg">
+            <div class="row" style="margin-top:10px;margin-left: 10px;">
+            <div class="col-sm-10">
+                <form action="__ACTION__" class="form-inline" method="get">
+                    <input type="hidden" name="userid" value="{$userid}"/>
+                    <div class="form-group">
+                        <select name="type" id="chgtype" class="form-control input-sm">
+                            <option value="1" <if condition="$type eq '1'"> selected="selected"</if>>处方凭证</option>
+                            <option value="2" <if condition="$type eq '2'"> selected="selected"</if>>病例</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br/>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+                                    <div class="ibox-content">
+                                        <table class="table table-bordered">
+                                        <thead>
+                                            <tr class="long-tr">
+                                                <th width="15%">日期</th>
+                                                <th>病例</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <foreach name='list' item='vo'>
+                                            <tr>
+                                                <td>{$vo.datestr}</td>
+                                                <td>
+                                                    <php>$pics = explode(',', $vo['pictures']);</php>
+                                                    <foreach name='pics' item='pic'>
+                                                        <a href="{$pic}" data-lightbox="group{$vo.cid}">
+                                                            <img src='{$pic}' width='120'/>
+                                                        </a>
+                                                    </foreach>
+                                                </td>
+                                            </tr>
+                                        </foreach>
+					</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+        <js file="__PUBLIC__/Admin/js/plugins/lightbox2/js/lightbox.min.js"/>
+    <script type="text/javascript">
+        $("#chgtype").change(function(){
+            $(this).parents('form').submit();
+        });
+    </script>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />	      	
+	<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Common/Ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Common/Ueditor/ueditor.all.min.js"></script>
+        <script type="text/javascript" src='__PUBLIC__/Admin/js/plugins/Validform/Validform_v5.3.1_min.js'></script>
+        <style type="text/css" src='__PUBLIC__/Admin/css/plugins/Validform/validform.css'></style>
+        <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/chosen/chosen.jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/plugins/chosen/chosen.css" />
+        <css file='__PUBLIC__/Admin/css/goods/goods.base.css' />
+        <js file='__PUBLIC__/Admin/js/plugins/webuploader/webuploader.min.js' />
+        <css file='__PUBLIC__/Admin/css/plugins/webuploader/webuploader.css' />
+	<include file="Public:page_css" />
+        <style>
+            .uploadVideoItem{   
+                width: 500px;
+                position: relative;
+                float: left;
+                margin: 0 10px 10px 0;
+                overflow: hidden;
+            }
+            .info{
+                float: left;
+            }
+            .hideclass{visibility:hidden}
+        </style>
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+		<div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>编辑广告</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a><i class="fa fa-home"></i>广告管理</a>
+                    </li>
+                    <li>
+                        <a>首页底部广告</a>
+                    </li>
+                    <li>
+                        <strong>编辑广告</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+					</div>
+					<div class="ibox-content">
+						<form class="form-horizontal" method="post" action="" name="basic_validate" id="productForm">
+                                                    <input type='hidden' name="aid" value="{$data.aid}"/>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">图片</label>
+                                                            <div class="col-sm-10">
+                                                                <div class="row" id="GD_IndexImg">
+                                                                    <div class="col-sm-10">
+                                                                        <img src="{$data.poster}" width="200" height="120" style="margin-bottom: 5px;">
+                                                                        <input type="hidden" class="form-control" name="poster" datatype="*" nullmsg="请上传封面" id="poster" value="{$data.poster}">
+                                                                    </div>
+                                                                </div>                  
+                                                                <div class="row">
+                                                                    <div class="btns col-sm-10">
+                                                                        <div id="uploadOne" class="pull-left">选择文件</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">类型</label>
+                                                            <div class="col-sm-2">                   				                    
+                                                                <select id="cate_id" name="datatype" class="form-control m-b chosen-select">
+                                                                    <option value="1" <if condition="$data['datatype'] eq 1">selected</if>>链接</option>
+                                                                    <option value="2" <if condition="$data['datatype'] eq 2">selected</if>>抢购商品</option>
+                                                                    <option value="3" <if condition="$data['datatype'] eq 3">selected</if>>夺宝商品</option>
+                                                                </select>                                    
+                                                            </div>
+                                                            <label class="col-sm-2 control-label">排序</label>
+                                                            <div class="col-sm-1">                   				                    
+                                                                <input type='text' name='sortval' datatype='n' nullmsg='请填写排序值' value="{$data.sortval|default=0}" errormsg='排序值格式错误'/>                              
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="hr-line-dashed"></div>
+                                                        <div class="form-group" id="linkdiv">
+                                                            <label class="col-sm-2 control-label">链接</label>
+                                                            <div class="col-sm-6">
+                                                                <div id="checkdiv" >
+                                                                    <div id="picker" class="btn btn-primary">选择</div>
+                                                                    <input type="text" name="checkname" style="border:0;" id="checkname" value="{$data.subtitle}" readonly/>
+                                                                    <input type="hidden" name="checkid" value="{$data.links}" id="checkid" />
+                                                                </div>
+                                                                <input type="text" value="{$links|default=''}" id="links"  name="links"  class="form-control">
+                                                            </div>
+							</div>
+                                                <div class="hr-line-dashed"></div>
+                                                <div class="form-group">
+                                                        <div class="col-sm-6 col-sm-offset-4">
+                                                            <button class="btn btn-primary" type="submit">提交</button>
+                                                            <a class="btn btn-danger" href="javascript:history.back()">取消</a>
+                                                        </div>
+                                                </div>
+                                                    </div>
+					</form>
+					</div>
+				</div>
+			</div>
+		</div>
+                <form id="uploadForm" method="post"  action="__URL__/upload" style="display: none;"   enctype="multipart/form-data">
+                    <input type="file" name="file" id="cower"  style="display: none;" />
+                </form>
+<include file="Public:footer" />
+<script src="__PUBLIC__/Admin/js/plugins/validate/jquery.validate.min.js"></script>
+<script src='__PUBLIC__/Admin/js/plugins/laydate/laydate.js' /></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Common/Ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Common/Ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.form.js"></script>
+<script type="text/javascript">
+    var uploadUrl = '{:U("Upload/upload")}'; //图片上传地址
+    var swfpath = '__PUBLIC__/Admin/js/plugins/webuploader/Uploader.swf';
+    var succpath = "{:U('homelist')}";
+    var isedit = '{$isedit}';
+</script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/pagejs/banner.js"></script>
+<script type="text/javascript">
+        var stype = {$data.datatype|default=1};
+        $(document).ready(function(){
+            $("#picker").click(function(){
+                var shoptype = 0;
+                if($("#cate_id").prop("disabled")){
+                    shoptype = stype;
+                }else{
+                    shoptype = $("#cate_id").val();
+                }
+                var url = '__URL__/pagedata/stype/'+shoptype;
+                layer.open({
+                    type: 2,
+                    title:"选择关联数据",
+                    content: url,
+                    area: ['800px', '600px'],
+                    shadeClose: true,
+                    skin: 'layui-layer-rim',
+                    maxmin: true,
+                    scrollbar: true,
+                    btn:['确定'],
+                    yes: function(index, goodslay){
+                        layer.close(index); //如果设定了yes回调，需进行手工关闭
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

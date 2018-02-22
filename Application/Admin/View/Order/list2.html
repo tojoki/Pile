@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/js/plugins/datetimepick/css/lq.datetimepick.css"/>
+    <style type="text/css">
+        .headimg_wrap{position: relative; width: 166px; overflow: hidden;}
+        .blurbg_wrap{width:200px;height: 100px;overflow: hidden; position: relative;}
+
+        .headimg_bg{width:220px;height: 120px;z-index: 1; position: absolute;left: -10px;top:-10px;}
+        .headimg_bg2{width:200px;height: 100px;z-index: 2; background: #fff;position: absolute;top:0;left: 0; opacity: .6;}
+        .headimg{width: 60px; height: 60px;border-radius: 0px; position: absolute;z-index: 10; margin:auto;left:0; right:0; top:0; bottom:0; border:1px solid #fff; box-shadow: 1px 1px 3px rgba(0,0,0,.2); }
+        .blur { 
+            filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+
+            -webkit-filter: blur(10px); /* Chrome, Opera */
+            -moz-filter: blur(10px);
+            -ms-filter: blur(10px);    
+                filter: blur(10px);
+            filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
+        }
+
+        .infoDetail p{
+            text-align: left;margin:0;line-height: 28px;font-family:"Helvetica Neue",HelveticaNeue,"Microsoft YaHei",Arial,Helvetica,sans-serif; color:#555;
+        }
+        .infoDetail p span{text-align:right;width:70px; display: inline-block; font-weight: 400; color:#888; }
+        .tags{ text-align: left; margin-top: 10px; }
+        .tags span{
+            padding: 1px 2px; background: #5397BF;border-radius: 2px; margin: 2px;display: inline-block; font-size: 12px;color:#fff;
+        }
+        .btns a{
+            margin:0 5px 5px 0; display: inline-block;  
+            -webkit-transition: all .1s linear;
+        }
+        .btns a{background: #fff; color:#333;border:1px solid #888;}
+        /*.btns a.openWindow:hover{background: #1c84c6; color:#fff;border:1px solid #1c84c6;}*/
+    </style>
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+
+		<include file="Public:nav" />
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content no-padding">
+						<ul class="list-group">
+                            <li class="list-group-item">
+                                <p class="text-success"><a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"><i class="fa fa-home"></i> 首页</a> /
+                                    <a href="{:U('Admin/Order/list2')}" class="tip-bottom">订单管理</a> /
+                                    <a href="javascript:;" class="tip-bottom">订单列表</a>
+                                </p>
+                            </li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+        <div class="row">
+            <!-- <div class="col-sm-1">
+            <a href="{:U('add')}" class="btn btn-primary btn-sm">添加活动</a>
+            </div> -->
+            <div class="col-sm-10">
+                <form action="__ACTION__" class="form-inline" method="get">
+                    <input type='hidden' name='doctorid' value="{$doctorid}"/>
+                    <div class="form-group">
+                    <label for="title" class="sr-only">姓名/账号</label>
+                    <input type="text" class="form-control input-sm" id="keyword" placeholder="姓名/账号" name="keyword" value="{$Think.request.keyword}" size="10">
+                    </div>
+                    <div class="form-group">
+                    <label for="title" class="sr-only">所属区域</label>
+                    <select name="place_id" class="form-control input-sm">
+                        <option value="" <if condition="$Think.request.place_id eq ''"> selected="selected"</if> >所属区域</option>
+                    <?php
+                        foreach($placeList as $v){
+                    ?>
+                        <option value="{$v['id']}" <if condition="$Think.request.place_id eq $v['id']"> selected="selected"</if>>{$v['title']}</option>
+                    <?php
+                        }
+                    ?>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <label for="title" class="sr-only">预订时间&lt;</label>
+                    <input type="text" class="form-control input-sm" id="stime" placeholder="###&lt;预订时间" name="stime" value="{$Think.request.stime}" size="10">
+                    </div>
+                    <div class="form-group">
+                    <label for="title" class="sr-only">预订时间&gt;</label>
+                    <input type="text" class="form-control input-sm" id="etime" placeholder="预订时间&gt;###" name="etime" value="{$Think.request.etime}" size="10">
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-sm">搜索</button>
+                </form>
+            </div>
+        </div>
+        <br/>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="fa fa-tasks"></i> 美容美发订单</h5>
+					</div>
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+								<tr class="long-tr">
+									<th >ID</th>
+									<th >订单号</th>
+                                    <th >姓名/手机号</th>
+                                    <th >所属区域</th>
+                                    <th >服务内容</th>
+                                    <th >金额</th>
+                                    <th >支付方式</th>
+                                    <th >预订时间</th>
+                                    <th >状态</th>
+                                    <th >操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<volist name="list" id="vo">
+									<tr class="long-td">
+                                        <td>{$vo.oid}</td>
+                                        <td>{$vo.orderid}</td>
+                                        <td>
+                                            <div class="infoDetail">
+                                                <p>{$vo.username}</p>
+                                                <p>{$vo.phone}</p>
+                                            </div>
+                                        </td>
+                                        <td>{$vo.title}</td>
+                                        <td>{$vo.catname}</td>
+                                        <td>{$vo.price}元</td>
+                                        <td>
+                                        	<if condition="$vo.payway eq 1">刷卡</if>
+                                            <if condition="$vo.payway eq 2">包月</if>
+                                        </td>
+                                        <td>{$vo.ctime|date="Y-m-d H:i",###}</td>
+                                        <td>
+                                            <if condition="$vo.status eq 0">排队中</if>
+                                            <if condition="$vo.status eq 1">进行中</if>
+                                            <if condition="$vo.status eq 2">已完成</if>
+                                            <if condition="$vo.status eq -1">已取消</if>
+                                        </td>
+                                        <td class="btns" style="text-align:center;">
+                                        	<a href="javascript:;" class="btn-sm btn-success edit" data-oid="{$vo.oid}" style='background-color:#1ab394;border-color:#1ab394;color:#FFF;'>订单详情</a>
+                                        <?php
+                                        	if($vo['status']==2 || $vo['status']==-1){
+                                        ?>
+                                            <a href="javascript:;" class="btn-sm btn-success del" data-oid="{$vo.oid}" style='background-color:#ed5565;border-color:#ed5565;color:#FFF;'>删除</a>
+                                        <?php
+                                        	}
+                                        ?>                                            
+					                    </td>
+									</tr>
+								</volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+	</body>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/datetimepick/js/lq.datetimepick.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/plugins/datetimepick/js/selectUi.js"></script>
+    <script type="text/javascript">
+    $(function(){
+
+    	$('.edit').on('click',function(){
+    		var oid = $(this).data("oid");
+    		location.href='__CONTROLLER__/orderInfo2?oid='+oid;
+    	});
+
+        $('.del').on('click',function(){
+            var oid = $(this).data("oid");
+        	layer.confirm('确定删除？', {icon: 3}, function(index){
+	            $.ajax({
+	                url:'__CONTROLLER__/del2',
+	                data:'oid='+oid,
+	                type:'post',
+	                success:function(data){
+	                    layer.msg(data.msg,{skin:"layui-layer-hui",time:1500,end:function(){
+	                         window.location.reload();
+	                    }});
+	                },
+	                dataType:'json'
+	            });
+            });
+            
+        });
+
+        $("#stime,#etime").on("click",function(e){
+            e.stopPropagation();
+            $(this).lqdatetimepicker({
+                css : 'datetime-day',
+                dateType : 'D',
+                selectback : function(){
+
+                }
+            });
+        });
+
+    });
+
+    </script>
+</html>

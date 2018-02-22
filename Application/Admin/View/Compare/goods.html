@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+		<div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>商品列表</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="article.html"><i class="fa fa-home"></i> 主页</a>
+                    </li>
+                    <li>
+                        <a>首页管理</a>
+                    </li>
+                    <li>
+                        <strong>商品列表</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+           <div class="row">
+            <!-- <div class="col-sm-1">
+            <a href="{:U('add')}" class="btn btn-primary btn-sm">添加活动</a>
+            </div> -->
+            <div class="col-sm-10"><br/>
+                <form action="__ACTION__" class="form-inline" method="get">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-sm" id="title" placeholder="商品名称" name="title" value="{$title}" size="30">
+                    </div>
+                    <div class="form-group">
+                        <select name='type' class="form-control">
+                            <option value="">分类</option>
+                            <option <if condition="$Think.get.type eq '1'">selected</if> value="1">水果</option>
+                            <option <if condition="$Think.get.type eq '2'">selected</if> value="2">蔬菜</option>
+                            <option <if condition="$Think.get.type eq '3'">selected</if> value="3">肉类</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-sm">搜索</button>
+                    <a href="{:U('compare/addgoods')}" class="btn btn-primary" style="float:right;">添加商品</a>
+                </form>
+            </div>
+        </div><br/>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+                                                            <tr class="long-tr">
+                                                                <th width="20%">名称</th>
+                                                                <th width="10%">分类</th>
+                                                                <th width="12%">封面</th>
+                                                                <th width="15%">价格区间</th>	
+                                                                <th width="15%">创建时间</th>
+                                                                <th width="10%">排序</th>
+                                                                <th>操作</th>
+                                                            </tr>
+							</thead>
+							<tbody>
+								<volist name="list" id="vo">
+									<tr class="long-td">
+                                                                            <td style="text-align: left;">
+                                                                                {$vo.gname}
+                                                                                <if condition="$vo['othername']">
+                                                                                    <br/>曾用名：{$vo.othername}
+                                                                                </if>
+                                                                            </td>
+                                                                            <td>
+                                                                                <switch name='vo.catid'  >
+                                                                                    <case value='1'>水果</case>
+                                                                                    <case value='2'>蔬菜</case>
+                                                                                    <case value='3'>肉类</case>
+                                                                                </switch>
+                                                                            </td>
+                                                                            <td>
+                                                                                <div style="width:100%;max-height: 80px;overflow: hidden;">
+                                                                                    <img src="{$vo.poster}" onerror="this.src='__PUBLIC__/Admin/img/no_img.jpg'" style="width:90%;" />
+                                                                                </div>
+                                                                            </td>
+                                                                            <td>{$vo.minprice}-{$vo.maxprice}</td>
+                                                                            <td>{$vo.ctime|date='Y-m-d H:i:s',###}</td>
+                                                                            <td>{$vo.sortval|default=0}</td>
+                                                                            <td>
+                                                                                <a href="{:U('addgoods',array('gid'=>$vo['gid']))}" class="btn btn-primary btn-mini">
+                                                                                        <i class="fa fa-pencil"></i> 编辑</a>&nbsp;&nbsp;
+                                                                                <a href="javascript:;" onclick="return del({$vo.gid});" class="btn btn-danger">
+                                                                                        <i class="fa fa-trash-o"></i> 删除</a>
+                                                                            </td>										
+									</tr>
+								</volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+		function del(id){
+                    layer.confirm('确认删除该商品？', {icon: 3}, function(index){
+                        layer.close(index);
+                        $.post("{:U('delgoods')}",{gid:id},function(data){
+                            layer.msg(data.msg,{skin:"layui-layer-hui",time:1500,end:function(){
+                                if(data.status == 0){
+                                    window.location.reload();
+                                }   
+                            }});
+                        });
+                    });
+		}
+		</script>
+
+		<include file="Public:footer" />
+	</body>
+</html>

@@ -1,0 +1,65 @@
+[ 2017-03-03T19:52:57+08:00 ] ::1 /lawyer/api/common/test_push
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000769s ]
+
+[ 2017-03-03T19:53:13+08:00 ] ::1 /lawyer/api/common/test_push
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001523s ]
+
+[ 2017-03-03T19:53:42+08:00 ] ::1 /lawyer/api/common/test_push
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014452s ]
+
+[ 2017-03-03T19:54:04+08:00 ] ::1 /lawyer/api/common/test_push
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000697s ]
+
+[ 2017-03-03T19:54:14+08:00 ] ::1 /lawyer/api/common/test_push
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005319s ]
+
+[ 2017-03-03T19:54:44+08:00 ] ::1 /lawyer/api/common/test_push
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000788s ]
+
+[ 2017-03-03T19:55:15+08:00 ] ::1 /lawyer/api/common/test_push
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000810s ]
+
+[ 2017-03-03T19:55:25+08:00 ] ::1 /lawyer/api/common/test_push
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000074s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006171s ]
+
+[ 2017-03-03T19:55:26+08:00 ] ::1 /lawyer/api/common/test_push
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000936s ]
+
+[ 2017-03-03T19:55:26+08:00 ] ::1 /lawyer/api/common/test_push
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002007s ]
+
+[ 2017-03-03T19:55:26+08:00 ] ::1 /lawyer/api/common/test_push
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001082s ]
+
+[ 2017-03-03T19:55:35+08:00 ] ::1 /lawyer/api/common/test_push
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000710s ]
+
+[ 2017-03-03T19:55:36+08:00 ] ::1 /lawyer/api/common/test_push
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000714s ]
+

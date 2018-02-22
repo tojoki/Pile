@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />	      	
+	<include file="Public:page_css" />
+        <css file='__PUBLIC__/Admin/css/goods/goods.base.css' />
+        <js file='__PUBLIC__/Admin/js/plugins/webuploader/webuploader.min.js' />
+        <css file='__PUBLIC__/Admin/css/plugins/webuploader/webuploader.css' />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+		<div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>添加促销</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"> 主页</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="tip-bottom">首页管理</a>
+                    </li>
+                    <li>
+                        <strong>添加促销</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+        <br/>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+                                            <h5>添加促销</h5>
+                                            <div class="ibox-tools">
+                                                <a class="collapse-link">
+                                                    <i class="fa fa-chevron-up"></i>
+                                                </a>
+                                            </div>
+					</div>
+					<div class="ibox-content">
+						<form class="form-horizontal" method="post" action="__URL__/addactivity" name="basic_validate" id="myform">
+                                                        <notempty name="data">
+                                                            <input name="aid" type="hidden" value="{$data.aid}"/>
+                                                        </notempty>
+                                                       <div class="form-group">
+                                                            <label class="col-sm-2 control-label">促销超市</label>
+                                                            <div class="col-sm-3">
+                                                                <select name="sid" datatype="*" nullmsg="请选择超市" class="form-control">
+                                                                    <option value="" >请选择</option>
+                                                                    <foreach name="shops" item="shop">
+                                                                        <option value="{$shop.sid}" <if condition="$data['sid'] eq $shop['sid']">selected</if> >{$shop.sname}</option>
+                                                                    </foreach>
+                                                                </select>
+                                                            </div>
+							</div>
+                                                        <div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">标题</label>
+								<div class="col-sm-6">
+									<input type="text" datatype="*" nullmsg="请填写标题" name="title" placeholder="标题" class="form-control" value="{$data.title}">
+								</div>
+							</div>
+                                                        <input type="hidden" name="pictures" id="pictures"  nullmsg="请上传促销图片"  value="{$data.posters}"/>
+                                                        <div class="hr-line-dashed"></div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">促销图片</label>
+                                                            <div class="col-sm-10">  
+                                                                <div class="row">  
+                                                                    <div class="col-sm-10" id="uploadImgWrap">
+                                                                    <volist name="data.posters" id="pic">
+                                                                        <div class="uploadImgItem" draggable="false"><img src="{$pic}"  realpath="{$pic}" draggable="false"><p class="state succ">已上传</p><i class="fa fa-close delBtn"></i><div class="progress progress-striped active" style="display: none;"><div class="progress-bar" role="progressbar" style="width: 100%;"></div></div></div>
+                                                                    </volist>
+                                                                    </div>
+                                                                </div> 
+                                                                <div class="row">
+                                                                    <div class="btns col-sm-10">
+                                                                        <div id="picker" class="pull-left">选择图片</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="hr-line-dashed"></div>
+                                                            <div class="form-group">
+                                                                    <label class="col-sm-2 control-label">时间</label>
+                                                                    <div class="col-sm-3">
+                                                                        <input type="text"  name="starttime" datatype="*" placeholder="开始时间" id="starttime" readonly nullmsg="请设置开始时间" value="<php>if($data) echo date('Y-m-d H:i:s',$data['starttime']);</php>" class="form-control">
+                                                                    </div>
+                                                                    <div class="col-sm-3">
+                                                                        <input type="text"  name="endtime" datatype="*" placeholder="结束时间" id="endtime" readonly nullmsg="请设置结束时间" value="<php>if($data) echo date('Y-m-d H:i:s',$data['endtime']);</php>"  class="form-control">
+                                                                    </div>
+                                                            </div>
+<!--							<div class="hr-line-dashed"></div>
+                                                        <div class="form-group">
+                                                                <label class="col-sm-2 control-label">排序值</label>
+								<div class=" col-sm-2">
+									<input type="text" name="sortval" datatype="n" nullmsg="请填写排序值" errormsg="排序值格式错误" placeholder="排序值" class="form-control m-t-none" value="{$data.sortval|default=0}">
+								</div>
+							</div>-->
+                                                        <div class="hr-line-dashed"></div>
+							<div class="form-group">
+								<div class="col-sm-4 col-sm-offset-2">
+                                                                    <button class="btn btn-primary" type="submit">保存</button>
+                                                                    <a class="btn btn-white" href="javascript:history.back();">取消</a>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+        <include file="Public:footer" />
+        <script src='__PUBLIC__/Admin/js/plugins/laydate/laydate.js' /></script>
+	<js file='__PUBLIC__/Common/js/uploadify/jquery.uploadify.min.js' />		
+	<link rel="stylesheet" href="__PUBLIC__/Common/js/uploadify/uploadify.css"> 
+        <script type="text/javascript" src='__PUBLIC__/Admin/js/plugins/Validform/Validform_v5.3.1_min.js'></script>
+        <style type="text/css" src='__PUBLIC__/Admin/css/plugins/Validform/validform.css'></style>
+	<script type="text/javascript">
+            var uploadUrl = '{:U("Upload/upload")}'; //图片上传地址
+            var swfpath = '__PUBLIC__/Admin/js/plugins/webuploader/Uploader.swf';
+            var succpath = "{:U('lists')}";
+            $.extend($.Datatype,{
+            "price" : /^[0-9]+(\.[0-9]{1,2})?$/
+          });
+            $("#photo_file").uploadify({
+                'swf': '__PUBLIC__/Common/js/uploadify/uploadify.swf',
+                'uploader': '{:U("Upload/upload")}',
+                'cancelImg': '__PUBLIC__/Common/js/uploadify/uploadify-cancel.png',
+                'buttonText': '上传图片',
+                'height': 35,
+                'fileTypeExts': '*.gif;*.jpg;*.png',
+                'queueSizeLimit': 1,
+                'onUploadSuccess': function(file, data, response) {
+                    $("#poster").val('/Uploads' + data);
+                    $("#upload_img").attr('src', '__ROOT__/Uploads' + data).show();
+                }
+            });
+            function dialog(msg){
+                layer.msg(msg,{skin:"layui-layer-hui",time:1500});
+            }
+           
+            function show_result_msg(msg,o,cssctl){
+                if(o.type>2){
+                    layer.msg(msg,{skin:"layui-layer-hui",time:1500});
+                    return false;
+                }
+            }
+            function show_hint(msg){
+                layer.msg(msg,{skin:"layui-layer-hui",time:1500});
+            }
+            $(document).ready(function(){
+                    var valid = $("#myform").Validform({
+                    tiptype:show_result_msg,
+                    tipSweep:true,
+                    postonce:true,
+                    ajaxPost:true,
+                    beforeSubmit:function(form){
+                        var starttime = Date.parse($("#starttime").val().replace(/-/g,"/"));
+                        var endtime = Date.parse($("#endtime").val().replace(/-/g,"/"));
+                        var now = new Date();
+                        if(starttime<=now){
+                            dialog('开始时间不能小于当前时间');
+                            return false;
+                        }
+                        if(starttime >= endtime){
+                            dialog("结束时间不能小于开始时间");
+                            return false;
+                        }
+                        if($("#uploadImgWrap img").size() == 0){
+                            dialog('请上传促销图片');
+                            return false;
+                        }
+                        var goods_pics = '';
+                        $("#uploadImgWrap img").each(function(i,img){
+                            if(goods_pics == ''){
+                                goods_pics = $(this).attr('realpath');
+                            }else{
+                                goods_pics += ',' + $(this).attr('realpath');
+                            }
+                        });
+                        $('#pictures').val(goods_pics);
+                        return true;
+            },
+                    callback:function(data){
+                        layer.msg(data.msg,{skin:"layui-layer-hui",time:1500,end:function(){
+                            if(data.status == 0){
+                                window.location.href = succpath;
+                            }
+                        }});
+                    }
+                });
+            });
+            
+            //时间
+            var options = {        
+            event:'click',
+            format: 'YYYY-MM-DD hh:mm:ss', //日期格式 hh:mm:ss
+            istime: true, //是否开启时间选择
+            isclear: true, //是否显示清空
+            istoday: true, //是否显示今天
+            issure: true, //是否显示确认
+            festival: false, //是否显示节日
+            choose: function(dates){ //选择好日期的回调
+
+            }
+        };
+        options.elem = '#starttime';
+        laydate(options).skin('molv');
+        options.elem = '#endtime';
+        laydate(options).skin('molv');
+        
+        var $list = $('#uploadImgWrap'),
+        $btn  = $('#ctlBtn'),
+        state = 'pending',
+        uploader;
+        //图片上传webuploader
+    var uploader = WebUploader.create({
+        auto : true,
+        swf: swfpath,
+        server: uploadUrl,
+        pick: '#picker',
+        resize: true,
+        accept: {
+            title: 'Images',
+            extensions: 'gif,jpg,jpeg,bmp,png',
+            mimeTypes: 'image/*'
+        }
+    });
+    // 当有文件添加进来的时候
+    uploader.on( 'fileQueued', function( file ) {        
+        console.log(file.id);
+        var $li = $(
+                '<div id="' + (file.id) + '" class="uploadImgItem">' +
+                    '<img>' +
+                    // '<div class="info">' + file.name + '</div>' +
+                    '<p class="state"></p>'+
+                    '<i class="fa fa-close delBtn"></i>'+
+                '</div>'
+                ),
+            $img = $li.find('img');
+        $list.append( $li );
+        // 创建缩略图
+        // thumbnailWidth x thumbnailHeight 为 100 x 100
+        uploader.makeThumb( file, function( error, src ) {
+            if ( error ) {
+                $img.replaceWith('<span>不能预览</span>');
+                return;
+            }
+            $img.attr( 'src', src );
+        }, 100, 100 );
+    });
+
+    // 文件上传过程中创建进度条实时显示。
+    uploader.on( 'uploadProgress', function( file, percentage ) {
+        var $li = $( '#'+file.id ),
+            $percent = $li.find('.progress .progress-bar');
+
+        // 避免重复创建
+        if ( !$percent.length ) {
+            $percent = $('<div class="progress progress-striped active">' +
+              '<div class="progress-bar" role="progressbar" style="width: 0%">' +
+              '</div>' +
+            '</div>').appendTo( $li ).find('.progress-bar');
+        }
+
+        $li.find('p.state').text('上传中');
+        $percent.css( 'width', percentage * 100 + '%' );
+    });
+    uploader.on( 'uploadSuccess', function( file , rsObj) {
+        // console.log(rsObj._raw);
+        $( '#'+file.id+' img').attr('realpath','/Uploads'+rsObj._raw);
+        $( '#'+file.id ).find('p.state').text('已上传').addClass('succ');
+    });
+
+    uploader.on( 'uploadError', function( file ) {
+        $( '#'+file.id ).find('p.state').text('上传出错').addClass('err');
+    });
+
+    uploader.on( 'uploadComplete', function( file ) {
+        $( '#'+file.id ).find('.progress').fadeOut();
+    });
+
+    $(document).on('click','.delBtn',function(){
+        $(this).parents('.uploadImgItem').remove();
+    });
+	</script>
+	</body>
+</html>

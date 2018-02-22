@@ -1,0 +1,26 @@
+[ 2017-03-27T14:53:10+08:00 ] ::1 /xj_property/Api/worker/change_service?uid=6&ucode=a4ff38ba8af613cb688046edbedac29e&limit_num=1&limit_stime=9:00&limit_etime=18:30
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000196s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002242s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002530s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002678s ]
+
+[ 2017-03-27T14:53:24+08:00 ] ::1 /xj_property/Api/worker/change_service?uid=6&ucode=a4ff38ba8af613cb688046edbedac29e&limit_num=1&limit_stime=9:00&limit_etime=18:30
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003796s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002584s ]
+
+[ 2017-03-27T14:53:52+08:00 ] ::1 /xj_property/Api/worker/change_service?uid=6&ucode=a4ff38ba8af613cb688046edbedac29e&cate_id=2&limit_num=1&limit_stime=9:00&limit_etime=18:30
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005162s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002622s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0444s ]
+SQL: SELECT w.*,p.title FROM web_worker w left join web_place p on p.id=w.place_id  WHERE ( w.worker_id=6 AND w.ucode='a4ff38ba8af613cb688046edbedac29e' AND w.cate_id=2 ) LIMIT 1   [ RunTime:0.0042s ]
+

@@ -1,0 +1,144 @@
+[ 2017-01-16T14:26:43+08:00 ] ::1 /lawyer/Api/Order/waitpay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001006s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001065s ]
+SQL: SHOW COLUMNS FROM `web_order` [ RunTime:0.0255s ]
+SQL: SELECT `orderid`,`ordertype` FROM `web_order` WHERE ( uid=10 AND status=2 ) LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-01-16T14:26:48+08:00 ] ::1 /lawyer/Api/Order/waitpay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000881s ]
+SQL: SHOW COLUMNS FROM `web_order` [ RunTime:0.0288s ]
+SQL: SELECT `orderid`,`ordertype` FROM `web_order` WHERE ( uid=10 AND status=2 ) LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-01-16T14:27:31+08:00 ] ::1 /lawyer/Api/Order/waitpay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001115s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001199s ]
+SQL: SHOW COLUMNS FROM `web_order` [ RunTime:0.0148s ]
+
+[ 2017-01-16T14:28:56+08:00 ] ::1 /lawyer/Api/Order/waitpay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000753s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000922s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000977s ]
+SQL: SHOW COLUMNS FROM `web_order` [ RunTime:0.0208s ]
+SQL: SELECT `orderid`,`ordertype` FROM `web_order` WHERE ( uid=10 AND status=2 ) LIMIT 1   [ RunTime:0.0013s ]
+
+[ 2017-01-16T14:30:04+08:00 ] ::1 /lawyer/Api/Order/waitpay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000666s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000916s ]
+SQL: SHOW COLUMNS FROM `web_order` [ RunTime:0.0208s ]
+
+[ 2017-01-16T14:31:21+08:00 ] ::1 /lawyer/Api/Order/waitpay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000678s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001136s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001205s ]
+SQL: SHOW COLUMNS FROM `web_order` [ RunTime:0.0300s ]
+SQL: SELECT `orderid`,`ordertype` FROM `web_order` WHERE ( uid=10 AND status=2 ) LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2017-01-16T14:37:11+08:00 ] ::1 /lawyer/Api/Order/waitpay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000936s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001058s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001131s ]
+SQL: SHOW COLUMNS FROM `web_order` [ RunTime:0.0212s ]
+NOTIC: [8] Undefined variable: user D:\heyi\USBWebserver\root\lawyer\Application\Api\Controller\OrderController.class.php 第 156 行.
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%d AND status=3 ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `orderid`,`ordertype` FROM `web_order` WHERE ( uid=%d AND status=3 ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%d AND status=3 ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `orderid`,`ordertype` FROM `web_order` WHERE ( uid=%d AND status=3 ) LIMIT 1  
+
+[ 2017-01-16T14:37:30+08:00 ] ::1 /lawyer/Api/Order/waitpay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000870s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000804s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000874s ]
+SQL: SHOW COLUMNS FROM `web_order` [ RunTime:0.0118s ]
+SQL: SELECT `orderid`,`ordertype` FROM `web_order` WHERE ( uid=10 AND status=3 ) LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-01-16T15:08:24+08:00 ] ::1 /lawyer/Api/Order/waitpay
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000069s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000933s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001589s ]
+
+[ 2017-01-16T15:10:23+08:00 ] ::1 /lawyer/Api/%20User/activityList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000820s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000861s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000929s ]
+ERR: 无法加载控制器: User
+
+[ 2017-01-16T15:10:38+08:00 ] ::1 /lawyer/Api/User/activityList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000757s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001160s ]
+SQL: SHOW COLUMNS FROM `web_activity` [ RunTime:0.0167s ]
+ERR: 1054:Unknown column 'endtime' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `web_activity` WHERE ( starttime<1484550636 and endtime>1484550636 ) LIMIT 1  
+ERR: 1054:Unknown column 'endtime' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `web_activity` WHERE ( starttime<1484550636 and endtime>1484550636 ) LIMIT 1  
+
+[ 2017-01-16T15:10:57+08:00 ] ::1 /lawyer/Api/User/activityList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000725s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000876s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000946s ]
+SQL: SHOW COLUMNS FROM `web_activity` [ RunTime:0.0740s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_activity` WHERE ( starttime<1484550656 and deadtime>1484550656 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `web_activity` WHERE ( starttime<1484550656 and deadtime>1484550656 ) ORDER BY activity_id desc LIMIT 0,8   [ RunTime:0.0006s ]
+
+[ 2017-01-16T15:11:57+08:00 ] ::1 /lawyer/Api/User/activityList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000775s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000861s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000932s ]
+SQL: SHOW COLUMNS FROM `web_activity` [ RunTime:0.0116s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_activity` WHERE ( starttime<1484550715 and deadtime>1484550715 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `web_activity` WHERE ( starttime<1484550715 and deadtime>1484550715 ) ORDER BY activity_id desc LIMIT 0,8   [ RunTime:0.0005s ]
+
+[ 2017-01-16T15:33:01+08:00 ] ::1 /lawyer/Api/User/activityInfo?activity_id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000770s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002073s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002169s ]
+SQL: SHOW COLUMNS FROM `web_activity` [ RunTime:0.0212s ]
+SQL: SELECT * FROM `web_activity` WHERE ( activity_id=3 ) LIMIT 1   [ RunTime:0.0009s ]
+

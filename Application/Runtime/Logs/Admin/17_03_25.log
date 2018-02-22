@@ -1,0 +1,1155 @@
+[ 2017-03-25T11:00:30+08:00 ] ::1 /xj_property/Admin/plat/category.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015168s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0441s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0373s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid = 0 )  [ RunTime:0.0009s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=1 )  [ RunTime:0.0009s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=5 )  [ RunTime:0.0009s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=10 )  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=19 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=20 )  [ RunTime:0.0009s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=21 )  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000665s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001394s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\e529c7c0b2802539dcd1db5ea171c017.php 第 140 行.
+NOTIC: [8] Undefined variable: page D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\e529c7c0b2802539dcd1db5ea171c017.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.097952s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.098090s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.014678s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.014793s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002368s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002486s ]
+
+[ 2017-03-25T13:18:55+08:00 ] ::1 /xj_property/Admin/service/worker.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002703s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005635s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0264s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0295s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_worker` LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM web_worker w left join web_place p on p.id=w.place_id  ORDER BY worker_id DESC LIMIT 0,5   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000178s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000256s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\53c87ced07994399af6936232bea25c5.php 第 157 行.
+NOTIC: [8] Undefined index: phone D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\53c87ced07994399af6936232bea25c5.php 第 221 行.
+NOTIC: [8] Undefined index: phone D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\53c87ced07994399af6936232bea25c5.php 第 221 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043879s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043973s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001391s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001458s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002203s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002358s ]
+
+[ 2017-03-25T13:19:23+08:00 ] ::1 /xj_property/Admin/service/worker.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002545s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0400s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0230s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_worker` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM web_worker w left join web_place p on p.id=w.place_id  ORDER BY worker_id DESC LIMIT 0,5   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000252s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000375s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\53c87ced07994399af6936232bea25c5.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039394s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039488s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001136s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001199s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002205s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002317s ]
+
+[ 2017-03-25T13:19:29+08:00 ] ::1 /xj_property/Admin/Service/edit/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004658s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.2390s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0368s ]
+SQL: SELECT * FROM `web_worker` WHERE ( worker_id=3 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `web_service1` [ RunTime:0.0284s ]
+SQL: SELECT s.*,p.title FROM web_service1 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `web_service2` [ RunTime:0.0260s ]
+SQL: SELECT s.*,p.title FROM web_service2 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000176s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000290s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027188s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027329s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002802s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002904s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002916s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003087s ]
+
+[ 2017-03-25T13:19:42+08:00 ] ::1 /xj_property/Admin/Service/edit/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003575s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003215s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0244s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `web_service2` [ RunTime:0.0247s ]
+SQL: SELECT * FROM `web_service2` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0248s ]
+SQL: UPDATE `web_worker` SET `phone`='15004692806',`password`='c4ca4238a0b923820dcc509a6f75849b',`place_id`='1',`cate_id`='2',`service_id`='1' WHERE ( worker_id=3 ) [ RunTime:0.0640s ]
+
+[ 2017-03-25T13:19:44+08:00 ] ::1 /xj_property/Admin/service/worker.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002456s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0218s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0228s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_worker` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM web_worker w left join web_place p on p.id=w.place_id  ORDER BY worker_id DESC LIMIT 0,5   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000239s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000348s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\53c87ced07994399af6936232bea25c5.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041344s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041423s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001717s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001807s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002485s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002629s ]
+
+[ 2017-03-25T13:19:50+08:00 ] ::1 /xj_property/Admin/Service/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008761s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0235s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0281s ]
+SQL: SELECT * FROM `web_worker` WHERE ( worker_id=1 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `web_service1` [ RunTime:0.0295s ]
+SQL: SELECT s.*,p.title FROM web_service1 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `web_service2` [ RunTime:0.0276s ]
+SQL: SELECT s.*,p.title FROM web_service2 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000229s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025949s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026061s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001406s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001485s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002337s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002560s ]
+
+[ 2017-03-25T13:19:59+08:00 ] ::1 /xj_property/Admin/Service/edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000893s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001749s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001872s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0267s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `web_service1` [ RunTime:0.0286s ]
+SQL: SELECT * FROM `web_service1` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0225s ]
+SQL: UPDATE `web_worker` SET `phone`='15004692807',`password`='c4ca4238a0b923820dcc509a6f75849b',`place_id`='1',`cate_id`='1',`service_id`='3' WHERE ( worker_id=1 ) [ RunTime:0.0402s ]
+
+[ 2017-03-25T13:20:01+08:00 ] ::1 /xj_property/Admin/service/worker.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001122s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002447s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0299s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0296s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_worker` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM web_worker w left join web_place p on p.id=w.place_id  ORDER BY worker_id DESC LIMIT 0,5   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000231s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000367s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\53c87ced07994399af6936232bea25c5.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047123s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001579s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001662s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002369s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002523s ]
+
+[ 2017-03-25T13:22:49+08:00 ] ::1 /xj_property/Admin/Service/deel/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003496s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0404s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0289s ]
+SQL: DELETE FROM `web_worker` WHERE `worker_id` = 3 [ RunTime:0.0544s ]
+
+[ 2017-03-25T13:22:52+08:00 ] ::1 /xj_property/Admin/service/worker.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001908s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001962s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002075s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0249s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0293s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_worker` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM web_worker w left join web_place p on p.id=w.place_id  ORDER BY worker_id DESC LIMIT 0,5   [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000209s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000316s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\53c87ced07994399af6936232bea25c5.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046863s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047010s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002810s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002926s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002840s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002941s ]
+
+[ 2017-03-25T13:22:55+08:00 ] ::1 /xj_property/Admin/Service/deel/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005119s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004910s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005140s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0240s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0242s ]
+SQL: DELETE FROM `web_worker` WHERE `worker_id` = 1 [ RunTime:0.0376s ]
+
+[ 2017-03-25T13:22:57+08:00 ] ::1 /xj_property/Admin/service/worker.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001291s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002174s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002299s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0397s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0261s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_worker` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM web_worker w left join web_place p on p.id=w.place_id  ORDER BY worker_id DESC LIMIT 0,5   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000203s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000307s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\53c87ced07994399af6936232bea25c5.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049613s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049753s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002654s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002746s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002404s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002512s ]
+
+[ 2017-03-25T13:23:00+08:00 ] ::1 /xj_property/Admin/Service/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001276s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008178s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008443s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0293s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `web_service1` [ RunTime:0.0307s ]
+SQL: SELECT s.*,p.title FROM web_service1 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `web_service2` [ RunTime:0.0336s ]
+SQL: SELECT s.*,p.title FROM web_service2 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000106s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000185s ]
+NOTIC: [8] Undefined variable: info D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\606fdac2891db40f0202579c44d43c68.php 第 42 行.
+NOTIC: [8] Undefined variable: info D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\606fdac2891db40f0202579c44d43c68.php 第 67 行.
+NOTIC: [8] Undefined variable: info D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\606fdac2891db40f0202579c44d43c68.php 第 67 行.
+NOTIC: [8] Undefined variable: info D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\606fdac2891db40f0202579c44d43c68.php 第 67 行.
+NOTIC: [8] Undefined variable: info D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\606fdac2891db40f0202579c44d43c68.php 第 74 行.
+NOTIC: [8] Undefined variable: info D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\606fdac2891db40f0202579c44d43c68.php 第 74 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026682s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026776s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002300s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002408s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002171s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002282s ]
+
+[ 2017-03-25T13:23:10+08:00 ] ::1 /xj_property/Admin/Service/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001364s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0223s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `web_service1` [ RunTime:0.0229s ]
+SQL: SELECT * FROM `web_service1` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0223s ]
+SQL: INSERT INTO `web_worker` (`phone`,`password`,`place_id`,`cate_id`,`service_id`,`ucode`) VALUES ('15004692806','c4ca4238a0b923820dcc509a6f75849b','1','1','3','c1942dd3ba1d5e5494df42d4abe37efb') [ RunTime:0.0352s ]
+
+[ 2017-03-25T13:23:12+08:00 ] ::1 /xj_property/Admin/service/worker.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001211s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001390s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0234s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0259s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_worker` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM web_worker w left join web_place p on p.id=w.place_id  ORDER BY worker_id DESC LIMIT 0,5   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000349s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000456s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\53c87ced07994399af6936232bea25c5.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039147s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039267s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001589s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001674s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001736s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001838s ]
+
+[ 2017-03-25T13:23:20+08:00 ] ::1 /xj_property/Admin/Service/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003050s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0267s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `web_service1` [ RunTime:0.0265s ]
+SQL: SELECT s.*,p.title FROM web_service1 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `web_service2` [ RunTime:0.0382s ]
+SQL: SELECT s.*,p.title FROM web_service2 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000177s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000344s ]
+NOTIC: [8] Undefined variable: info D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\606fdac2891db40f0202579c44d43c68.php 第 42 行.
+NOTIC: [8] Undefined variable: info D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\606fdac2891db40f0202579c44d43c68.php 第 67 行.
+NOTIC: [8] Undefined variable: info D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\606fdac2891db40f0202579c44d43c68.php 第 67 行.
+NOTIC: [8] Undefined variable: info D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\606fdac2891db40f0202579c44d43c68.php 第 67 行.
+NOTIC: [8] Undefined variable: info D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\606fdac2891db40f0202579c44d43c68.php 第 74 行.
+NOTIC: [8] Undefined variable: info D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\606fdac2891db40f0202579c44d43c68.php 第 74 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038306s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038423s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002466s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002612s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003040s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003196s ]
+
+[ 2017-03-25T13:23:31+08:00 ] ::1 /xj_property/Admin/Service/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000983s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001917s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002013s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0255s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `web_service2` [ RunTime:0.0272s ]
+SQL: SELECT * FROM `web_service2` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0248s ]
+SQL: INSERT INTO `web_worker` (`phone`,`password`,`place_id`,`cate_id`,`service_id`,`ucode`) VALUES ('15004692807','c4ca4238a0b923820dcc509a6f75849b','1','2','1','a4ff38ba8af613cb688046edbedac29e') [ RunTime:0.0326s ]
+
+[ 2017-03-25T13:23:34+08:00 ] ::1 /xj_property/Admin/service/worker.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002949s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003105s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0321s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0248s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_worker` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM web_worker w left join web_place p on p.id=w.place_id  ORDER BY worker_id DESC LIMIT 0,5   [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000222s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000360s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\53c87ced07994399af6936232bea25c5.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045412s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045587s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002754s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002900s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003191s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003309s ]
+
+[ 2017-03-25T13:50:29+08:00 ] ::1 /xj_property/Admin/service/lists.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001586s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0260s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `web_service1` [ RunTime:0.0223s ]
+SQL: SELECT s.*,p.title FROM web_service1 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `web_service2` [ RunTime:0.0219s ]
+SQL: SELECT s.*,p.title FROM web_service2 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000212s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000312s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\277a2838f7529798d02e341c0f97e605.php 第 173 行.
+NOTIC: [8] Undefined variable: page D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\277a2838f7529798d02e341c0f97e605.php 第 265 行.
+NOTIC: [8] Undefined variable: page D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\277a2838f7529798d02e341c0f97e605.php 第 326 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.069887s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.070000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001723s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001792s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002723s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002870s ]
+
+[ 2017-03-25T13:50:34+08:00 ] ::1 /xj_property/Admin/plat/category.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000976s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001190s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001317s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0229s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0250s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid = 0 )  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=1 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=5 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=10 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=19 )  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=20 )  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=21 )  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000199s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000299s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\e529c7c0b2802539dcd1db5ea171c017.php 第 140 行.
+NOTIC: [8] Undefined variable: page D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\e529c7c0b2802539dcd1db5ea171c017.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039871s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039960s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001298s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001399s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002961s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003099s ]
+
+[ 2017-03-25T13:50:38+08:00 ] ::1 /xj_property/Admin/Plat/cate_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002355s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0333s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0254s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid = 0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000242s ]
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 42 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 51 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 53 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 53 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 53 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 53 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 53 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 53 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 62 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 70 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 71 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062959s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063089s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001799s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001915s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002329s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002452s ]
+
+[ 2017-03-25T13:50:51+08:00 ] ::1 /xj_property/Admin/Plat/cate_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003582s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0239s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0253s ]
+SQL: INSERT INTO `web_category` (`catname`,`pid`,`sortorder`,`type`,`ctime`,`admin_name`) VALUES ('测试项目','0','100','2','1490421050','admin') [ RunTime:0.0507s ]
+
+[ 2017-03-25T13:50:53+08:00 ] ::1 /xj_property/Admin/plat/category.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001611s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001823s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001944s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0456s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0313s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid = 0 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=1 )  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=5 )  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=10 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=19 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=20 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=21 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=26 )  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000185s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000277s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\e529c7c0b2802539dcd1db5ea171c017.php 第 140 行.
+NOTIC: [8] Undefined variable: page D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\e529c7c0b2802539dcd1db5ea171c017.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045708s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045832s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001354s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001442s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002469s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002593s ]
+
+[ 2017-03-25T14:19:04+08:00 ] ::1 /xj_property/Admin/Plat/cate_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001993s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002391s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002512s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0429s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0260s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid = 0 )  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000124s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000208s ]
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 42 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 51 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 53 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 53 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 53 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 53 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 53 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 53 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 53 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 62 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 70 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\bf2bff0ec85bd954d31246c57d9551cc.php 第 71 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027320s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027427s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002586s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002677s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002322s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002411s ]
+
+[ 2017-03-25T14:19:17+08:00 ] ::1 /xj_property/Admin/Plat/cate_add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001006s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002458s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002556s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0661s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0216s ]
+SQL: SELECT `type` FROM `web_category` WHERE ( catid=26 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: UPDATE `web_category` SET `sortorder`='0' WHERE ( catid=26 ) [ RunTime:0.0567s ]
+SQL: INSERT INTO `web_category` (`catname`,`pid`,`sortorder`,`type`,`ctime`,`admin_name`) VALUES ('撒','26','1','2','1490422756','admin') [ RunTime:0.0239s ]
+
+[ 2017-03-25T14:19:19+08:00 ] ::1 /xj_property/Admin/plat/category.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001709s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001991s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002093s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0238s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0215s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid = 0 )  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=1 )  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=5 )  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=10 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=19 )  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=20 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=21 )  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=26 )  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000256s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000385s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\e529c7c0b2802539dcd1db5ea171c017.php 第 140 行.
+NOTIC: [8] Undefined variable: page D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\e529c7c0b2802539dcd1db5ea171c017.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041637s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002794s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002894s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002266s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002391s ]
+
+[ 2017-03-25T14:19:26+08:00 ] ::1 /xj_property/Admin/Plat/cate_del/cat_id/27
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002007s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004156s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004300s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0322s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0340s ]
+SQL: DELETE FROM `web_category` WHERE ( catid = 27 ) [ RunTime:0.0369s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=27 )  [ RunTime:0.0008s ]
+
+[ 2017-03-25T14:19:28+08:00 ] ::1 /xj_property/Admin/plat/category.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001979s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002121s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0434s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0223s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid = 0 )  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=1 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=5 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=10 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=19 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=20 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=21 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=26 )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000147s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000217s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\e529c7c0b2802539dcd1db5ea171c017.php 第 140 行.
+NOTIC: [8] Undefined variable: page D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\e529c7c0b2802539dcd1db5ea171c017.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043371s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043494s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001501s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001565s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002672s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002809s ]
+
+[ 2017-03-25T14:19:32+08:00 ] ::1 /xj_property/Admin/Plat/cate_edit/cat_id/26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002539s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0348s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0276s ]
+SQL: SELECT * FROM `web_category` WHERE `catid` = 26 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid = 0 )  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024838s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024934s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001734s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001847s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001735s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001836s ]
+
+[ 2017-03-25T14:19:38+08:00 ] ::1 /xj_property/Admin/Plat/cate_edit/cat_id/26
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000066s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001623s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001779s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0247s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0187s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=26 )  [ RunTime:0.0006s ]
+SQL: UPDATE `web_category` SET `catname`='测试项目',`pid`='0',`sortorder`='100',`type`='2',`etime`='1490422776',`admin_name`='admin' WHERE `catid` = 26 [ RunTime:0.0598s ]
+
+[ 2017-03-25T14:19:40+08:00 ] ::1 /xj_property/Admin/plat/category.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001758s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001926s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0239s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `web_category` [ RunTime:0.0217s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid = 0 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=1 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=5 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=10 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=19 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=20 )  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=21 )  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `web_category` WHERE ( pid=26 )  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000148s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000219s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\e529c7c0b2802539dcd1db5ea171c017.php 第 140 行.
+NOTIC: [8] Undefined variable: page D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\e529c7c0b2802539dcd1db5ea171c017.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046012s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046137s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001187s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001256s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001799s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001891s ]
+
+[ 2017-03-25T18:14:49+08:00 ] ::1 /xj_property/Admin/orders/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002411s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002589s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0271s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0021s ]
+ERR: 1146:Table 'xj_property.web_order' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `web_order`
+ERR: 1146:Table 'xj_property.web_order' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `web_order`
+
+[ 2017-03-25T18:14:58+08:00 ] ::1 /xj_property/Admin/service/worker.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001558s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001784s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001886s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0245s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0225s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_worker` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM web_worker w left join web_place p on p.id=w.place_id  ORDER BY worker_id DESC LIMIT 0,5   [ RunTime:0.0044s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000260s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000384s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\53c87ced07994399af6936232bea25c5.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042758s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042852s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001472s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001535s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001761s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001913s ]
+
+[ 2017-03-25T18:15:06+08:00 ] ::1 /xj_property/Admin/Service/edit/id/6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001878s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001290s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001412s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0251s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0247s ]
+SQL: SELECT * FROM `web_worker` WHERE ( worker_id=6 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `web_service1` [ RunTime:0.0330s ]
+SQL: SELECT s.*,p.title FROM web_service1 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `web_service2` [ RunTime:0.0283s ]
+SQL: SELECT s.*,p.title FROM web_service2 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000207s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028140s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001906s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002396s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002578s ]
+
+[ 2017-03-25T18:17:52+08:00 ] ::1 /xj_property/Admin/service/worker.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002134s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004011s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0237s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0241s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_worker` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM web_worker w left join web_place p on p.id=w.place_id  ORDER BY worker_id DESC LIMIT 0,5   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000237s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000321s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\53c87ced07994399af6936232bea25c5.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038218s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038337s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002261s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002360s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002503s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002628s ]
+
+[ 2017-03-25T18:17:54+08:00 ] ::1 /xj_property/Admin/Service/edit/id/6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001698s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003628s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0268s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0287s ]
+SQL: SELECT * FROM `web_worker` WHERE ( worker_id=6 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `web_service1` [ RunTime:0.0249s ]
+SQL: SELECT s.*,p.title FROM web_service1 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `web_service2` [ RunTime:0.0270s ]
+SQL: SELECT s.*,p.title FROM web_service2 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000139s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000246s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028962s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029142s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001810s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001923s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003938s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004064s ]
+
+[ 2017-03-25T18:18:18+08:00 ] ::1 /xj_property/Admin/service/worker.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002736s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0264s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0278s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_worker` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM web_worker w left join web_place p on p.id=w.place_id  ORDER BY worker_id DESC LIMIT 0,5   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000267s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000392s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\53c87ced07994399af6936232bea25c5.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046665s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046759s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002114s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002207s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002592s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002822s ]
+
+[ 2017-03-25T18:18:21+08:00 ] ::1 /xj_property/Admin/Service/edit/id/6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001057s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001501s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0249s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0274s ]
+SQL: SELECT * FROM `web_worker` WHERE ( worker_id=6 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `web_service1` [ RunTime:0.0265s ]
+SQL: SELECT s.*,p.title FROM web_service1 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `web_service2` [ RunTime:0.0417s ]
+SQL: SELECT s.*,p.title FROM web_service2 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000134s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000232s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025559s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025708s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001299s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001383s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002477s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002884s ]
+
+[ 2017-03-25T18:18:34+08:00 ] ::1 /xj_property/Admin/Service/edit/id/6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000989s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001875s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002022s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0218s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `web_service2` [ RunTime:0.0234s ]
+SQL: SELECT * FROM `web_service2` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0235s ]
+SQL: UPDATE `web_worker` SET `worker_name`='suzuko',`phone`='15004692807',`password`='c4ca4238a0b923820dcc509a6f75849b',`place_id`='1',`cate_id`='2',`service_id`='1' WHERE ( worker_id=6 ) [ RunTime:0.0379s ]
+
+[ 2017-03-25T18:18:36+08:00 ] ::1 /xj_property/Admin/service/worker.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001153s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001948s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0246s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0280s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_worker` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM web_worker w left join web_place p on p.id=w.place_id  ORDER BY worker_id DESC LIMIT 0,5   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000240s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\53c87ced07994399af6936232bea25c5.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042033s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042163s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001825s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001942s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002770s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002900s ]
+
+[ 2017-03-25T18:18:39+08:00 ] ::1 /xj_property/Admin/Service/edit/id/5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001626s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001606s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0201s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0273s ]
+SQL: SELECT * FROM `web_worker` WHERE ( worker_id=5 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `web_service1` [ RunTime:0.0231s ]
+SQL: SELECT s.*,p.title FROM web_service1 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `web_service2` [ RunTime:0.0283s ]
+SQL: SELECT s.*,p.title FROM web_service2 s left join web_place p on s.place_id=p.id  WHERE ( s.is_del=0 )  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000166s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000287s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026158s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026292s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001559s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001723s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002943s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003092s ]
+
+[ 2017-03-25T18:18:48+08:00 ] ::1 /xj_property/Admin/Service/edit/id/5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009071s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009195s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0239s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `web_service1` [ RunTime:0.0210s ]
+SQL: SELECT * FROM `web_service1` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0230s ]
+SQL: UPDATE `web_worker` SET `worker_name`='pile',`phone`='15004692806',`password`='c4ca4238a0b923820dcc509a6f75849b',`place_id`='1',`cate_id`='1',`service_id`='3' WHERE ( worker_id=5 ) [ RunTime:0.0365s ]
+
+[ 2017-03-25T18:18:50+08:00 ] ::1 /xj_property/Admin/service/worker.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000129s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001659s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001193s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001302s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\xj_property\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0238s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `web_worker` [ RunTime:0.0218s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_worker` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM web_worker w left join web_place p on p.id=w.place_id  ORDER BY worker_id DESC LIMIT 0,5   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000179s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000277s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\xj_property\Application\Runtime\Cache\Admin\53c87ced07994399af6936232bea25c5.php 第 157 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035944s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036053s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001759s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001842s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002078s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002221s ]
+

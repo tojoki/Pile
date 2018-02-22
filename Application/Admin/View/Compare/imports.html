@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />	      	
+	<include file="Public:page_css" />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+                                            <h5>选择文件</h5>
+                                            <div class="ibox-tools">
+                                                <a class="collapse-link">
+                                                    <i class="fa fa-chevron-up"></i>
+                                                </a>
+                                            </div>
+					</div>
+					<div class="ibox-content">
+						<form class="form-horizontal" method="post" action="__URL__/imports" name="basic_validate" id="myform">
+                                                        <input name="shopid" type="hidden" value="{$shopid}"/>
+                                                        <input name="optype" type="hidden" value="{$optype}"/>
+                                                        <div class="form-group">
+                                                            <div class="col-sm-2"></div>
+                                                            <div class="col-sm-8">
+                                                                支持文件类型:xls<br/>
+                                                                商品导入:第一列为商品名称<br/>
+                                                                价格导入：第一列为商品名称，第二列为价格<br/>
+                                                                *商品名称需和商品管理录入的商品名称完全相等
+                                                            </div>
+							</div>
+							<div class="hr-line-dashed"></div>
+							<div class="form-group">
+                                                            <label class="col-sm-2 control-label">选择文件</label>
+                                                            <div class="col-sm-3">
+                                                                <input id="photo_file" name="attach" type="file" multiple="false" value="" />
+                                                            </div>
+                                                            <div class="col-sm-5">
+                                                                <input type="text" readonly style="border:none;width:350px;" name="file" value="" id="poster" datatype="*" nullmsg="请上传导入文件" />
+                                                            </div>
+                                                            
+							</div>
+							<div class="hr-line-dashed"></div>
+							<div class="form-group">
+                                                            <div class="col-sm-4 col-sm-offset-2">
+                                                                <button class="btn btn-primary" type="submit">保存</button>
+                                                            </div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	<js file='__PUBLIC__/Common/js/uploadify/jquery.uploadify.min.js' />		
+	<link rel="stylesheet" href="__PUBLIC__/Common/js/uploadify/uploadify.css"> 
+        <script type="text/javascript" src='__PUBLIC__/Admin/js/plugins/Validform/Validform_v5.3.1_min.js'></script>
+        <style type="text/css" src='__PUBLIC__/Admin/css/plugins/Validform/validform.css'></style>
+	<script type="text/javascript">
+            var succpath = "{:U('category')}";
+            $("#photo_file").uploadify({
+                'swf': '__PUBLIC__/Common/js/uploadify/uploadify.swf',
+                'uploader': '{:U("upload")}',
+                'cancelImg': '__PUBLIC__/Common/js/uploadify/uploadify-cancel.png',
+                'buttonText': '上传文件',
+                'height': 35,
+                'dataType':'json',
+                'fileTypeExts': '*.xls;*.xlsx',
+                'queueSizeLimit': 1,
+                'onUploadSuccess': function(file, data, response) {
+                    var data = JSON.parse(data);
+                    if(data.status==0){
+                        $("#poster").val( data.path);
+                    }else{
+                       show_hint(data.msg); 
+                    }
+                    
+                    //$("#upload_img").attr('src', '__ROOT__/Uploads' + data).show();
+                }
+            });
+            function show_result_msg(msg,o,cssctl){
+                if(o.type>2){
+                    layer.msg(msg,{skin:"layui-layer-hui",time:1500});
+                    return false;
+                }
+            }
+            function show_hint(msg){
+                layer.msg(msg,{skin:"layui-layer-hui",time:1500});
+            }
+            $(document).ready(function(){
+                    var valid = $("#myform").Validform({
+                    tiptype:show_result_msg,
+                    tipSweep:true,
+                    postonce:true,
+                    ajaxPost:true,
+                    callback:function(data){
+                        layer.msg(data.msg,{skin:"layui-layer-hui",time:2000,end:function(){
+                            if(data.status == 0){
+                                layer.close();
+                                parent.location.reload();
+                            }
+                        }});
+                    }
+                });
+            });
+	</script>
+	</body>
+</html>

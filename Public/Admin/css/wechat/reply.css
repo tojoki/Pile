@@ -1,0 +1,86 @@
+.newsList{
+        width:300px;
+        padding: 10px;
+        border:1px solid #ccc;
+        border-radius: 10px;
+        font-family: "微软雅黑";
+        min-height: 35px;
+    }
+    .one{position: relative;}
+    .one img,.first img{width: 100%}
+    .one h3{
+        font-size:14px;
+        line-height: 14px;
+        color:#000;
+    }
+    .one .time{
+        font-size:12px;
+        line-height: 14px;
+        color:#ccc;
+    }
+    .one .describe p{
+        font-size:12px;
+        line-height: 14px;
+        color: #666;
+    }
+    .one .btm{
+        border-top:1px solid #f0f0f0;
+        font-size: 12px; line-height: 24px;
+        padding: 5px 0;
+    }
+
+    .first{
+        position: relative;
+        overflow: hidden;
+    }
+    .first h3{
+        position: absolute;
+        bottom: 0 ;
+        height: 40px;
+        background: #333;
+        font-size:14px;
+        line-height: 20px;
+        color:#fff;
+        padding: 0 5px;
+        width: 100%;
+        margin:0;
+    }
+
+    .item{
+        position: relative;
+        overflow: hidden;
+        height: 50px;
+        border-top:1px solid #f0f0f0;
+        padding: 5px 0;
+    }
+    .item h3{
+        margin:0;
+        padding: 0;
+        bottom: 0 ;
+        font-size:12px;
+        line-height: 20px;
+        height: 40px;
+        color:#fff;
+        float: left;
+        width: 80%;
+        color:#333;
+    }
+    .item img{
+        width: 40px;height: 40px;
+        position: absolute;
+        right: 0;
+    }
+    .delBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    background: rgba(0,0,0,.0);
+    font-size: 16px;
+    text-align: center;
+    line-height: 18px;
+    color: #DC2222;
+    transition: all .2s;
+    border-radius: 0 0 0 5px;
+    cursor: pointer;

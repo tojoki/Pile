@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content no-padding">
+						<ul class="list-group">
+							<li class="list-group-item">
+								<p class="text-success"><a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"><i class="fa fa-home"></i> 首页</a> /
+									<a href="" class="tip-bottom">微信设置</a> /<a href="javascript:;" class="current">基础设置</a></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5>基础设置</h5>
+						<div class="ibox-tools">
+							<a class="collapse-link">
+								<i class="fa fa-chevron-up"></i>
+							</a>
+						</div>
+					</div>
+<form id="form" action="" method="post" class="form-horizontal">
+					<div class="ibox-content">
+                                <div class="tab-wrapper tab-primary">
+                                   <!--  <ul class="nav nav-tabs">
+                                       <li class="active"><a href="#base" data-toggle="tab">基础设置</a>
+                                       </li>
+                                      <li class=""><a href="#point" data-toggle="tab">积分设置</a>
+                                       </li>
+                                       <li class=""><a href="#exp" data-toggle="tab">成长值</a>
+                                       </li>
+                                   </ul> -->
+                                    <div class="tab-content">
+<!-- 基础设置 -->
+
+
+
+                                        <div class="tab-pane active" id="base">
+
+<div class="form-group">
+	<label class="col-sm-2 control-label">公众号名称</label>
+	<div class="col-sm-6">
+		<input type="text" name="name" datatype="*" class="form-control w50" id="name" value="{$data.name}"/>
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">接口地址</label>
+	<div class="col-sm-6">
+		<input type="text" name="url" datatype="*" class="form-control w50" id="url" value="{:getDomain()}{:U('Wechat/Api/index','','')}" />
+	</div>
+</div>
+
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Appid</label>
+	<div class="col-sm-6">
+		<input type="text" name="appid" datatype="*" class="form-control w50" id="appid" value="{$data.appid}"/>
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Appsecret</label>
+	<div class="col-sm-6">
+		<input type="text" name="appsecret" value="{$data.appsecret}" class="form-control">
+	</div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">Token</label>
+    <div class="col-sm-6">
+        <input type="text" name="token" datatype="*" class="form-control w50" id="token" value="{$data.token}"/>
+    </div>
+    <div class="col-sm-1">
+        <a href="javascript:;" id="createToken" class="btn btn-success">随机生成</a>
+    </div>
+</div>
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Encodingaeskey</label>
+	<div class="col-sm-6">
+		<input type="text" name="encodingaeskey" class="form-control w50" id="encodingaeskey" value="{$data.encodingaeskey}"/>
+	</div>
+    <div class="col-sm-1">
+        <a href="javascript:;" id="createEncodingaeskey" class="btn btn-success">随机生成</a>
+    </div>
+</div>
+
+                                        </div>
+<!-- 基础设置 -->
+<!-- 积分兑换设置 -->
+<div class="tab-pane" id="point">
+</div>
+<!-- 积分兑换设置 -->
+
+
+<!-- 成长值 经验设置 -->
+<div class="tab-pane" id="exp">
+</div>
+<!-- 成长值 设置 -->
+<div class="hr-line-dashed"></div>
+<div class="form-group">
+	<div class="col-sm-4 col-sm-offset-2">
+		<button class="btn btn-primary" type="submit">保存信息</button>&nbsp;&nbsp;&nbsp;
+		<a class="btn btn-danger" href="{:U('Index/index')}">取消</a>
+	</div>
+</div>                                          
+                                    </div>
+                                </div>
+                            </div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+	</body>
+<js file='__PUBLIC__/Admin/js/plugins/Validform/Validform_v5.3.1_min.js' />		
+<css file='__PUBLIC__/Admin/css/plugins/Validform/validform.css' />		
+<script type="text/javascript">
+$(document).ready(function(){
+	 var valid = $("#form").Validform({
+        tiptype:function(msg){
+            layer.msg(msg,{skin:"layui-layer-hui",time:1000});
+        },
+        tipSweep:true,
+        postonce:true,
+        beforeSubmit:function(form){
+          // return false;
+        },
+        ajaxPost:true,
+        callback:function(data){
+            layer.msg(data.returnMsg,{skin:"layui-layer-hui",time:1000,end:function(){
+                if(data.returnCode == 'SUCCESS')parent.location.reload(); //重载父页面
+            }});
+        }
+    });
+     
+    $('#createEncodingaeskey,#createToken').click(function(){
+        var randomStr = randomString(32);
+        $(this).parent().siblings('div').find('input').val(randomStr);
+    })
+
+    /**
+     * 随机字符串
+     */
+    function randomString(len) {
+    　　len = len || 32;
+    /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
+    　　var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';
+    　　var maxPos = $chars.length;
+    　　var pwd = '';
+    　　for (i = 0; i < len; i++) {
+    　　　　pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+    　　}
+    　　return pwd;
+    }
+});
+</script>
+</html>

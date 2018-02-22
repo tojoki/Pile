@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+    <style type="text/css">
+        .headimg_wrap{position: relative; width: 166px; overflow: hidden;}
+        .blurbg_wrap{width:200px;height: 100px;overflow: hidden; position: relative;}
+
+        .headimg_bg{width:220px;height: 120px;z-index: 1; position: absolute;left: -10px;top:-10px;}
+        .headimg_bg2{width:200px;height: 100px;z-index: 2; background: #fff;position: absolute;top:0;left: 0; opacity: .6;}
+        .headimg{width: 60px; height: 60px;border-radius: 0px; position: absolute;z-index: 10; margin:auto;left:0; right:0; top:0; bottom:0; border:1px solid #fff; box-shadow: 1px 1px 3px rgba(0,0,0,.2); }
+        .blur { 
+            filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+
+            -webkit-filter: blur(10px); /* Chrome, Opera */
+            -moz-filter: blur(10px);
+            -ms-filter: blur(10px);    
+                filter: blur(10px);
+            filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
+        }
+
+        .infoDetail p{
+            text-align: left;margin:0;line-height: 28px;font-family:"Helvetica Neue",HelveticaNeue,"Microsoft YaHei",Arial,Helvetica,sans-serif; color:#555;
+        }
+        .infoDetail p span{text-align:right;width:70px; display: inline-block; font-weight: 400; color:#888; }
+        .tags{ text-align: left; margin-top: 10px; }
+        .tags span{
+            padding: 1px 2px; background: #5397BF;border-radius: 2px; margin: 2px;display: inline-block; font-size: 12px;color:#fff;
+        }
+        .btns a{
+            margin:0 5px 5px 0; display: inline-block;  
+            -webkit-transition: all .1s linear;
+        }
+        .btns a{background: #fff; color:#333;border:1px solid #888;}
+        .bd{font-weight: bold;}
+        /*.btns a.openWindow:hover{background: #1c84c6; color:#fff;border:1px solid #1c84c6;}*/
+    </style>
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+
+		<include file="Public:nav" />
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2></h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="index.html"><i class="fa fa-home"></i> 主页</a>
+                    </li>
+                    <li>
+                        <a>Pile</a>
+                    </li>
+                    <li>
+                        <strong>内容</strong>
+
+                    </li>
+                </ol>
+            </div>              
+        </div>
+        <br/>
+        <div class="row">
+            
+            <div class="col-sm-10">
+            </div>
+            <div class="col-sm-1">
+            <a href="{:U('add_content',array('id'=>$disc_id))}" class="btn btn-primary btn-sm">添加内容</a>
+            </div>
+        </div>
+        <br/>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="fa fa-tasks"></i> {$disc_name}</h5> 
+					</div>
+					<div class="ibox-content">
+						<table class="table table-hover">
+							<thead>
+								<tr class="long-tr">
+                                    <th width="10%">类型</th>
+                                    <th width="50%">名称</th>
+								</tr>
+							</thead>
+							<tbody>
+								<volist name="lists" id="vo">
+									<tr class="long-td">
+                                        <td>
+                                            <if condition="$vo['type'] eq 1">cd</if>
+                                            <if condition="$vo['type'] eq 2">dvd</if>
+                                            <if condition="$vo['type'] eq 3">bd</if>
+                                        </td>
+                                        <td>
+                                        <?php
+                                        if ($vo['name']=='') {
+                                           echo '';
+                                        }else{
+                                            echo '<span title="'.$vo['name'].'">'.mb_substr($vo['name'],0,80,'utf-8').'...</span>';
+                                        }
+                                        ?>
+                                        </td>
+									</tr>
+								</volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+
+	</body>
+    <js file="__PUBLIC__/Admin/js/plugins/laydate/laydate.js"/>
+    <js file="__PUBLIC__/Admin/js/common.js"/>
+    <script type="text/javascript">
+
+    $(".discount").click(function(){
+            var id = $(this).data("id");
+            var app = "<?php echo '__APP__';?>";
+            var url = app + "/Admin/Film/discount?id="+id;
+            var index = layer.open({
+                type: 2,
+                title:"选择电影",
+                content: url,
+                area: ['800px', '500px'],
+                skin: 'layui-layer-rim',
+                maxmin: true,
+                scrollbar: true,
+            });
+        });    
+
+
+    $(function(){
+        var config = {
+            point:{
+                title:"用户绑定积分变动记录",
+                url:"{:U("Admin/User/pointLog",'','')}",
+            },
+            money:{
+                title:"用户通用积分变动记录",
+                url:"{:U("Admin/User/moneyLog",'','')}",
+            },
+            process:{
+                title:"案例详情",
+                url:"{:U("Admin/Bible/detail",'','')}",
+            }
+        };
+        $(".del").click(function(){
+            $href = $(this).data("href");
+            layer.confirm('是否删除此条记录？', {icon: 3}, function(index){
+                layer.close(index);
+                window.location.href= $href;
+            });
+        });
+
+        $(".openWindow").click(function(){
+            var id = $(this).data("id");
+            url = eval("config."+$(this).data("type")+".url") +"/id/"+id;
+            var index = layer.open({
+                type: 2,
+                title:eval("config."+$(this).data("type")+".title"),
+                content: url,
+                area: ['800px', '600px'],
+                shadeClose: true,
+                skin: 'layui-layer-rim',
+                maxmin: true,
+                scrollbar: true,
+            });
+        });
+
+        var options = {        
+        event:'click',
+        format: 'YYYY-MM-DD hh:mm', //日期格式
+        istime: true, //是否开启时间选择
+        isclear: true, //是否显示清空
+        istoday: true, //是否显示今天
+        issure: true, //是否显示确认
+        festival: false, //是否显示节日
+        choose: function(dates){ //选择好日期的回调
+            }
+        }
+        options.elem = '#stime';
+        laydate(options).skin('molv');
+        options.elem = '#etime';
+        laydate(options).skin('molv');
+
+        $('.uplevel').click(function(){
+            var userid = $(this).data('userid'),
+                vip = $(this).data('type');
+            var params = {
+                url : '{:U("uplevel")}',
+                params : {
+                    userid : userid,
+                    vip : vip,
+                },
+                callback : function(d){
+                    msg(d.returnMsg,function(){
+                        if(d.returnCode == 'SUCCESS') window.location.reload();
+                    })
+                }
+            }
+            ajax(params);
+        })
+
+    });
+
+    </script>
+</html>

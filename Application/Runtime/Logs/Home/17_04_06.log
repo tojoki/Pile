@@ -1,0 +1,10 @@
+[ 2017-04-06T18:17:57+08:00 ] ::1 /property/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001066s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002596s ]
+NOTIC: [8] Undefined index: qc_cwbdyj D:\heyi\USBWebserver\root\property\Application\Home\Controller\BaseController.class.php 第 36 行.
+ERR: SQLSTATE[HY000] [1049] Unknown database 'db_property'
+

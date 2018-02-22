@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+		<include file="Public:nav" />
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-12">
+                <h2>首页管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"> 主页</a>
+                    </li>
+                    <li>
+                        <a href="{:U('Shop/goods')}" class="tip-bottom">首页管理</a>
+                    </li>
+                    <li>
+                        <strong>推荐列表</strong>
+                    </li>
+                </ol>
+            </div>              
+        </div>
+        <br/>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="fa fa-tasks"></i> 首页管理</h5>
+					</div>
+					<div class="ibox-content">
+						<table class="table table-bordered">
+							<thead>
+                                                            <tr class="long-tr">
+                                                                <th width="30%">标题</th>
+                                                                <th width="20%">封面</th>
+                                                                <th width="15%">排序</th>
+                                                                <th width="15%">类型</th>
+                                                                <th>操作</th>
+                                                            </tr>
+							</thead>
+							<tbody>
+								<volist name="list" id="vo">
+									<tr class="long-td">
+                                            <td style="text-align: left;">
+                                                {:msubstr($vo['title'],0,15)}
+                                            </td>
+                                            <td> 
+                                                <img src="{$vo.poster}" width="100"/>
+                                            </td>
+                                            <td>
+                                                <span class="sortorder" title="点击修改排序">{$vo.sortval}</span>
+                                                <input name="sortorder" type="text" value="{$vo.sortval}" gid="{$vo.rcmdid}" style="display:none;width:50px;"/>
+                                            </td>
+                                       <td>
+                                           <switch name="vo['dtype']">
+                                                <case value="1">课程</case>
+                                                <case value="2">机构</case>
+                                                <case value="3">讲师</case>
+                                                <case value="4">专家</case>
+                                                <case value="5">店铺</case>
+                                                <case value="6">需求</case>
+                                                <case value="7">商品</case>
+                                           </switch>
+                                       </td>
+					<td>
+                                            <a href="{:U('delhome',array('id'=>$vo['rcmdid']))}" class="btn btn-danger">
+                                                    <i class="fa fa-pencil"></i> 删除
+                                            </a>
+										</td>
+									</tr>
+								</volist>
+							</tbody>
+						</table>
+						<div class="pages" style=" text-align: right;">
+							{$page}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+
+	</body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("a.btn-danger").click(function(){
+                var url = $(this).attr('href');
+                layer.confirm('确认取消该推荐？', {icon: 3}, function(index){
+                    layer.close(index);
+                    $.get(url,{},function(data){
+                        if(data.status ==0){
+                            window.location.reload();
+                        }
+                    });
+                });
+                return false;
+            });
+            
+        $(".sortorder").click(function(){
+            $(this).parent().find("input").show().focus();
+            $(this).hide();
+        });
+        $("input[name='sortorder']").blur(function(){
+           var sortval = $(this).val();
+           var gid = $(this).attr("gid");
+           if(!/^\d*$/.test(sortval)){
+               return;
+           }
+           $(this).hide();
+           var currspan = $(this).parent().find('span');
+           $(this).parent().find('span').show();
+           $.post('__URL__/edithomeorder',{id:gid,sortval:sortval},function(dt){
+               if(dt.status == 0){
+                   currspan.text(sortval);
+               }
+           });
+        });
+        });
+    </script>
+
+</html>

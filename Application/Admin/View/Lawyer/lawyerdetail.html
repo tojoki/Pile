@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+	<include file="Public:header" />
+	<include file="Public:page_css" />
+        <css file="__PUBLIC__/Admin/js/plugins/lightbox2/css/lightbox.min.css" />
+    <style type="text/css">
+        .ibox-content table tr td:nth-child(1){text-align: right;font-weight: bold;padding-right: 30px;width:15%;line-height: 30px;}
+    </style>
+	<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+
+		<include file="Public:nav" />
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content no-padding">
+						<ul class="list-group">
+                            <li class="list-group-item">
+                                <p class="text-success"><a href="{:U('Index/index')}" title="返回首页" class="tip-bottom"><i class="fa fa-home"></i> 首页</a> /
+                                    <a href="{:U('Admin/User/index')}" class="tip-bottom">律师管理</a> /
+                                    <a href="javascript:;" class="tip-bottom">律师详情</a>
+                                </p>
+                            </li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="fa fa-tasks"></i> 律师申请信息</h5>
+					</div>
+					<div class="ibox-content">
+                                            <table class="table table-bordered">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>用户</td>
+                                                            <td>{$teacher.phone}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>姓名</td>
+                                                            <td>{$teacher.rname}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>性别</td>
+                                                            <td>
+                                                                <if condition="$teacher['gender'] eq '1'">
+                                                                    男<elseif condition="$teacher['gender'] eq '2'"/>女
+                                                                </if>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>年龄</td>
+                                                            <td>{$teacher.age}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>律所</td>
+                                                            <td>{$teacher.company}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>执业证号</td>
+                                                            <td>{$teacher.lincenceno}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>执业证类型</td>
+                                                            <td>{$teacher.licencetype}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>执业证城市</td>
+                                                            <td>{$teacher.licencecity}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>开始执业时间</td>
+                                                            <td>{$teacher.startyear}年</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>执业证书</td>
+                                                            <td>
+                                                                <a href="{$teacher.licence}" data-lightbox="group1">
+                                                                    <img style="max-width:600px;" src='{$teacher.licence}'/> 
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>申请时间</td>
+                                                            <td>{$teacher.ctime|date='Y-m-d H:i:s',###}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>状态</td>
+                                                            <td><switch name="teacher['authstatus']" >
+                                                                    <case value="1">待审核</case>
+                                                                    <case value="2">驳回</case>
+                                                                </switch>
+                                                            </td>
+                                                        </tr>
+                                                        <if condition="$showop">
+                                                            <tr>
+                                                                <td>审核信息</td>
+                                                                <td>
+                                                                    <form>
+                                                                        <input type='hidden' name='applyid' id='applyid' value="{$teacher.uid}"/>
+                                                                    <table class="table">
+                                                                        <tr>
+                                                                            <td class="col-sm-2">审核结果</td>
+                                                                            <td>
+                                                                                <select id='authtype' class="form-control ">
+                                                                                    <option value="1" >通过</option>
+                                                                                    <option value="2" >驳回</option>
+                                                                                </select>      
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>备注</td>
+                                                                            <td><textarea type="text" rows="5" name="memo" id='memo' class="form-control"></textarea></td>
+                                                                        </tr>
+                                                                    </table>
+                                                                    </form>
+                                                                </td>
+                                                            </tr>
+                                                        </if>
+                                                        <tr>
+                                                            <td colspan='2' style="text-align: center;" >
+                                                                <if condition="$showop">
+                                                                 <button class="btn btn-primary" type="submit">确定</button>
+                                                                </if>
+                                                                 <a class="btn btn-danger" href="javascript:history.back()">返回</a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<include file="Public:footer" />
+	</body>
+    <js file="__PUBLIC__/Admin/js/plugins/lightbox2/js/lightbox.min.js"/>
+    <script type="text/javascript">
+    $(function(){
+        $(".btn-primary").click(function(){
+            var authstr = $("#authtype option:selected").text();
+            layer.confirm('是否确认要'+authstr+'该条申请？', {icon: 3}, function(index){
+                layer.close(index);
+                var status = $('#authtype').val();
+                var memo = $('#memo').val();
+                ajax_request({
+                   url:'__URL__/authlawyer',
+                   params:{status:status,memo:memo,applyid:$("#applyid").val()},
+                   succshow:true,
+                   redirect:'__URL__/lawyer',
+                });
+            });
+        });
+    });
+    </script>
+</html>

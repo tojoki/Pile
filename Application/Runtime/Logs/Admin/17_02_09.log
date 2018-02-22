@@ -1,0 +1,785 @@
+[ 2017-02-09T09:00:06+08:00 ] ::1 /lawyer/Admin/benefit/couponRule.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001138s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009782s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009863s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `web_coupon_rule` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_coupon_rule` LIMIT 1   [ RunTime:0.0004s ]
+SQL: select * from web_coupon_rule order by rule_id desc limit 0,12  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000110s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000161s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 153 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 219 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 219 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 221 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 221 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.118277s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.118332s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.007420s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007473s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.014905s ]
+INFO: [ app_end ] --END-- [ RunTime:0.014964s ]
+
+[ 2017-02-09T09:00:14+08:00 ] ::1 /lawyer/Admin/benefit/couponRule.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002188s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `web_coupon_rule` [ RunTime:0.0101s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_coupon_rule` LIMIT 1   [ RunTime:0.0004s ]
+SQL: select * from web_coupon_rule order by rule_id desc limit 0,12  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 153 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 219 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 219 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 221 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 221 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025025s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025096s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001879s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001948s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001573s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001653s ]
+
+[ 2017-02-09T09:02:25+08:00 ] ::1 /lawyer/Admin/benefit/couponRule.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001888s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001905s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002010s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `web_coupon_rule` [ RunTime:0.0082s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_coupon_rule` LIMIT 1   [ RunTime:0.0004s ]
+SQL: select * from web_coupon_rule order by rule_id desc limit 0,12  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000150s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 153 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 221 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 221 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021195s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021255s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001048s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001096s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001894s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001985s ]
+
+[ 2017-02-09T09:10:27+08:00 ] ::1 /lawyer/Admin/system/version.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000784s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001506s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0206s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `web_app_version` [ RunTime:0.0221s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_app_version` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT web_app_version.*,web_admin.username AS managername FROM `web_app_version` LEFT JOIN web_admin ON web_admin.id = web_app_version.managerid  ORDER BY vid DESC LIMIT 0,10   [ RunTime:0.0029s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000137s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\290a61dc9550300bfb0904c3347d693f.php 第 136 行.
+NOTIC: [8] Undefined index: system D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\290a61dc9550300bfb0904c3347d693f.php 第 204 行.
+NOTIC: [8] Undefined index: system D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\290a61dc9550300bfb0904c3347d693f.php 第 204 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.056593s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056656s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001024s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001065s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001777s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001837s ]
+
+[ 2017-02-09T09:10:31+08:00 ] ::1 /lawyer/Admin/System/versionadd
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000758s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001587s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0178s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0028s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000117s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000185s ]
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\066633f32df71de3bd34b33c825b0e9b.php 第 43 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\066633f32df71de3bd34b33c825b0e9b.php 第 52 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\066633f32df71de3bd34b33c825b0e9b.php 第 60 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\066633f32df71de3bd34b33c825b0e9b.php 第 67 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\066633f32df71de3bd34b33c825b0e9b.php 第 68 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\066633f32df71de3bd34b33c825b0e9b.php 第 76 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\066633f32df71de3bd34b33c825b0e9b.php 第 85 行.
+NOTIC: [8] Undefined variable: nowtime D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\066633f32df71de3bd34b33c825b0e9b.php 第 143 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040024s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040160s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001451s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001511s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001370s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001439s ]
+
+[ 2017-02-09T09:10:35+08:00 ] ::1 /lawyer/Admin/System/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001109s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001382s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0012s ]
+ERR: 非法操作:index
+
+[ 2017-02-09T09:17:08+08:00 ] ::1 /lawyer/Admin/system/version.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001462s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001305s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001376s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0505s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `web_app_version` [ RunTime:0.0109s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_app_version` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT web_app_version.*,web_admin.username AS managername FROM `web_app_version` LEFT JOIN web_admin ON web_admin.id = web_app_version.managerid  ORDER BY vid DESC LIMIT 0,10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000174s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000416s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\290a61dc9550300bfb0904c3347d693f.php 第 136 行.
+NOTIC: [8] Undefined index: system D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\290a61dc9550300bfb0904c3347d693f.php 第 204 行.
+NOTIC: [8] Undefined index: system D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\290a61dc9550300bfb0904c3347d693f.php 第 204 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025114s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025171s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001192s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001250s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001790s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001863s ]
+
+[ 2017-02-09T09:17:14+08:00 ] ::1 /lawyer/Admin/benefit/couponRule.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000748s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001461s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001548s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0271s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `web_coupon_rule` [ RunTime:0.0076s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_coupon_rule` LIMIT 1   [ RunTime:0.0003s ]
+SQL: select * from web_coupon_rule order by rule_id desc limit 0,12  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000158s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 153 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 223 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022316s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022381s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001057s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001099s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001778s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001849s ]
+
+[ 2017-02-09T09:17:17+08:00 ] ::1 /lawyer/Admin/Benefit/editRule?rule_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000797s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001483s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0202s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `web_coupon_rule` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `web_coupon_rule` WHERE ( rule_id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000146s ]
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\63fd197a156593739c547eed360fedab.php 第 43 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\63fd197a156593739c547eed360fedab.php 第 52 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\63fd197a156593739c547eed360fedab.php 第 60 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\63fd197a156593739c547eed360fedab.php 第 67 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\63fd197a156593739c547eed360fedab.php 第 68 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\63fd197a156593739c547eed360fedab.php 第 76 行.
+NOTIC: [8] Undefined variable: data D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\63fd197a156593739c547eed360fedab.php 第 85 行.
+NOTIC: [8] Undefined variable: nowtime D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\63fd197a156593739c547eed360fedab.php 第 143 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015190s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015290s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002141s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002211s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001718s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001790s ]
+
+[ 2017-02-09T09:17:20+08:00 ] ::1 /lawyer/Admin/Benefit/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000944s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001758s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001887s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0167s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0025s ]
+ERR: 非法操作:index
+
+[ 2017-02-09T09:23:57+08:00 ] ::1 /lawyer/Admin/benefit/couponRule.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000964s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001586s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001653s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `web_coupon_rule` [ RunTime:0.0094s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_coupon_rule` LIMIT 1   [ RunTime:0.0004s ]
+SQL: select * from web_coupon_rule order by rule_id desc limit 0,12  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000236s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000342s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 153 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 223 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032928s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001325s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001404s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002119s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002214s ]
+
+[ 2017-02-09T09:24:00+08:00 ] ::1 /lawyer/Admin/Benefit/editRule?rule_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001563s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002741s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002840s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0407s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `web_coupon_rule` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `web_coupon_rule` WHERE ( rule_id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010889s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010957s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000962s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001493s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001625s ]
+
+[ 2017-02-09T09:27:32+08:00 ] ::1 /lawyer/Admin/benefit/couponRule.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001996s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002090s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `web_coupon_rule` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_coupon_rule` LIMIT 1   [ RunTime:0.0004s ]
+SQL: select * from web_coupon_rule order by rule_id desc limit 0,12  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000124s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000176s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 153 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 223 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020545s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020593s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000963s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001741s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001800s ]
+
+[ 2017-02-09T09:27:35+08:00 ] ::1 /lawyer/Admin/Benefit/editRule?rule_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000855s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001177s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001240s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0267s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `web_coupon_rule` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `web_coupon_rule` WHERE ( rule_id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000127s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011929s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000974s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001233s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001285s ]
+
+[ 2017-02-09T09:27:41+08:00 ] ::1 /lawyer/Admin/Benefit/editRule
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001062s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001930s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002004s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `web_coupon_rule` [ RunTime:0.0098s ]
+SQL: UPDATE `web_coupon_rule` SET `name`='测试22',`amount`='212.00' WHERE ( rule_id=1 ) [ RunTime:0.0389s ]
+
+[ 2017-02-09T09:27:44+08:00 ] ::1 /lawyer/Admin/benefit/couponRule.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001653s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002163s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0884s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `web_coupon_rule` [ RunTime:0.0082s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_coupon_rule` LIMIT 1   [ RunTime:0.0004s ]
+SQL: select * from web_coupon_rule order by rule_id desc limit 0,12  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000309s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 153 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 223 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024297s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024357s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001049s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001089s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001787s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001860s ]
+
+[ 2017-02-09T09:27:48+08:00 ] ::1 /lawyer/Admin/Benefit/editRule?rule_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000987s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001730s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0804s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `web_coupon_rule` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `web_coupon_rule` WHERE ( rule_id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017192s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017301s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001619s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001696s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001729s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001812s ]
+
+[ 2017-02-09T09:27:59+08:00 ] ::1 /lawyer/Admin/Benefit/editRule
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001036s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001291s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0189s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0025s ]
+SQL: SHOW COLUMNS FROM `web_coupon_rule` [ RunTime:0.0089s ]
+SQL: UPDATE `web_coupon_rule` SET `name`='测试',`amount`='10' WHERE ( rule_id=1 ) [ RunTime:0.0582s ]
+
+[ 2017-02-09T09:28:01+08:00 ] ::1 /lawyer/Admin/benefit/couponRule.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000875s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001865s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `web_coupon_rule` [ RunTime:0.0097s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_coupon_rule` LIMIT 1   [ RunTime:0.0005s ]
+SQL: select * from web_coupon_rule order by rule_id desc limit 0,12  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000121s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000171s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 153 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 223 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021051s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021118s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001036s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001079s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001250s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001306s ]
+
+[ 2017-02-09T09:28:52+08:00 ] ::1 /lawyer/Admin/Benefit/editRule?rule_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001541s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001325s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `web_coupon_rule` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `web_coupon_rule` WHERE ( rule_id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013182s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013267s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001364s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001454s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001704s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001775s ]
+
+[ 2017-02-09T09:29:01+08:00 ] ::1 /lawyer/Admin/Benefit/editRule
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000734s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001847s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0262s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `web_coupon_rule` [ RunTime:0.0076s ]
+SQL: UPDATE `web_coupon_rule` SET `name`='用户反馈规则',`amount`='10.00' WHERE ( rule_id=1 ) [ RunTime:0.0439s ]
+
+[ 2017-02-09T09:29:03+08:00 ] ::1 /lawyer/Admin/benefit/couponRule.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000809s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001461s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `web_coupon_rule` [ RunTime:0.0082s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_coupon_rule` LIMIT 1   [ RunTime:0.0004s ]
+SQL: select * from web_coupon_rule order by rule_id desc limit 0,12  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000161s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 153 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 223 行.
+NOTIC: [8] Undefined index: type_id D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\3e77b15d708a3c414306c513b76519e0.php 第 223 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022637s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022688s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001261s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001313s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001340s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001406s ]
+
+[ 2017-02-09T09:34:30+08:00 ] ::1 /lawyer/Admin/benefit/couponList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000805s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001309s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001370s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0151s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `web_user_coupon` [ RunTime:0.0104s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_user_coupon` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `web_lawyer_coupon` [ RunTime:0.0107s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_lawyer_coupon` LIMIT 1   [ RunTime:0.0005s ]
+SQL: (select uc.couponid,uc.name,uc.amount,uc.starttime,uc.deadtime,uc.usetime,uc.status,u.nickname,u.phone,1 as type_id 
+            from web_user_coupon uc left join web_user u on u.uid=uc.uid) 
+            union 
+            (select lc.couponid,lc.title as name,lc.amount,lc.starttime,lc.deadtime,lc.usetime,lc.status,l.nickname,l.phone,2 as type_id 
+            from web_lawyer_coupon lc left join web_lawyer l on l.uid=lc.uid) 
+            order by starttime desc limit 0,12  [ RunTime:0.0023s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000110s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000161s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 153 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049254s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049306s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001066s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001108s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001344s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001401s ]
+
+[ 2017-02-09T09:34:37+08:00 ] ::1 /lawyer/Admin/Benefit/couponList/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000836s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001274s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001337s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0108s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `web_user_coupon` [ RunTime:0.0107s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_user_coupon` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `web_lawyer_coupon` [ RunTime:0.0094s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_lawyer_coupon` LIMIT 1   [ RunTime:0.0004s ]
+SQL: (select uc.couponid,uc.name,uc.amount,uc.starttime,uc.deadtime,uc.usetime,uc.status,u.nickname,u.phone,1 as type_id 
+            from web_user_coupon uc left join web_user u on u.uid=uc.uid) 
+            union 
+            (select lc.couponid,lc.title as name,lc.amount,lc.starttime,lc.deadtime,lc.usetime,lc.status,l.nickname,l.phone,2 as type_id 
+            from web_lawyer_coupon lc left join web_lawyer l on l.uid=lc.uid) 
+            order by starttime desc limit 12,12  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000178s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000277s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 153 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033586s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033678s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001521s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001604s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002168s ]
+
+[ 2017-02-09T09:34:40+08:00 ] ::1 /lawyer/Admin/Benefit/couponList/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002368s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `web_user_coupon` [ RunTime:0.0085s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_user_coupon` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `web_lawyer_coupon` [ RunTime:0.0081s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_lawyer_coupon` LIMIT 1   [ RunTime:0.0003s ]
+SQL: (select uc.couponid,uc.name,uc.amount,uc.starttime,uc.deadtime,uc.usetime,uc.status,u.nickname,u.phone,1 as type_id 
+            from web_user_coupon uc left join web_user u on u.uid=uc.uid) 
+            union 
+            (select lc.couponid,lc.title as name,lc.amount,lc.starttime,lc.deadtime,lc.usetime,lc.status,l.nickname,l.phone,2 as type_id 
+            from web_lawyer_coupon lc left join web_lawyer l on l.uid=lc.uid) 
+            order by starttime desc limit 0,12  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000130s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 153 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021681s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021733s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001654s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001725s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001331s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001412s ]
+
+[ 2017-02-09T09:35:28+08:00 ] ::1 /lawyer/Admin/Benefit/couponList/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000868s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001308s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001440s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0211s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `web_user_coupon` [ RunTime:0.0217s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_user_coupon` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `web_lawyer_coupon` [ RunTime:0.0092s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_lawyer_coupon` LIMIT 1   [ RunTime:0.0004s ]
+SQL: (select uc.couponid,uc.name,uc.amount,uc.starttime,uc.deadtime,uc.usetime,uc.status,u.nickname,u.phone,1 as type_id 
+            from web_user_coupon uc left join web_user u on u.uid=uc.uid) 
+            union 
+            (select lc.couponid,lc.title as name,lc.amount,lc.starttime,lc.deadtime,lc.usetime,lc.status,l.nickname,l.phone,2 as type_id 
+            from web_lawyer_coupon lc left join web_lawyer l on l.uid=lc.uid) 
+            order by starttime desc limit 12,12  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000166s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000220s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 153 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025702s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025782s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001084s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001124s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001302s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001360s ]
+
+[ 2017-02-09T09:35:34+08:00 ] ::1 /lawyer/Admin/Benefit/couponList/p/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001082s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001444s ]
+NOTIC: [8] Undefined index: menu_list D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\heyi\USBWebserver\root\lawyer\Application\Admin\Controller\BaseController.class.php 第 66 行.
+SQL: SHOW COLUMNS FROM `web_treenode` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `web_treenode` WHERE `menuflag` = 1 AND `is_hide` = 0 ORDER BY sort DESC  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `web_user_coupon` [ RunTime:0.0114s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_user_coupon` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `web_lawyer_coupon` [ RunTime:0.0118s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `web_lawyer_coupon` LIMIT 1   [ RunTime:0.0005s ]
+SQL: (select uc.couponid,uc.name,uc.amount,uc.starttime,uc.deadtime,uc.usetime,uc.status,u.nickname,u.phone,1 as type_id 
+            from web_user_coupon uc left join web_user u on u.uid=uc.uid) 
+            union 
+            (select lc.couponid,lc.title as name,lc.amount,lc.starttime,lc.deadtime,lc.usetime,lc.status,l.nickname,l.phone,2 as type_id 
+            from web_lawyer_coupon lc left join web_lawyer l on l.uid=lc.uid) 
+            order by starttime desc limit 0,12  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000146s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000194s ]
+NOTIC: [8] Undefined variable: Os D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 153 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+NOTIC: [8] Undefined index: feedid D:\heyi\USBWebserver\root\lawyer\Application\Runtime\Cache\Admin\52974b7994d46818882eb712e5598c26.php 第 231 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024134s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024201s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001034s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001085s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001755s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001829s ]
+

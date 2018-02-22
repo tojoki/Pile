@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<include file="Public:header" />	
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+<include file="Public:nav" />
+<div class="wrapper wrapper-content">
+    <div class="row" style="display:none;">
+         <section class="col-sm-4">
+             <div class="ibox float-e-margins">
+                 <div class="ibox-title">
+                     <h5>注册用户</h5>
+                 </div>
+                 <div class="ibox-content">
+                     <table class="table table-hover no-margins">
+                         <thead>
+                             <tr>
+                                 <th>用户</th>
+                                 <th>时间</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                         <volist name="users" id="u">
+                             <tr>
+                                 <td>{$u.nickname}</td>
+                                 <td class="text-navy"> <i class="fa"></i>{:tranTime2($u['ctime'])}</td>
+                             </tr>
+                         </volist>
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+         </section>
+         <section class="col-sm-4">
+             <div class="ibox float-e-margins">
+                 <div class="ibox-title">
+                     <h5>注册医生</h5>
+                 </div>
+                 <div class="ibox-content">
+                     <table class="table table-hover no-margins">
+                         <thead>
+                             <tr>
+                                 <th>医生</th>
+                                 <th>时间</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                         <volist name="doctors" id="dt">
+                             <tr>
+                                 <td>{$dt.nickname}</td>
+                                 <td class="text-navy"> <i class="fa"></i>{:tranTime2($dt['ctime'])}</td>
+                             </tr>
+                         </volist>
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+         </section>
+         <section class="col-sm-4">
+             <div class="ibox float-e-margins">
+                 <div class="ibox-title">
+                     <h5>医生认证申请</h5>
+                 </div>
+                 <div class="ibox-content">
+                     <table class="table table-hover no-margins">
+                         <thead>
+                             <tr>
+                                 <th>医生</th>
+                                 <th>申请时间</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                         <volist name="applys" id="ap">
+                             <tr>
+                                 <td>{$ap.nickname}</td>
+                                 <td class="text-navy"> <i class="fa"></i>{:tranTime2($ap['applytime'])}</td>
+                             </tr>
+                         </volist>
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+         </section>
+     </div> 
+    <div class="row" style="display:none;">
+         <section class="col-sm-4">
+             <div class="ibox float-e-margins">
+                 <div class="ibox-title">
+                     <h5>用户反馈</h5>
+                 </div>
+                 <div class="ibox-content">
+                     <table class="table table-hover no-margins">
+                         <thead>
+                             <tr>
+                                 <th>内容</th>
+                                 <th>时间</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                         <volist name="feeds" id="fd">
+                             <tr>
+                                 <td>{$fd.txt}</td>
+                                 <td class="text-navy"> <i class="fa"></i>{:tranTime2($fd['ctime'])}</td>
+                             </tr>
+                         </volist>
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+         </section>
+         <section class="col-sm-4">
+             <div class="ibox float-e-margins">
+                 <div class="ibox-title">
+                     <h5>用户留言</h5>
+                 </div>
+                 <div class="ibox-content">
+                     <table class="table table-hover no-margins">
+                         <thead>
+                             <tr>
+                                 <th>内容</th>
+                                 <th>时间</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                         <volist name="msgs" id="mg">
+                             <tr>
+                                 <td>{$mg.txt}</td>
+                                 <td class="text-navy"> <i class="fa"></i>{:tranTime2($mg['ctime'])}</td>
+                             </tr>
+                         </volist>
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+         </section>
+     </div> 
+</div>
+<include file="Public:footer" />
+</body>
+</html>
+
