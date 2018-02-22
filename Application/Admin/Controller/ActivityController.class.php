@@ -2,9 +2,7 @@
 namespace Admin\Controller;
 use Api\Common\Constant;
 
-/**
- * 活动管理
- */
+//活动管理
 class ActivityController extends BaseController {
     /**
      * 猜你喜欢
